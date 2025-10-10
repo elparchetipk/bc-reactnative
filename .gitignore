@@ -338,6 +338,47 @@ out/
 # Archivos de evaluación con calificaciones
 **/calificaciones.xlsx
 **/grades.xlsx
+
+# ============================================
+# 🔒 DOMINIOS PERSONALIZADOS (POLÍTICA ANTICOPIA)
+# ============================================
+# 
+# ¿Qué hace?
+# Protege las asignaciones de dominios únicos por estudiante
+# para garantizar aprendizaje genuino y evitar copias mecánicas
+# 
+# ¿Para qué sirve?
+# - Mantener privacidad de asignaciones individuales
+# - Evitar que estudiantes vean qué dominio tiene cada compañero
+# - Facilitar detección de copias entre estudiantes
+# - Forzar comprensión real del código (no copiar mecánicamente)
+# 
+# ¿Cómo funciona?
+# Se ignoran archivos .md de asignaciones individuales
+# pero se permiten plantillas y documentación general
+# 
+# Ver política completa: /_docs/POLITICA_ANTICOPIA_DOMINIOS.md
+
+# Asignaciones individuales de dominios (PRIVADAS - NO SUBIR)
+**/6-asignacion-dominios/*.md
+**/asignacion-dominios/*.md
+
+# EXCEPCIONES: Permitir archivos de plantilla y documentación
+!**/6-asignacion-dominios/.gitkeep
+!**/6-asignacion-dominios/README.md
+!**/6-asignacion-dominios/TEMPLATE.md
+!**/6-asignacion-dominios/INSTRUCCIONES.md
+!**/asignacion-dominios/.gitkeep
+!**/asignacion-dominios/README.md
+!**/asignacion-dominios/TEMPLATE.md
+!**/asignacion-dominios/INSTRUCCIONES.md
+
+# Archivos de tracking de asignaciones (backup privado del instructor)
+**/lista-asignaciones.json
+**/lista-asignaciones.csv
+**/domain-assignments.json
+**/asignaciones-backup.*
+**/assignments-tracking.*
 **/evaluaciones-privadas/
 /_docs/evaluaciones/calificaciones/
 

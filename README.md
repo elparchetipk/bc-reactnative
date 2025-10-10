@@ -71,7 +71,8 @@ bc-reactnative/
 │   ├── referencias/            # Referencias rápidas
 │   ├── recursos/               # eBooks, videos, artículos
 │   ├── evaluacion/             # Criterios de evaluación
-│   └── instructor/             # Material para instructores
+│   ├── instructor/             # Material para instructores
+│   └── POLITICA_ANTICOPIA_DOMINIOS.md  # 🔒 Sistema de dominios únicos
 ├── _scripts/                    # 🔧 Scripts de automatización
 │   ├── setup/                  # Configuración inicial
 │   ├── generators/             # Generadores de contenido
@@ -91,26 +92,32 @@ bc-reactnative/
 ## 📅 Contenido por Semanas
 
 ### [Semana 1: Fundamentos](./bootcamp/semana-01/)
+
 **Sesión Presencial (6h):** Configuración del entorno, componentes básicos, estilos y Flexbox  
 **Proyecto:** App de perfil personal
 
 ### [Semana 2: Navegación y Routing](./bootcamp/semana-02/)
+
 **Sesión Presencial (6h):** React Navigation, Stack/Tab/Drawer navigators, Expo Router  
 **Proyecto:** App multi-pantalla
 
 ### [Semana 3: Estado y Datos](./bootcamp/semana-03/)
+
 **Sesión Presencial (6h):** State management, Context API, AsyncStorage  
 **Proyecto:** App con persistencia de datos
 
 ### [Semana 4: APIs y Backend](./bootcamp/semana-04/)
+
 **Sesión Presencial (6h):** Fetch/Axios, autenticación JWT, manejo de errores  
 **Proyecto:** App con autenticación
 
 ### [Semana 5: Features Avanzadas](./bootcamp/semana-05/)
+
 **Sesión Presencial (6h):** Cámara, notificaciones push, mapas y geolocalización  
 **Proyecto:** App con multimedia
 
 ### [Semana 6: Deployment y Proyecto Final](./bootcamp/semana-06/)
+
 **Sesión Presencial (6h):** Testing, build, deployment, optimización  
 **Proyecto:** App completa lista para producción
 
@@ -121,29 +128,34 @@ bc-reactnative/
 Toda la documentación está organizada en [`/_docs/`](./_docs/):
 
 ### 📖 [Guías](./_docs/guias/)
+
 - Instalación del entorno de desarrollo
 - Configuración de VS Code
 - Primeros pasos con Expo
 - Troubleshooting común
 
 ### 🔍 [Referencias](./_docs/referencias/)
+
 - Cheat sheet de React Native
 - Componentes básicos
 - APIs de Expo
 - Comandos CLI
 
 ### 🎓 [Recursos](./_docs/recursos/)
+
 - eBooks recomendados
 - Canales de YouTube
 - Artículos imprescindibles
 - Comunidades y foros
 
 ### ✅ [Evaluación](./_docs/evaluacion/)
+
 - Criterios generales de evaluación
 - Rúbricas de proyectos
 - Guía de evaluación de código
 
 ### 👨‍🏫 [Material para Instructores](./_docs/instructor/)
+
 - Notas de sesiones
 - Preguntas frecuentes
 - Recursos adicionales
@@ -155,6 +167,7 @@ Toda la documentación está organizada en [`/_docs/`](./_docs/):
 Scripts de automatización disponibles en [`/_scripts/`](./_scripts/):
 
 ### Configuración Inicial
+
 ```bash
 # Instalar dependencias con pnpm
 pnpm install
@@ -164,6 +177,7 @@ pnpm install
 ```
 
 ### Generadores
+
 ```bash
 # Generar estructura de semana
 node _scripts/generators/generate-week.js --week 1
@@ -173,6 +187,7 @@ node _scripts/generators/create-practice.js
 ```
 
 ### Validadores
+
 ```bash
 # Validar código de estudiantes
 node _scripts/validators/validate-code.js
@@ -188,6 +203,7 @@ Ver documentación completa en [`/_scripts/README.md`](./_scripts/README.md)
 ## 📋 Requisitos Previos
 
 ### Conocimientos
+
 - ✅ JavaScript ES6+ (intermedio)
 - ✅ React básico (componentes, hooks, props)
 - ✅ HTML y CSS fundamentales
@@ -195,6 +211,7 @@ Ver documentación completa en [`/_scripts/README.md`](./_scripts/README.md)
 - ✅ Terminal/CLI básico
 
 ### Software Necesario
+
 - **Node.js** v18+ ([Descargar](https://nodejs.org/))
 - **pnpm** v9+ (Gestor de paquetes)
 - **Git** ([Descargar](https://git-scm.com/))
@@ -246,6 +263,7 @@ Ver [Guía de Instalación Completa](./_docs/guias/instalacion-entorno.md)
 ## 📱 Stack Tecnológico
 
 ### Tecnologías Principales
+
 - **React Native** - Framework de desarrollo móvil
 - **Expo** - Plataforma y herramientas de desarrollo
 - **pnpm** - Gestor de paquetes rápido y eficiente
@@ -253,6 +271,7 @@ Ver [Guía de Instalación Completa](./_docs/guias/instalacion-entorno.md)
 - **JavaScript ES6+** - Lenguaje de programación
 
 ### Librerías Complementarias
+
 - **React Navigation** - Navegación entre pantallas
 - **Expo Router** - Enrutamiento basado en archivos
 - **AsyncStorage** - Almacenamiento local
@@ -265,12 +284,15 @@ Ver [Guía de Instalación Completa](./_docs/guias/instalacion-entorno.md)
 ## 🎓 Metodología
 
 ### Sesión Presencial (6 horas)
+
 1. **Teoría y Conceptos** (2-3h)
+
    - Presentación de conceptos clave
    - Demostración en vivo
    - Código interactivo
 
 2. **Prácticas Guiadas** (2-3h)
+
    - Ejercicios hands-on
    - Resolución de problemas en tiempo real
    - Code reviews grupales
@@ -281,6 +303,7 @@ Ver [Guía de Instalación Completa](./_docs/guias/instalacion-entorno.md)
    - Asignación de tareas
 
 ### Trabajo Autónomo (9-14 horas)
+
 - Repaso de teoría
 - Prácticas adicionales
 - Desarrollo del proyecto semanal
@@ -292,37 +315,54 @@ Ver [Guía de Instalación Completa](./_docs/guias/instalacion-entorno.md)
 
 Cada semana se evalúa según:
 
-| Criterio | Peso | Puntos |
-|----------|------|--------|
-| Teoría   | 20%  | 20     |
-| Prácticas| 30%  | 30     |
-| Proyecto | 50%  | 50     |
-| **TOTAL**| 100% | **100**|
+| Criterio  | Peso | Puntos  |
+| --------- | ---- | ------- |
+| Teoría    | 20%  | 20      |
+| Prácticas | 30%  | 30      |
+| Proyecto  | 50%  | 50      |
+| **TOTAL** | 100% | **100** |
 
 ### Escala de Calificación
+
 - **90-100**: Excelente ⭐⭐⭐⭐⭐
 - **80-89**: Muy Bueno ⭐⭐⭐⭐
 - **70-79**: Bueno ⭐⭐⭐
 - **60-69**: Suficiente ⭐⭐
 - **0-59**: Insuficiente ⭐
 
-Ver [Criterios de Evaluación Detallados](./_docs/evaluacion/criterios-generales.md)
+### 🔒 Política de Integridad Académica
+
+Este bootcamp implementa un **sistema de dominios personalizados únicos** para garantizar el aprendizaje genuino y evitar copias mecánicas. Cada estudiante recibe un dominio de negocio personalizado (ej: Restaurante, Veterinaria, Gimnasio) que debe aplicar en todos sus proyectos.
+
+**Beneficios:**
+
+- ✅ Fuerza la comprensión real del código
+- ✅ Desarrolla pensamiento crítico y adaptación
+- ✅ Facilita la detección de copias
+- ✅ Crea portfolios únicos y profesionales
+
+Ver [Política Anticopia y Dominios Completa](./_docs/POLITICA_ANTICOPIA_DOMINIOS.md)
+
+Ver también [Criterios de Evaluación Detallados](./_docs/evaluacion/criterios-generales.md)
 
 ---
 
 ## 📖 Recursos Adicionales
 
 ### Documentación Oficial
+
 - [React Native Docs](https://reactnative.dev/docs/getting-started)
 - [Expo Documentation](https://docs.expo.dev/)
 - [React Docs](https://react.dev/)
 
 ### Comunidades
+
 - [React Native Community](https://www.reactnative.dev/community/overview)
 - [Expo Discord](https://chat.expo.dev/)
 - [Stack Overflow - React Native](https://stackoverflow.com/questions/tagged/react-native)
 
 ### Canales de YouTube Recomendados
+
 - [Expo YouTube](https://www.youtube.com/@expo)
 - [React Native School](https://www.youtube.com/@reactnativeschool)
 - [William Candillon](https://www.youtube.com/@wcandillon)
