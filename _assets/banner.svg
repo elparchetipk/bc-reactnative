@@ -1,0 +1,119 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 
+    Banner SVG - Bootcamp React Native
+    
+    ¿Qué hace?
+    Banner visual para el encabezado del README principal
+    
+    ¿Para qué sirve?
+    - Identificación visual del bootcamp
+    - Aspecto profesional y moderno
+    - Optimizado para tema dark de GitHub
+    
+    ¿Cómo funciona?
+    SVG vectorial escalable sin degradados, usando colores sólidos
+    compatibles con modo oscuro
+  -->
+  
+  <!-- Fondo principal -->
+  <rect width="1200" height="300" fill="#0d1117"/>
+  
+  <!-- Patrón de fondo con círculos sutiles -->
+  <circle cx="100" cy="50" r="40" fill="#161b22" opacity="0.3"/>
+  <circle cx="1100" cy="250" r="60" fill="#161b22" opacity="0.3"/>
+  <circle cx="200" cy="280" r="30" fill="#161b22" opacity="0.2"/>
+  <circle cx="1000" cy="30" r="50" fill="#161b22" opacity="0.2"/>
+  
+  <!-- Líneas decorativas de código -->
+  <line x1="50" y1="80" x2="180" y2="80" stroke="#30363d" stroke-width="2" opacity="0.5"/>
+  <line x1="50" y1="100" x2="220" y2="100" stroke="#30363d" stroke-width="2" opacity="0.5"/>
+  <line x1="50" y1="120" x2="150" y2="120" stroke="#30363d" stroke-width="2" opacity="0.5"/>
+  
+  <line x1="1020" y1="180" x2="1150" y2="180" stroke="#30363d" stroke-width="2" opacity="0.5"/>
+  <line x1="1020" y1="200" x2="1120" y2="200" stroke="#30363d" stroke-width="2" opacity="0.5"/>
+  <line x1="1020" y1="220" x2="1140" y2="220" stroke="#30363d" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Símbolo de React (simplificado) -->
+  <g transform="translate(300, 150)">
+    <!-- Núcleo -->
+    <circle cx="0" cy="0" r="12" fill="#61dafb"/>
+    
+    <!-- Órbitas -->
+    <ellipse cx="0" cy="0" rx="80" ry="30" fill="none" stroke="#61dafb" stroke-width="3" opacity="0.8"/>
+    <ellipse cx="0" cy="0" rx="80" ry="30" fill="none" stroke="#61dafb" stroke-width="3" opacity="0.8" transform="rotate(60)"/>
+    <ellipse cx="0" cy="0" rx="80" ry="30" fill="none" stroke="#61dafb" stroke-width="3" opacity="0.8" transform="rotate(120)"/>
+  </g>
+  
+  <!-- Texto principal: BOOTCAMP -->
+  <text x="450" y="130" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="#e6edf3">
+    BOOTCAMP
+  </text>
+  
+  <!-- Texto secundario: React Native + Expo -->
+  <text x="450" y="175" font-family="Arial, sans-serif" font-size="36" font-weight="600" fill="#61dafb">
+    React Native + Expo
+  </text>
+  
+  <!-- Subtítulo -->
+  <text x="450" y="210" font-family="Arial, sans-serif" font-size="18" fill="#8b949e">
+    Desarrollo de Aplicaciones Móviles Profesionales
+  </text>
+  
+  <!-- Badge: 6 Semanas -->
+  <g transform="translate(450, 235)">
+    <rect width="120" height="30" rx="15" fill="#238636" opacity="0.2"/>
+    <rect width="120" height="30" rx="15" fill="none" stroke="#238636" stroke-width="2"/>
+    <text x="60" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#3fb950" text-anchor="middle">
+      6 SEMANAS
+    </text>
+  </g>
+  
+  <!-- Badge: Intermedio -->
+  <g transform="translate(590, 235)">
+    <rect width="130" height="30" rx="15" fill="#1f6feb" opacity="0.2"/>
+    <rect width="130" height="30" rx="15" fill="none" stroke="#1f6feb" stroke-width="2"/>
+    <text x="65" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#58a6ff" text-anchor="middle">
+      INTERMEDIO
+    </text>
+  </g>
+  
+  <!-- Badge: pnpm -->
+  <g transform="translate(740, 235)">
+    <rect width="90" height="30" rx="15" fill="#f85149" opacity="0.2"/>
+    <rect width="90" height="30" rx="15" fill="none" stroke="#f85149" stroke-width="2"/>
+    <text x="45" y="20" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#ff7b72" text-anchor="middle">
+      pnpm
+    </text>
+  </g>
+  
+  <!-- Ícono de móvil -->
+  <g transform="translate(950, 120)">
+    <!-- Contorno del móvil -->
+    <rect x="0" y="0" width="80" height="140" rx="12" fill="#161b22" stroke="#30363d" stroke-width="3"/>
+    <rect x="8" y="8" width="64" height="104" rx="4" fill="#0d1117"/>
+    
+    <!-- Pantalla con código -->
+    <line x1="16" y1="20" x2="56" y2="20" stroke="#58a6ff" stroke-width="2"/>
+    <line x1="16" y1="30" x2="48" y2="30" stroke="#3fb950" stroke-width="2"/>
+    <line x1="16" y1="40" x2="60" y2="40" stroke="#f85149" stroke-width="2"/>
+    <line x1="16" y1="50" x2="52" y2="50" stroke="#8b949e" stroke-width="2"/>
+    
+    <!-- Componente visual -->
+    <rect x="20" y="60" width="40" height="40" rx="4" fill="none" stroke="#61dafb" stroke-width="2"/>
+    <circle cx="40" cy="80" r="8" fill="#61dafb"/>
+    
+    <!-- Botón home -->
+    <circle cx="40" cy="124" r="8" fill="#30363d"/>
+  </g>
+  
+  <!-- Elementos decorativos: brackets de código -->
+  <text x="420" y="160" font-family="monospace" font-size="80" fill="#30363d" opacity="0.3">
+    &lt;
+  </text>
+  <text x="870" y="160" font-family="monospace" font-size="80" fill="#30363d" opacity="0.3">
+    /&gt;
+  </text>
+  
+  <!-- Línea inferior decorativa -->
+  <line x1="100" y1="280" x2="1100" y2="280" stroke="#30363d" stroke-width="2" opacity="0.5"/>
+</svg>

@@ -1,0 +1,506 @@
+# ============================================
+# GITIGNORE - Bootcamp React Native + Expo
+# ============================================
+# 
+# ¿Qué hace este archivo?
+# Especifica archivos y directorios que Git debe ignorar
+# 
+# ¿Para qué sirve?
+# - Evita subir archivos innecesarios al repositorio
+# - Mantiene el repositorio limpio y ligero
+# - Protege información sensible (API keys, secrets)
+# - Previene conflictos con archivos generados automáticamente
+#
+# ¿Cómo funciona?
+# Git lee este archivo y excluye los patrones especificados
+# del seguimiento de versiones
+
+# ============================================
+# 📱 EXPO & REACT NATIVE
+# ============================================
+
+# Expo
+.expo/
+.expo-shared/
+dist/
+web-build/
+
+# Expo router
+.expo-router/
+
+# Metro bundler cache
+.metro-health-check*
+
+# Native builds (development)
+ios/
+android/
+
+# EAS (Expo Application Services)
+.eas/
+eas.json
+
+# Expo Go
+.expo-go/
+
+# ============================================
+# 📦 NODE.JS & PNPM
+# ============================================
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# pnpm específico
+pnpm-lock.yaml
+.pnpm-store/
+.pnpm-debug.log*
+
+# npm (por si alguien lo usa por error)
+package-lock.json
+npm-debug.log*
+
+# Yarn (por si alguien lo usa por error)
+yarn.lock
+yarn-error.log*
+.yarn/
+.pnp.*
+
+# ============================================
+# 🔐 VARIABLES DE ENTORNO & SECRETS
+# ============================================
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env*.local
+
+# API Keys y configuración sensible
+config/secrets.ts
+config/secrets.js
+**/secrets.json
+**/api-keys.json
+
+# Firebase config (si se usa)
+google-services.json
+GoogleService-Info.plist
+
+# ============================================
+# 💻 EDITORES & IDEs
+# ============================================
+
+# VSCode
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains IDEs (WebStorm, IntelliJ, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ============================================
+# 🍎 macOS
+# ============================================
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# ============================================
+# 🪟 WINDOWS
+# ============================================
+
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# ============================================
+# 🐧 LINUX
+# ============================================
+
+# temporary files
+.directory
+
+# trash folder
+.Trash-*
+
+# .nfs files
+.nfs*
+
+# ============================================
+# 📱 MOBILE SPECIFIC
+# ============================================
+
+# Android
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+local.properties
+.gradle/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# iOS
+*.ipa
+*.dSYM.zip
+*.dSYM
+DerivedData/
+*.xcworkspace
+!default.xcworkspace
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+**/.xcode.env.local
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# ============================================
+# 🧪 TESTING
+# ============================================
+
+# Test coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# Jest
+jest-coverage/
+
+# E2E tests
+e2e/screenshots/
+e2e/videos/
+
+# Detox
+.detoxrc.json
+
+# ============================================
+# 📝 LOGS & DEBUGGING
+# ============================================
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# ============================================
+# 🔧 BUILD & COMPILATION
+# ============================================
+
+# TypeScript
+*.tsbuildinfo
+dist-types/
+
+# Build files
+build/
+out/
+.next/
+.nuxt/
+.cache/
+.parcel-cache/
+.webpack/
+
+# ============================================
+# 🎓 BOOTCAMP ESPECÍFICO
+# ============================================
+
+# Estructura del proyecto:
+# /README.md (único documento en raíz)
+# /_assets/ (recursos visuales y assets generales)
+# /_docs/ (toda la documentación categorizada)
+# /_scripts/ (scripts de automatización y utilidades)
+# /bootcamp/ (contenido del bootcamp por semanas)
+
+# Assets temporales o de trabajo
+/_assets/temp/
+/_assets/draft/
+/_assets/**/*.psd
+/_assets/**/*.ai
+/_assets/**/*.sketch
+/_assets/**/*.fig
+
+# Soluciones de prácticas (para que estudiantes trabajen independientemente)
+**/2-practicas/**/solution/
+**/2-practicas/**/solucion/
+
+# Archivos temporales de estudiantes
+**/temp/
+**/tmp/
+**/scratch/
+**/draft/
+**/borrador/
+
+# Notas privadas de instructores
+**/instructor-notes/
+**/notas-instructor/
+**/private/
+/_docs/private/
+/_docs/instructor-only/
+
+# Archivos de evaluación con calificaciones
+**/calificaciones.xlsx
+**/grades.xlsx
+**/evaluaciones-privadas/
+/_docs/evaluaciones/calificaciones/
+
+# Backups
+*.backup
+*.bak
+*.old
+backup/
+backups/
+/_docs/backups/
+
+# Archivos comprimidos de entregas
+**/entregas/*.zip
+**/entregas/*.rar
+**/entregas/*.tar.gz
+**/submissions/*.zip
+**/submissions/*.rar
+
+# Scripts generados o temporales
+/_scripts/temp/
+/_scripts/output/
+/_scripts/*.log
+
+# ============================================
+# 📚 DOCUMENTACIÓN
+# ============================================
+
+# Generated documentation
+docs/api/
+docs/build/
+.docusaurus/
+
+# PDF generados (mantener solo fuentes)
+*.pdf
+!**/*-template.pdf
+!**/*-plantilla.pdf
+
+# ============================================
+# 🎨 ASSETS & MEDIA
+# ============================================
+
+# Large media files (usar Git LFS si es necesario)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# Large images (excepto assets necesarios)
+*.psd
+*.ai
+*.sketch
+
+# Audio files
+*.wav
+*.flac
+*.aiff
+
+# ============================================
+# 🔒 SEGURIDAD
+# ============================================
+
+# SSH keys
+*.pem
+*.key
+*.cert
+*.crt
+id_rsa
+id_dsa
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================
+# 🌐 MISC
+# ============================================
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# dotenv environment variable files
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Temporary folders
+tmp/
+temp/
+
+# ============================================
+# ✅ EXCEPCIONES (Archivos a INCLUIR)
+# ============================================
+
+# Asegurar que estos archivos SÍ se suban
+!.gitkeep
+!.gitignore
+!README.md
+!.github/
+!.vscode/settings.json
+
+# Assets y recursos visuales
+!/_assets/
+!/_assets/**/*.svg
+!/_assets/**/*.png
+!/_assets/**/*.jpg
+!/_assets/**/*.jpeg
+!/_assets/**/*.webp
+!/_assets/README.md
+
+# Documentación categorizada
+!/_docs/
+!/_docs/**/*.md
+!/_docs/**/*.pdf
+
+# Scripts de utilidad
+!/_scripts/
+!/_scripts/**/*.js
+!/_scripts/**/*.ts
+!/_scripts/**/*.sh
+!/_scripts/**/*.py
+!/_scripts/README.md
+
+# Bootcamp content
+!/bootcamp/
+!/bootcamp/**/*.md
+
+# Templates y ejemplos
+!**/template/
+!**/templates/
+!**/plantilla/
+!**/ejemplo/
+!**/example/
+
+# Configuración del proyecto
+!.prettierrc
+!.eslintrc.js
+!tsconfig.json
+!babel.config.js
+!metro.config.js
+!app.json
+!package.json
+
+# ============================================
+# FIN DEL ARCHIVO
+# ============================================
