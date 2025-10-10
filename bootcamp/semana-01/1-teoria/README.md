@@ -1,6 +1,8 @@
 # 📖 Teoría - Semana 1: Fundamentos de React Native
 
-Bienvenido al contenido teórico de la primera semana del bootcamp. Aquí aprenderás los fundamentos esenciales de React Native y Expo.
+**✨ NUEVA ESTRUCTURA OPTIMIZADA - Balance 60% Presencial / 40% Autónomo**
+
+Bienvenido al contenido teórico de la primera semana del bootcamp. Aquí aprenderás los fundamentos esenciales de React Native y Expo en sesiones presenciales prácticas y directas.
 
 ---
 
@@ -8,81 +10,112 @@ Bienvenido al contenido teórico de la primera semana del bootcamp. Aquí aprend
 
 Al completar este módulo teórico, serás capaz de:
 
-- ✅ Comprender qué es React Native y cómo funciona
+- ✅ Comprender qué es React Native y cuándo usarlo
 - ✅ Configurar un entorno de desarrollo completo
-- ✅ Conocer y utilizar los componentes básicos
-- ✅ Aplicar estilos con StyleSheet y Flexbox
-- ✅ Manejar estado y eventos en componentes
-- ✅ Crear layouts responsive y profesionales
+- ✅ Conocer y utilizar los 7 componentes básicos
+- ✅ Aplicar estilos con TailwindCSS (NativeWind)
+- ✅ Manejar estado y eventos interactivos
+- ✅ Crear layouts con Flexbox
 
 ---
 
-## 📚 Contenido Teórico
+## 📚 Contenido Teórico Consolidado (3 documentos)
 
-### 1. [Introducción a React Native](./01-introduccion-react-native.md)
+### 1. [Fundamentos de React Native](./01-fundamentos-react-native.md)
 
-**Duración:** 45 minutos
+**⏱️ Duración:** 45 minutos (PRESENCIAL)  
+**Modalidad:** Explicación + Demo en vivo
+
+**Contenido:**
 
 - ¿Qué es React Native?
-- Historia y evolución
-- Diferencias con React Web
+- React Native vs Alternativas (Flutter, Nativo)
+- Arquitectura básica (Bridge, Threads)
+- Casos de éxito (Instagram, Discord, Uber Eats)
 - Ventajas y limitaciones
-- Casos de éxito en la industria
+- Demo en vivo de una app real
 
-### 2. [Configuración del Entorno](./02-configuracion-entorno.md)
+**🎯 Al finalizar podrás:**
 
-**Duración:** 1 hora
-
-- Instalación de Node.js y pnpm
-- Configuración de Expo CLI
-- Setup de VS Code
-- Instalación de Expo Go
-- Primer proyecto Expo
-- Debugging básico
-
-### 3. [Componentes Básicos](./03-componentes-basicos.md)
-
-**Duración:** 1.5 horas
-
-- Core Components de React Native
-- View, Text, Image, ScrollView
-- Button, TextInput, TouchableOpacity
-- Props y composición de componentes
-- SafeAreaView y KeyboardAvoidingView
-
-### 4. [Estilos y Layouts](./04-estilos-layouts.md)
-
-**Duración:** 1.5 horas
-
-- StyleSheet API
-- Inline styles vs StyleSheet
-- Flexbox en React Native
-- Layouts comunes (header, content, footer)
-- Responsive design con Dimensions
-- Platform-specific styles
-
-### 5. [Estado y Eventos](./05-estado-eventos.md)
-
-**Duración:** 1 hora
-
-- React Hooks básicos (useState, useEffect)
-- Event handling (onPress, onChangeText)
-- Manejo de formularios
-- Validación básica
-- Actualización de estado
+- Explicar qué es React Native en 2-3 frases
+- Identificar cuándo usar o no React Native
+- Reconocer apps famosas hechas con RN
 
 ---
 
-## ⏱️ Distribución del Tiempo
+### 2. [Setup y Componentes Básicos](./02-setup-y-componentes-basicos.md)
 
-| Actividad               | Presencial | Autónoma (recomendada) | Total     |
-| ----------------------- | ---------- | ---------------------- | --------- |
-| Lectura y comprensión   | 2h         | ~1.5h                  | ~3.5h     |
-| Ejercicios de reflexión | 30min      | ~30min                 | ~1h       |
-| Videos complementarios  | -          | ~1h                    | ~1h       |
-| **Total**               | **2.5h**   | **~3h**                | **~5.5h** |
+**⏱️ Duración:** 2.5 horas (PRESENCIAL)  
+**Modalidad:** Hands-on (hacer juntos)
 
-> **Nota:** Los tiempos de trabajo autónomo son flexibles y dependen de tu ritmo de aprendizaje.
+**Contenido:**
+
+- **Parte 1: Configuración (60 min)**
+  - Instalación Node.js 22.20+, pnpm, VS Code
+  - Crear proyecto con Expo
+  - Configurar NativeWind (TailwindCSS)
+  - Ejecutar en Expo Go
+- **Parte 2: Componentes (90 min)**
+  - View, Text, Image
+  - ScrollView, TextInput
+  - TouchableOpacity
+  - Layouts con Flexbox
+- **Parte 3: Ejercicio (40 min)**
+  - Crear Card de Perfil completa
+  - Aplicar todo lo aprendido
+
+**🎯 Al finalizar podrás:**
+
+- Tener tu entorno 100% configurado
+- Usar los 7 componentes básicos
+- Crear layouts con Flexbox
+- Ver tu app funcionando en tu celular
+
+---
+
+### 3. [Estado y Eventos](./03-estado-y-eventos.md)
+
+**⏱️ Duración:** 1.5 horas (PRESENCIAL)  
+**Modalidad:** Live coding (escribir código juntos)
+
+**Contenido:**
+
+- **Ejercicio 1:** Contador Simple (20 min)
+  - useState básico
+  - Eventos onPress
+  - Re-renderizado automático
+- **Ejercicio 2:** Input Controlado (25 min)
+  - TextInput con estado
+  - Validación básica
+  - Renderizado condicional
+- **Ejercicio 3:** TODO List (45 min)
+  - Arrays en el estado
+  - Agregar, completar, eliminar tareas
+  - Estilos condicionales
+  - App completa funcional
+- **Bonus:** Introducción a useEffect (10 min)
+
+**🎯 Al finalizar podrás:**
+
+- Usar useState para estado local
+- Manejar eventos del usuario
+- Crear formularios funcionales
+- Trabajar con arrays en el estado
+
+---
+
+## ⏱️ Nueva Distribución del Tiempo
+
+| Actividad                  | Presencial | Autónoma | Total     |
+| -------------------------- | ---------- | -------- | --------- |
+| **1. Fundamentos RN**      | 45 min     | ~30 min  | ~1.25h    |
+| **2. Setup + Componentes** | 2.5h       | ~45 min  | ~3.25h    |
+| **3. Estado + Eventos**    | 1.5h       | ~45 min  | ~2.25h    |
+| **Total Teoría**           | **4.5h**   | **~2h**  | **~6.5h** |
+
+**Proporción:** ~69% presencial / 31% autónomo ✅
+
+> **Nota:** Los tiempos autónomos son para reforzar con videos y documentación oficial. Son opcionales y flexibles.
 
 ---
 
