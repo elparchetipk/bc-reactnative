@@ -1,26 +1,32 @@
-# Práctica 1: Mi Primera App
+# 💻 Práctica 1: Mi Primera App - Perfil Personal
 
-**Duración estimada:** 30 minutos  
-**Dificultad:** ⭐ Fácil  
-**Conceptos:** Componentes básicos, estilos con TailwindCSS
+**⏱️ Duración:** 45 minutos  
+**👥 Modalidad:** 🎓 **PRESENCIAL - Guiada por el instructor**  
+**📊 Dificultad:** ⭐ Fácil  
+**🎯 Conceptos:** Componentes básicos, estilos con TailwindCSS, Layouts
 
 ---
 
 ## 🎯 Objetivo
 
-Crear tu primera aplicación de React Native: una **pantalla de perfil personal** que muestre tu información básica con una foto, nombre, descripción y algunos datos de contacto.
+Crear juntos (instructor + estudiantes) tu primera aplicación de React Native: una **pantalla de perfil personal** con foto, nombre, información de contacto y biografía.
+
+**Importante:** Esta práctica se hace **EN CLASE, PASO A PASO** con el instructor. No es para trabajo autónomo.
 
 ---
 
-## 📚 Conceptos a Aplicar
+## 📚 Conceptos que Aplicaremos Juntos
 
-- ✅ Componente funcional con TypeScript
-- ✅ `View` para contenedores
-- ✅ `Text` para mostrar texto
-- ✅ `Image` para mostrar foto de perfil
+Durante esta práctica guiada veremos:
+
+- ✅ Estructura de un componente funcional con TypeScript
+- ✅ `View` y `SafeAreaView` para contenedores seguros
+- ✅ `Text` con diferentes estilos tipográficos
+- ✅ `Image` para mostrar avatar circular
 - ✅ `ScrollView` para contenido scrollable
 - ✅ Estilos con TailwindCSS (NativeWind)
-- ✅ Layouts con Flexbox
+- ✅ Layouts con Flexbox (column, center, spacing)
+- ✅ Organización de código limpio y comentado
 
 ---
 
@@ -41,156 +47,142 @@ Tu app debe verse similar a esto:
 │  ┌─────────────────┐   │
 │  │ 📧 Email        │   │  ← Sección de información
 │  │ juan@email.com  │   │
-│  ├─────────────────┤   │
-│  │ 📱 Teléfono     │   │
-│  │ +52 123 456 789 │   │
-│  ├─────────────────┤   │
-│  │ 📍 Ubicación    │   │
-│  │ Ciudad de Méx.  │   │
-│  └─────────────────┘   │
-│                         │
-│  ┌─────────────────┐   │
-│  │ Acerca de mí    │   │  ← Bio
-│  │ Lorem ipsum...  │   │
-│  └─────────────────┘   │
-│                         │
+---
+
+## 🖼️ Resultado que Construiremos Juntos
+
+```
+
+┌─────────────────────────┐
+│ [Fondo color] │ ← Header con gradiente
+│ ╔═══════╗ │
+│ ║ Foto ║ │ ← Avatar circular 120x120
+│ ╚═══════╝ │
+│ │
+│ Tu Nombre │ ← Texto grande y bold
+│ Tu Profesión │ ← Subtítulo gris
+│ │
+│ 📧 tu@email.com │ ← Info de contacto
+│ 📱 +1 234 567 890 │
+│ 📍 Tu Ciudad │
+│ │
+│ ┌─────────────────┐ │
+│ │ Sobre Mí │ │ ← Card con biografía
+│ │ Tu descripción │ │
+│ │ personal aquí │ │
+│ └─────────────────┘ │
 └─────────────────────────┘
-```
+
+````
 
 ---
 
-## 📋 Requisitos
+## �‍🏫 Dinámica de la Clase (45 minutos)
 
-### Funcionales:
+### Estructura:
+1. **Introducción (5 min):** Instructor explica el objetivo y muestra resultado final
+2. **Setup inicial (10 min):** Todos configuran el proyecto juntos
+3. **Desarrollo guiado (25 min):** Codear paso a paso con el instructor
+4. **Review y Q&A (5 min):** Resolver dudas y mostrar resultados
 
-- [ ] Mostrar una imagen de perfil circular
-- [ ] Nombre completo visible
-- [ ] Título o profesión
-- [ ] Email, teléfono y ubicación con iconos (emojis)
-- [ ] Sección "Acerca de mí" con texto descriptivo
-- [ ] Todo el contenido debe ser scrollable
-
-### Técnicos:
-
-- [ ] Usar TypeScript para el componente
-- [ ] Usar TailwindCSS (NativeWind) para todos los estilos
-- [ ] Implementar SafeAreaView para compatibilidad con notch
-- [ ] Código limpio y bien comentado
+### Reglas:
+- ✅ **Seguir al instructor** paso a paso
+- ✅ **Preguntar inmediatamente** si algo no funciona
+- ✅ **Experimentar después** con tu propia información
+- ❌ **NO adelantarse** (esperamos que todos estén en el mismo punto)
 
 ---
 
-## 🚀 Paso a Paso
+## �️ Preparación (El instructor guiará esto)
 
-### Paso 1: Crear el Proyecto (5 min)
+**NOTA:** Ya deberías tener instalado en la sesión anterior:
+- Node.js 22.20+
+- pnpm 9+
+- Expo Go en tu celular
+- Editor VS Code
 
-```bash
-# Crear proyecto nuevo
-npx create-expo-app@latest practica-01-perfil --template blank-typescript
+El instructor iniciará el proyecto base y todos seguirán los mismos pasos.
 
-# Entrar al directorio
-cd practica-01-perfil
+---
 
-# Instalar NativeWind
-pnpm add nativewind
-pnpm add -D tailwindcss
+## 👨‍💻 Desarrollo Guiado - Paso a Paso
 
-# Inicializar Tailwind
-npx tailwindcss init
-```
+> **Instructor:** Lee cada paso en voz alta y espera a que todos completen antes de avanzar.
 
-### Paso 2: Configurar NativeWind (5 min)
+### Paso 1: Estructura Base (5 min)
 
-**Editar `tailwind.config.js`:**
-
-```js
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ['./App.{js,jsx,ts,tsx}', './src/**/*.{js,jsx,ts,tsx}'],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
-```
-
-**Editar `babel.config.js`:**
-
-```js
-module.exports = function (api) {
-  api.cache(true)
-  return {
-    presets: ['babel-preset-expo'],
-    plugins: ['nativewind/babel'],
-  }
-}
-```
-
-**Crear `nativewind-env.d.ts` en la raíz:**
+**El instructor proyecta y explica:**
 
 ```typescript
-/// <reference types="nativewind/types" />
-```
+// App.tsx
+import { SafeAreaView, ScrollView, View, Text, Image } from 'react-native'
 
-### Paso 3: Crear la Estructura Básica (5 min)
-
-**Editar `App.tsx`:**
-
-```tsx
-import { ScrollView, View, Text, Image } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
-
-export default function App(): JSX.Element {
+export default function App() {
   return (
-    <SafeAreaView className="flex-1 bg-white">
+    <SafeAreaView className="flex-1 bg-gray-50">
       <ScrollView>
-        {/* Aquí irá nuestro contenido */}
-        <Text className="text-2xl font-bold text-center mt-10">Mi Perfil</Text>
+        {/* Aquí construiremos el perfil */}
+        <Text>Hola Mundo!</Text>
       </ScrollView>
     </SafeAreaView>
   )
 }
-```
+````
 
-**Instalar SafeAreaView:**
+**Todos escriben esto juntos.**
 
-```bash
-pnpm add react-native-safe-area-context
-```
+**✅ Checkpoint:** Todos deben ver "Hola Mundo!" en pantalla antes de continuar.
 
-### Paso 4: Agregar Header con Avatar (5 min)
+---
 
-Reemplaza el contenido del `ScrollView`:
+### Paso 2: Header con Avatar (10 min)
 
-```tsx
-<ScrollView className="flex-1">
-  {/* Header con fondo azul */}
-  <View className="bg-blue-600 h-48 items-center justify-end pb-16">
-    <Text className="text-white text-2xl font-bold">Mi Perfil</Text>
-  </View>
+**El instructor explica y codea:**
 
-  {/* Avatar circular superpuesto */}
-  <View className="items-center -mt-16">
-    <Image
-      source={{ uri: 'https://i.pravatar.cc/150?img=12' }}
-      className="w-32 h-32 rounded-full border-4 border-white"
-    />
-  </View>
+```typescript
+// Agregar después del <Text>Hola Mundo!</Text>
 
-  {/* Nombre y título */}
-  <View className="items-center mt-4 px-5">
-    <Text className="text-3xl font-bold text-gray-900">Juan Pérez</Text>
-    <Text className="text-lg text-gray-600 mt-1">Desarrollador Mobile</Text>
-  </View>
-</ScrollView>
-```
-
-### Paso 5: Agregar Información de Contacto (5 min)
-
-Después de la sección de nombre, agrega:
-
-```tsx
 {
-  /* Información de contacto */
+  /* Header con color de fondo */
+}
+;<View className="bg-blue-600 h-40 items-center justify-end pb-10">
+  <Text className="text-white text-2xl font-bold">Mi Perfil</Text>
+</View>
+
+{
+  /* Avatar circular */
+}
+;<View className="items-center -mt-16">
+  <Image
+    source={{ uri: 'https://i.pravatar.cc/150?img=12' }}
+    className="w-32 h-32 rounded-full border-4 border-white"
+  />
+</View>
+
+{
+  /* Nombre y profesión */
+}
+;<View className="items-center mt-4 px-5">
+  <Text className="text-3xl font-bold text-gray-900">Tu Nombre Aquí</Text>
+  <Text className="text-lg text-gray-600 mt-1">Tu Profesión</Text>
+</View>
+```
+
+**✅ Checkpoint:** Todos deben ver el header azul, avatar circular y nombre antes de continuar.
+
+---
+
+### Paso 3: Información de Contacto (10 min)
+
+**El instructor continúa:**
+
+```typescript
+{
+  /* Agregar después de la sección de nombre */
+}
+
+{
+  /* Card de información */
 }
 ;<View className="mx-5 mt-6 bg-gray-50 rounded-xl p-5">
   {/* Email */}
@@ -198,9 +190,7 @@ Después de la sección de nombre, agrega:
     <Text className="text-2xl mr-3">📧</Text>
     <View className="flex-1">
       <Text className="text-sm text-gray-500">Email</Text>
-      <Text className="text-base text-gray-900 font-medium">
-        juan@email.com
-      </Text>
+      <Text className="text-base text-gray-900 font-medium">tu@email.com</Text>
     </View>
   </View>
 
@@ -210,7 +200,7 @@ Después de la sección de nombre, agrega:
     <View className="flex-1">
       <Text className="text-sm text-gray-500">Teléfono</Text>
       <Text className="text-base text-gray-900 font-medium">
-        +52 123 456 7890
+        +1 234 567 890
       </Text>
     </View>
   </View>
@@ -220,13 +210,206 @@ Después de la sección de nombre, agrega:
     <Text className="text-2xl mr-3">📍</Text>
     <View className="flex-1">
       <Text className="text-sm text-gray-500">Ubicación</Text>
-      <Text className="text-base text-gray-900 font-medium">
-        Ciudad de México, México
-      </Text>
+      <Text className="text-base text-gray-900 font-medium">Tu Ciudad</Text>
     </View>
   </View>
 </View>
 ```
+
+**✅ Checkpoint:** Verificar que todos tienen la card con la info de contacto.
+
+---
+
+### Paso 4: Sección "Sobre Mí" (5 min)
+
+**Último paso guiado:**
+
+```typescript
+{
+  /* Agregar al final, antes de cerrar ScrollView */
+}
+
+{
+  /* Sobre mí */
+}
+;<View className="mx-5 mt-6 mb-10 bg-white rounded-xl p-5 border border-gray-200">
+  <Text className="text-xl font-bold text-gray-900 mb-3">Sobre Mí</Text>
+  <Text className="text-base text-gray-600 leading-6">
+    Escribe aquí una breve descripción sobre ti. Qué te gusta hacer, tus
+    hobbies, tu experiencia, etc. Puedes escribir varias líneas.
+  </Text>
+</View>
+```
+
+**✅ Checkpoint Final:** ¡Todos deben tener la app completa funcionando!
+
+---
+
+## ✅ Código Completo Final
+
+<details>
+<summary>👉 Ver código completo del App.tsx</summary>
+
+```typescript
+import { SafeAreaView, ScrollView, View, Text, Image } from 'react-native'
+
+export default function App() {
+  return (
+    <SafeAreaView className="flex-1 bg-gray-50">
+      <ScrollView>
+        {/* Header */}
+        <View className="bg-blue-600 h-40 items-center justify-end pb-10">
+          <Text className="text-white text-2xl font-bold">Mi Perfil</Text>
+        </View>
+
+        {/* Avatar */}
+        <View className="items-center -mt-16">
+          <Image
+            source={{ uri: 'https://i.pravatar.cc/150?img=12' }}
+            className="w-32 h-32 rounded-full border-4 border-white"
+          />
+        </View>
+
+        {/* Nombre */}
+        <View className="items-center mt-4 px-5">
+          <Text className="text-3xl font-bold text-gray-900">Juan Pérez</Text>
+          <Text className="text-lg text-gray-600 mt-1">
+            Desarrollador Mobile
+          </Text>
+        </View>
+
+        {/* Info de contacto */}
+        <View className="mx-5 mt-6 bg-gray-50 rounded-xl p-5">
+          <View className="flex-row items-center mb-4">
+            <Text className="text-2xl mr-3">📧</Text>
+            <View className="flex-1">
+              <Text className="text-sm text-gray-500">Email</Text>
+              <Text className="text-base text-gray-900 font-medium">
+                juan@email.com
+              </Text>
+            </View>
+          </View>
+
+          <View className="flex-row items-center mb-4">
+            <Text className="text-2xl mr-3">📱</Text>
+            <View className="flex-1">
+              <Text className="text-sm text-gray-500">Teléfono</Text>
+              <Text className="text-base text-gray-900 font-medium">
+                +52 123 456 7890
+              </Text>
+            </View>
+          </View>
+
+          <View className="flex-row items-center">
+            <Text className="text-2xl mr-3">📍</Text>
+            <View className="flex-1">
+              <Text className="text-sm text-gray-500">Ubicación</Text>
+              <Text className="text-base text-gray-900 font-medium">
+                Ciudad de México
+              </Text>
+            </View>
+          </View>
+        </View>
+
+        {/* Sobre mí */}
+        <View className="mx-5 mt-6 mb-10 bg-white rounded-xl p-5 border border-gray-200">
+          <Text className="text-xl font-bold text-gray-900 mb-3">Sobre Mí</Text>
+          <Text className="text-base text-gray-600 leading-6">
+            Soy un desarrollador apasionado por crear aplicaciones móviles. Me
+            encanta aprender nuevas tecnologías y compartir conocimiento.
+          </Text>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  )
+}
+```
+
+</details>
+
+---
+
+## 🎨 Personalización (Tiempo Libre en Clase)
+
+Si terminas antes que los demás, personaliza tu app:
+
+1. **Cambia los colores:** `bg-blue-600` → `bg-purple-600`, `bg-green-600`, etc.
+2. **Usa tu foto:** Cambia el URI de la imagen por tu foto
+3. **Agrega más secciones:** Habilidades, redes sociales, etc.
+4. **Experimenta con tamaños:** `text-3xl` → `text-4xl`, `w-32` → `w-40`, etc.
+
+---
+
+## 🏠 Tarea Opcional (Autónoma - 30min)
+
+Para reforzar lo aprendido en casa:
+
+### Desafío 1: Agrega Redes Sociales
+
+Crea una nueva sección con iconos de redes sociales (GitHub, LinkedIn, Twitter)
+
+### Desafío 2: Modo Oscuro
+
+Cambia los colores para crear una versión dark mode
+
+### Desafío 3: Botón de Contacto
+
+Agrega un botón al final que diga "Enviar Mensaje"
+
+---
+
+## 🐛 Problemas Comunes (Troubleshooting)
+
+### ❌ Error: "className is not defined"
+
+**Solución:** Verifica que hayas configurado NativeWind correctamente en `babel.config.js`
+
+### ❌ La imagen no se ve
+
+**Solución:** Asegúrate de tener conexión a internet. Prueba con otra URL.
+
+### ❌ Los estilos no se aplican
+
+**Solución:** Reinicia el servidor: `Ctrl+C` y luego `pnpm start` de nuevo
+
+### ❌ Safe Area no funciona
+
+**Solución:** Verifica que instalaste `react-native-safe-area-context`
+
+---
+
+## 📚 Recursos Adicionales
+
+- [React Native Docs - View](https://reactnative.dev/docs/view)
+- [React Native Docs - Text](https://reactnative.dev/docs/text)
+- [React Native Docs - Image](https://reactnative.dev/docs/image)
+- [NativeWind Docs](https://www.nativewind.dev/)
+- [TailwindCSS Colors](https://tailwindcss.com/docs/customizing-colors)
+
+---
+
+## ✅ Checklist de Completación
+
+Antes de terminar la clase, verifica que:
+
+- [ ] Tu app muestra el header con color de fondo
+- [ ] El avatar se ve circular y centrado
+- [ ] El nombre y profesión están visibles
+- [ ] La información de contacto se muestra correctamente
+- [ ] La sección "Sobre mí" está completa
+- [ ] Todo el contenido es scrollable
+- [ ] La app se ve bien en tu dispositivo
+- [ ] El código está limpio y comentado
+
+---
+
+**🎉 ¡Felicidades! Has creado tu primera app de React Native.**
+
+**🔜 Siguiente:** Práctica 2 - Card Component Reutilizable
+</View>
+</View>
+
+````
 
 ### Paso 6: Agregar Sección "Acerca de mí" (5 min)
 
@@ -247,7 +430,7 @@ Después de la información de contacto:
     </Text>
   </View>
 </View>
-```
+````
 
 ---
 
@@ -472,7 +655,6 @@ export function InfoItem({
 ```tsx
 // Usar una imagen local como fallback
 import { Image } from 'react-native'
-
 ;<Image
   source={require('./assets/avatar.png')} // Imagen local
   className="w-32 h-32 rounded-full"

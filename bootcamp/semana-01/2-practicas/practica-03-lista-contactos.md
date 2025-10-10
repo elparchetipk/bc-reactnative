@@ -1,26 +1,33 @@
-# Práctica 3: Lista de Contactos
+# 💻 Práctica 3: Lista de Contactos (Inicio Guiado)
 
-**Duración estimada:** 40 minutos  
-**Dificultad:** ⭐⭐ Medio  
-**Conceptos:** Arrays, ScrollView, renderizado de listas, componentes anidados
+**⏱️ Duración:** 20 minutos presencial + 30 minutos autónomo  
+**👥 Modalidad:** 🎓 **PRESENCIAL (inicio)** + 🏠 **AUTÓNOMO (completar)**  
+**📊 Dificultad:** ⭐⭐ Intermedio  
+**🎯 Conceptos:** Arrays, map(), FlatList, Estado local
 
 ---
 
 ## 🎯 Objetivo
 
-Crear una **aplicación de lista de contactos** que muestre información de múltiples personas de forma organizada. Aprenderás a trabajar con arrays de datos, renderizar listas dinámicamente y crear componentes que muestren información estructurada.
+**En clase (20 min):** El instructor iniciará la lista de contactos y explicará el renderizado de arrays.  
+**En casa (30 min):** Completarás la funcionalidad de búsqueda y agregarás más contactos.
 
 ---
 
-## 📚 Conceptos a Aplicar
+## 📚 Conceptos que Veremos
 
-- ✅ Renderizado de arrays con `.map()`
-- ✅ ScrollView para listas scrollables
-- ✅ Componentes anidados (ContactCard dentro de ContactList)
-- ✅ Props para pasar datos entre componentes
-- ✅ TypeScript interfaces para datos estructurados
-- ✅ TouchableOpacity para acciones
-- ✅ Layouts complejos con Flexbox
+### En Clase (Presencial):
+
+- ✅ Renderizar arrays con `.map()`
+- ✅ Usar `FlatList` para listas optimizadas
+- ✅ Crear datos mock (contactos falsos)
+- ✅ TypeScript interfaces para objetos
+
+### En Casa (Autónomo):
+
+- ✅ Implementar búsqueda/filtrado
+- ✅ Agregar más contactos
+- ✅ Personalizar estilos
 
 ---
 

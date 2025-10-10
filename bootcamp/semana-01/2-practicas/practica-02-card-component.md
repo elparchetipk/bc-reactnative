@@ -1,25 +1,28 @@
-# Práctica 2: Componente Card Reutilizable
+# 💻 Práctica 2: Card Component Reutilizable
 
-**Duración estimada:** 30 minutos  
-**Dificultad:** ⭐⭐ Medio  
-**Conceptos:** Props, TypeScript interfaces, componentes reutilizables
+**⏱️ Duración:** 45 minutos  
+**👥 Modalidad:** 🎓 **PRESENCIAL - Guiada por el instructor**  
+**📊 Dificultad:** ⭐⭐ Intermedio  
+**🎯 Conceptos:** Componentes reutilizables, Props, TypeScript, Variants
 
 ---
 
 ## 🎯 Objetivo
 
-Crear un **componente Card reutilizable** que pueda mostrar diferentes tipos de contenido y variantes visuales. Aprenderás a diseñar componentes que se puedan usar en múltiples lugares de tu app con diferentes configuraciones.
+Crear juntos un **componente Card reutilizable** con TypeScript que acepte diferentes variantes (default, featured, compact) y pueda usarse en cualquier parte de la app.
+
+**Importante:** Esta práctica se hace **EN CLASE, PASO A PASO** con el instructor.
 
 ---
 
-## 📚 Conceptos a Aplicar
+## 📚 Conceptos que Aprenderemos Juntos
 
-- ✅ Props con TypeScript interfaces
-- ✅ Componentes reutilizables
-- ✅ Estilos condicionales
-- ✅ Valores por defecto en props
+- ✅ Crear componentes personalizados
+- ✅ Usar props con TypeScript (interfaces)
+- ✅ Implementar variantes de componentes
+- ✅ Props opcionales vs requeridos
+- ✅ Reutilización de componentes
 - ✅ Composición de componentes
-- ✅ Variantes de diseño
 
 ---
 
