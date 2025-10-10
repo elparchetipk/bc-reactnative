@@ -1,126 +1,266 @@
-# Prácticas Guiadas - Semana 1
+# 💻 Prácticas Guiadas - Semana 1
 
-**Duración estimada:** 2-3 horas  
-**Modalidad:** Práctica hands-on  
-**Prerequisitos:** Haber completado la teoría de la semana 1
+**✨ NUEVO ENFOQUE - Prácticas Presenciales Guiadas**
 
----
-
-## 🎯 Objetivos
-
-Las prácticas guiadas te permitirán:
-
-- ✅ Aplicar los conceptos teóricos en ejercicios reales
-- ✅ Desarrollar habilidades de resolución de problemas
-- ✅ Familiarizarte con patrones comunes de React Native
-- ✅ Construir componentes reutilizables y profesionales
-- ✅ Practicar TypeScript y TailwindCSS en contexto real
+**⏱️ Duración:** 2 horas (PRESENCIAL)  
+**Modalidad:** Instructor guía paso a paso, TODOS codean juntos  
+**Prerequisitos:** Haber completado las 3 sesiones de teoría
 
 ---
 
-## 📚 Lista de Prácticas
+## 🎯 Objetivo de las Prácticas Presenciales
 
-### Práctica 1: Mi Primera App (30 minutos)
+**NO son tutoriales para hacer solo.** Son ejercicios que haremos **TODOS JUNTOS en clase** con el instructor:
 
-**Archivo:** [practica-01-primera-app.md](./practica-01-primera-app.md)
-
-**Conceptos:**
-
-- Crear proyecto con Expo
-- Estructura de archivos básica
-- Componentes View, Text, Image
-- Estilos con TailwindCSS
-
-**Resultado:** App de perfil personal con foto, nombre y descripción
+✅ El instructor escribe código en vivo  
+✅ TODOS siguen el mismo ritmo  
+✅ Resolvemos dudas en tiempo real  
+✅ Nadie se queda atrás  
+✅ Aprendemos de los errores juntos
 
 ---
 
-### Práctica 2: Componente Card Reutilizable (30 minutos)
+## 📊 Nueva Estructura (3 Prácticas Guiadas)
 
-**Archivo:** [practica-02-card-component.md](./practica-02-card-component.md)
+### ⏱️ Distribución del Tiempo Presencial
 
-**Conceptos:**
-
-- Props y TypeScript interfaces
-- Componentes reutilizables
-- Layouts con Flexbox
-- Estilos condicionales
-
-**Resultado:** Componente Card con variantes (default, featured, compact)
+| Práctica                 | Tiempo | Modalidad           | Dificultad        |
+| ------------------------ | ------ | ------------------- | ----------------- |
+| **1. Card de Perfil**    | 45 min | Guiada en clase     | ⭐ Fácil          |
+| **2. Lista Interactiva** | 45 min | Guiada en clase     | ⭐⭐ Medio        |
+| **3. Mini TODO List**    | 30 min | Guiada en clase     | ⭐⭐⭐ Medio-Alto |
+| **TOTAL**                | **2h** | **100% presencial** |                   |
 
 ---
 
-### Práctica 3: Lista de Contactos (40 minutos)
+## 📚 Prácticas Presenciales Guiadas
 
-**Archivo:** [practica-03-lista-contactos.md](./practica-03-lista-contactos.md)
+### Práctica 1: Card de Perfil Completa (45 min)
 
-**Conceptos:**
+**📁 Archivo:** [practica-01-card-perfil.md](./practica-01-card-perfil.md)
 
-- ScrollView y renderizado de listas
-- Manejo de arrays de datos
-- Componentes anidados
-- TouchableOpacity para interacción
+**🎯 Qué haremos TODOS JUNTOS:**
 
-**Resultado:** Lista de contactos con avatares y acciones
+1. Crear proyecto desde cero
+2. Configurar NativeWind paso a paso
+3. Construir layout con header + avatar superpuesto
+4. Agregar información de contacto
+5. Aplicar estilos profesionales
 
----
+**Componentes que usaremos:**
 
-### Práctica 4: Formulario de Login (40 minutos)
+- View (containers)
+- Text (títulos, descripciones)
+- Image (avatar circular)
+- ScrollView (contenido scrollable)
 
-**Archivo:** [practica-04-formulario-login.md](./practica-04-formulario-login.md)
+**Resultado final:**
 
-**Conceptos:**
+```
+┌──────────────────┐
+│   Header Azul    │
+│      Avatar      │ ← Circular superpuesto
+│   Nombre Grande  │
+│   Profesión      │
+│                  │
+│ 📧 Email         │
+│ 📱 Teléfono     │
+│ 📍 Ubicación    │
+│                  │
+│ [Acerca de mí]   │
+└──────────────────┘
+```
 
-- TextInput controlado con useState
-- Validación de formularios
-- Manejo de eventos
-- Feedback visual de errores
+**⏱️ Desglose:**
 
-**Resultado:** Pantalla de login funcional con validación
-
----
-
-### Práctica 5: Contador Interactivo (30 minutos)
-
-**Archivo:** [practica-05-contador-interactivo.md](./practica-05-contador-interactivo.md)
-
-**Conceptos:**
-
-- useState para estado local
-- Eventos onPress
-- Actualización de estado
-- Estilos dinámicos
-
-**Resultado:** Contador con incremento, decremento y reset
-
----
-
-### Práctica 6: TODO List (50 minutos)
-
-**Archivo:** [practica-06-todo-list.md](./practica-06-todo-list.md)
-
-**Conceptos:**
-
-- Estado complejo (array de objetos)
-- CRUD operations
-- useEffect para logging
-- Renderizado condicional
-
-**Resultado:** App de tareas completa con agregar, completar y eliminar
+- 10 min: Setup proyecto + NativeWind
+- 15 min: Header + Avatar
+- 10 min: Información de contacto
+- 10 min: Estilos finales y ajustes
 
 ---
 
-## 📊 Distribución de Tiempo
+### Práctica 2: Lista de Contactos Interactiva (45 min)
 
-| Práctica            | Tiempo Estimado | Dificultad     | Conceptos Clave       |
-| ------------------- | --------------- | -------------- | --------------------- |
-| 1. Primera App      | 30 min          | ⭐ Fácil       | Componentes básicos   |
-| 2. Card Component   | 30 min          | ⭐⭐ Medio     | Props, reutilización  |
-| 3. Lista Contactos  | 40 min          | ⭐⭐ Medio     | Arrays, ScrollView    |
-| 4. Formulario Login | 40 min          | ⭐⭐⭐ Difícil | Validación, estado    |
-| 5. Contador         | 30 min          | ⭐ Fácil       | useState, eventos     |
-| 6. TODO List        | 50 min          | ⭐⭐⭐ Difícil | Estado complejo, CRUD |
-| **TOTAL**           | **3h 40min**    |                |                       |
+**📁 Archivo:** [practica-02-lista-contactos.md](./practica-02-lista-contactos.md)
+
+**🎯 Qué haremos TODOS JUNTOS:**
+
+1. Crear array de datos (6-8 contactos)
+2. Renderizar lista con .map()
+3. Crear componente ContactCard
+4. Agregar TouchableOpacity para interacción
+5. Mostrar Alert al presionar contacto
+
+**Componentes que usaremos:**
+
+- ScrollView (lista scrollable)
+- TouchableOpacity (cards presionables)
+- Alert (mostrar información)
+- Array.map() (renderizar múltiples items)
+
+**Resultado final:**
+
+```
+┌────────────────────┐
+│ 👥 Contactos (8)  │
+├────────────────────┤
+│ [Avatar] Juan P.  →│
+│         Developer  │
+├────────────────────┤
+│ [Avatar] María L. →│
+│         Designer   │
+├────────────────────┤
+│ [Avatar] Carlos R.→│
+│         Backend    │
+└────────────────────┘
+```
+
+**⏱️ Desglose:**
+
+- 10 min: Crear datos mock
+- 15 min: Componente ContactCard
+- 10 min: Renderizar lista con .map()
+- 10 min: Agregar interacción y Alert
+
+---
+
+### Práctica 3: Mini TODO List (30 min)
+
+**📁 Archivo:** [practica-03-mini-todo.md](./practica-03-mini-todo.md)
+
+**🎯 Qué haremos TODOS JUNTOS:**
+
+1. Crear estado para array de tareas
+2. Input + botón para agregar tarea
+3. Renderizar lista de tareas
+4. Marcar como completada (toggle)
+5. Eliminar tarea
+
+**Componentes que usaremos:**
+
+- useState (estado complejo)
+- TextInput (agregar tarea)
+- TouchableOpacity (checkbox custom)
+- Array operations (add, update, delete)
+
+**Resultado final:**
+
+```
+┌──────────────────────┐
+│ Mis Tareas 📝       │
+│ [Input] [+Agregar]   │
+├──────────────────────┤
+│ ☑ Tarea completada  │
+│ □ Tarea pendiente   │
+│ □ Otra tarea        │
+└──────────────────────┘
+```
+
+**⏱️ Desglose:**
+
+- 5 min: Setup estado y input
+- 10 min: Agregar tareas
+- 10 min: Toggle completado
+- 5 min: Eliminar tareas
+
+---
+
+## 🎓 Metodología de la Clase Presencial
+
+### Cómo Funcionan las Prácticas Guiadas:
+
+#### 1. **Instructor Proyecta su Pantalla**
+
+- Escribimos código todos juntos
+- Explicamos cada línea antes de escribirla
+- Vemos el resultado inmediato en Expo Go
+
+#### 2. **Todos Siguen el Mismo Ritmo**
+
+- Nadie avanza solo
+- Esperamos a que todos tengan el código funcionando
+- Resolvemos errores en grupo
+
+#### 3. **Debugging en Vivo**
+
+- Si algo falla, lo resolvemos juntos
+- Aprendemos de los errores comunes
+- Entendemos los mensajes de error
+
+#### 4. **Pausas para Preguntas**
+
+- Cada 10-15 minutos: "¿Dudas hasta aquí?"
+- Todos pueden compartir pantalla si tienen problemas
+- Ayuda entre compañeros
+
+---
+
+## ✅ Checklist Durante la Clase
+
+### Antes de Comenzar:
+
+- [ ] Todos tienen VS Code abierto
+- [ ] Todos tienen Expo Go instalado en su celular
+- [ ] Todos ven la proyección del instructor
+- [ ] Todos tienen internet estable
+
+### Durante Cada Práctica:
+
+- [ ] Escribir código línea por línea con el instructor
+- [ ] Guardar archivo después de cada cambio
+- [ ] Ver cambios en Expo Go inmediatamente
+- [ ] Levantar la mano si algo no funciona
+- [ ] Tomar captura si todo funciona
+
+### Al Finalizar Cada Práctica:
+
+- [ ] El código funciona sin errores
+- [ ] La app se ve igual que la del instructor
+- [ ] Entiendes qué hace cada parte del código
+- [ ] Has tomado notas de conceptos clave
+
+---
+
+## 📝 Material de Apoyo (Para Referencia)
+
+Los archivos de las prácticas incluyen:
+
+✅ **Código Completo Comentado** - Para revisar después  
+✅ **Explicación Paso a Paso** - Qué hace cada parte  
+✅ **Troubleshooting** - Solución a errores comunes  
+✅ **Desafíos Adicionales** - Para trabajo autónomo (opcional)
+
+**⚠️ IMPORTANTE:** Los archivos NO son para seguir solos. Son para:
+
+- Repasar después de clase
+- Completar si te quedaste atrás
+- Ver la solución si algo no funcionó
+
+---
+
+## 🏠 Trabajo Autónomo Opcional (~1h)
+
+### Después de clase puedes (opcional):
+
+1. **Personalizar las prácticas:**
+
+   - Cambiar colores y estilos
+   - Agregar tus propios datos
+   - Mejorar el diseño
+
+2. **Hacer los desafíos adicionales:**
+
+   - Cada práctica tiene 2-3 desafíos extra
+   - Son opcionales pero recomendados
+   - Te preparan para el proyecto integrador
+
+3. **Experimentar libremente:**
+   - Combinar elementos de diferentes prácticas
+   - Crear variaciones
+   - Probar cosas nuevas
+
+> **Nota:** El trabajo autónomo NO es obligatorio. Es para quien quiera practicar más.
 
 ---
 
