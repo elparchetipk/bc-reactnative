@@ -59,7 +59,7 @@ Crea el archivo `src/types/todo.ts`:
 ```typescript
 /**
  * todo.ts
- * 
+ *
  * Tipos e interfaces para la aplicación de tareas
  */
 
@@ -76,16 +76,16 @@ export interface TodoContextType {
   // Estado
   todos: Todo[]
   filter: TodoFilter
-  
+
   // Funciones para tareas
   addTodo: (title: string) => void
   toggleTodo: (id: string) => void
   deleteTodo: (id: string) => void
   editTodo: (id: string, title: string) => void
-  
+
   // Funciones para filtros
   setFilter: (filter: TodoFilter) => void
-  
+
   // Computed values
   activeTodosCount: number
   completedTodosCount: number
@@ -94,6 +94,7 @@ export interface TodoContextType {
 ```
 
 **💡 Explicación:**
+
 - `Todo` - Interfaz de una tarea individual
 - `TodoFilter` - Tipos de filtro posibles
 - `TodoContextType` - Interfaz completa del contexto (lo que expondremos)
@@ -107,15 +108,15 @@ Crea el archivo `src/contexts/TodoContext.tsx`:
 ```typescript
 /**
  * TodoContext.tsx
- * 
+ *
  * Context API para gestión de tareas
- * 
+ *
  * ¿Qué hace?
  * Proporciona estado global y funciones para manejar tareas
- * 
+ *
  * ¿Para qué?
  * Evitar prop drilling y centralizar lógica de tareas
- * 
+ *
  * ¿Cómo funciona?
  * 1. Crea el contexto con createContext
  * 2. Provider mantiene el estado con useState
@@ -137,7 +138,7 @@ export function TodoProvider({ children }: TodoProviderProps) {
   // Estado local del Provider
   const [todos, setTodos] = useState<Todo[]>([])
   const [filter, setFilter] = useState<TodoFilter>('all')
-  
+
   // Función: Agregar tarea
   const addTodo = (title: string) => {
     const newTodo: Todo = {
@@ -146,81 +147,77 @@ export function TodoProvider({ children }: TodoProviderProps) {
       completed: false,
       createdAt: new Date(),
     }
-    
-    setTodos(prevTodos => [newTodo, ...prevTodos])
+
+    setTodos((prevTodos) => [newTodo, ...prevTodos])
   }
-  
+
   // Función: Toggle completado
   const toggleTodo = (id: string) => {
-    setTodos(prevTodos =>
-      prevTodos.map(todo =>
-        todo.id === id
-          ? { ...todo, completed: !todo.completed }
-          : todo
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     )
   }
-  
+
   // Función: Eliminar tarea
   const deleteTodo = (id: string) => {
-    setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id))
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id))
   }
-  
+
   // Función: Editar tarea
   const editTodo = (id: string, title: string) => {
-    setTodos(prevTodos =>
-      prevTodos.map(todo =>
-        todo.id === id
-          ? { ...todo, title: title.trim() }
-          : todo
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, title: title.trim() } : todo
       )
     )
   }
-  
+
   // Computed values con useMemo para optimización
   const activeTodosCount = useMemo(() => {
-    return todos.filter(todo => !todo.completed).length
+    return todos.filter((todo) => !todo.completed).length
   }, [todos])
-  
+
   const completedTodosCount = useMemo(() => {
-    return todos.filter(todo => todo.completed).length
+    return todos.filter((todo) => todo.completed).length
   }, [todos])
-  
+
   const filteredTodos = useMemo(() => {
     switch (filter) {
       case 'active':
-        return todos.filter(todo => !todo.completed)
+        return todos.filter((todo) => !todo.completed)
       case 'completed':
-        return todos.filter(todo => todo.completed)
+        return todos.filter((todo) => todo.completed)
       case 'all':
       default:
         return todos
     }
   }, [todos, filter])
-  
+
   // Valor del contexto (memoizado para performance)
-  const value = useMemo<TodoContextType>(() => ({
-    todos,
-    filter,
-    addTodo,
-    toggleTodo,
-    deleteTodo,
-    editTodo,
-    setFilter,
-    activeTodosCount,
-    completedTodosCount,
-    filteredTodos,
-  }), [todos, filter, activeTodosCount, completedTodosCount, filteredTodos])
-  
-  return (
-    <TodoContext.Provider value={value}>
-      {children}
-    </TodoContext.Provider>
+  const value = useMemo<TodoContextType>(
+    () => ({
+      todos,
+      filter,
+      addTodo,
+      toggleTodo,
+      deleteTodo,
+      editTodo,
+      setFilter,
+      activeTodosCount,
+      completedTodosCount,
+      filteredTodos,
+    }),
+    [todos, filter, activeTodosCount, completedTodosCount, filteredTodos]
   )
+
+  return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>
 }
 ```
 
 **💡 Puntos clave:**
+
 - ✅ Estado local con `useState`
 - ✅ Funciones para manipular tareas
 - ✅ `useMemo` para valores derivados (optimización)
@@ -236,9 +233,9 @@ Crea el archivo `src/hooks/useTodos.ts`:
 ```typescript
 /**
  * useTodos.ts
- * 
+ *
  * Custom hook para consumir el TodoContext
- * 
+ *
  * ¿Para qué?
  * - API más limpia y fácil de usar
  * - Validación automática del contexto
@@ -250,16 +247,17 @@ import { TodoContext } from '../contexts/TodoContext'
 
 export function useTodos() {
   const context = useContext(TodoContext)
-  
+
   if (context === undefined) {
     throw new Error('useTodos must be used within a TodoProvider')
   }
-  
+
   return context
 }
 ```
 
 **💡 Ventajas del custom hook:**
+
 - ✅ Simplifica el uso: `useTodos()` vs `useContext(TodoContext)`
 - ✅ Valida que se use dentro del Provider
 - ✅ TypeScript infiere tipos automáticamente
@@ -273,7 +271,7 @@ Crea el archivo `src/components/TodoForm.tsx`:
 ```typescript
 /**
  * TodoForm.tsx
- * 
+ *
  * Formulario para agregar nuevas tareas
  */
 
@@ -291,26 +289,26 @@ import { useTodos } from '../hooks/useTodos'
 export function TodoForm() {
   const [title, setTitle] = useState('')
   const { addTodo } = useTodos()
-  
+
   const handleSubmit = () => {
     // Validación
     if (title.trim().length === 0) {
       Alert.alert('Error', 'El título no puede estar vacío')
       return
     }
-    
+
     if (title.trim().length < 3) {
       Alert.alert('Error', 'El título debe tener al menos 3 caracteres')
       return
     }
-    
+
     // Agregar tarea
     addTodo(title)
-    
+
     // Limpiar input
     setTitle('')
   }
-  
+
   return (
     <View style={styles.container}>
       <TextInput
@@ -377,7 +375,7 @@ Crea el archivo `src/components/TodoItem.tsx`:
 ```typescript
 /**
  * TodoItem.tsx
- * 
+ *
  * Item individual de tarea con acciones
  */
 
@@ -401,41 +399,37 @@ export function TodoItem({ todo }: TodoItemProps) {
   const { toggleTodo, deleteTodo, editTodo } = useTodos()
   const [isEditing, setIsEditing] = useState(false)
   const [editText, setEditText] = useState(todo.title)
-  
+
   const handleToggle = () => {
     toggleTodo(todo.id)
   }
-  
+
   const handleDelete = () => {
-    Alert.alert(
-      'Eliminar tarea',
-      '¿Estás seguro de eliminar esta tarea?',
-      [
-        { text: 'Cancelar', style: 'cancel' },
-        {
-          text: 'Eliminar',
-          style: 'destructive',
-          onPress: () => deleteTodo(todo.id),
-        },
-      ]
-    )
+    Alert.alert('Eliminar tarea', '¿Estás seguro de eliminar esta tarea?', [
+      { text: 'Cancelar', style: 'cancel' },
+      {
+        text: 'Eliminar',
+        style: 'destructive',
+        onPress: () => deleteTodo(todo.id),
+      },
+    ])
   }
-  
+
   const handleEdit = () => {
     if (editText.trim().length === 0) {
       Alert.alert('Error', 'El título no puede estar vacío')
       return
     }
-    
+
     editTodo(todo.id, editText)
     setIsEditing(false)
   }
-  
+
   const handleCancelEdit = () => {
     setEditText(todo.title)
     setIsEditing(false)
   }
-  
+
   return (
     <View style={styles.container}>
       {/* Checkbox */}
@@ -446,7 +440,7 @@ export function TodoItem({ todo }: TodoItemProps) {
       >
         {todo.completed && <Text style={styles.checkmark}>✓</Text>}
       </TouchableOpacity>
-      
+
       {/* Título */}
       <View style={styles.content}>
         {isEditing ? (
@@ -463,7 +457,9 @@ export function TodoItem({ todo }: TodoItemProps) {
             onLongPress={handleDelete}
             activeOpacity={0.7}
           >
-            <Text style={[styles.title, todo.completed && styles.titleCompleted]}>
+            <Text
+              style={[styles.title, todo.completed && styles.titleCompleted]}
+            >
               {todo.title}
             </Text>
             <Text style={styles.date}>
@@ -472,14 +468,17 @@ export function TodoItem({ todo }: TodoItemProps) {
           </TouchableOpacity>
         )}
       </View>
-      
+
       {/* Botones de acción */}
       {isEditing ? (
         <View style={styles.actions}>
           <TouchableOpacity onPress={handleEdit} style={styles.actionButton}>
             <Text style={styles.saveButton}>💾</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={handleCancelEdit} style={styles.actionButton}>
+          <TouchableOpacity
+            onPress={handleCancelEdit}
+            style={styles.actionButton}
+          >
             <Text style={styles.cancelButton}>✖️</Text>
           </TouchableOpacity>
         </View>
@@ -564,6 +563,7 @@ const styles = StyleSheet.create({
 ```
 
 **💡 Características:**
+
 - ✅ Toggle completado con checkbox
 - ✅ Edición inline al hacer tap
 - ✅ Eliminar con long press + confirmación
@@ -578,7 +578,7 @@ Crea el archivo `src/components/TodoList.tsx`:
 ```typescript
 /**
  * TodoList.tsx
- * 
+ *
  * Lista de tareas con FlatList
  */
 
@@ -589,23 +589,21 @@ import { TodoItem } from './TodoItem'
 
 export function TodoList() {
   const { filteredTodos } = useTodos()
-  
+
   if (filteredTodos.length === 0) {
     return (
       <View style={styles.emptyContainer}>
         <Text style={styles.emptyText}>📝</Text>
         <Text style={styles.emptyTitle}>No hay tareas</Text>
-        <Text style={styles.emptySubtitle}>
-          Agrega una tarea para comenzar
-        </Text>
+        <Text style={styles.emptySubtitle}>Agrega una tarea para comenzar</Text>
       </View>
     )
   }
-  
+
   return (
     <FlatList
       data={filteredTodos}
-      keyExtractor={item => item.id}
+      keyExtractor={(item) => item.id}
       renderItem={({ item }) => <TodoItem todo={item} />}
       contentContainerStyle={styles.list}
     />
@@ -649,7 +647,7 @@ Crea el archivo `src/components/TodoFilters.tsx`:
 ```typescript
 /**
  * TodoFilters.tsx
- * 
+ *
  * Filtros y estadísticas
  */
 
@@ -659,19 +657,15 @@ import { useTodos } from '../hooks/useTodos'
 import { TodoFilter } from '../types/todo'
 
 export function TodoFilters() {
-  const {
-    filter,
-    setFilter,
-    activeTodosCount,
-    completedTodosCount,
-  } = useTodos()
-  
+  const { filter, setFilter, activeTodosCount, completedTodosCount } =
+    useTodos()
+
   const filters: { key: TodoFilter; label: string }[] = [
     { key: 'all', label: 'Todas' },
     { key: 'active', label: 'Activas' },
     { key: 'completed', label: 'Completadas' },
   ]
-  
+
   return (
     <View style={styles.container}>
       {/* Estadísticas */}
@@ -679,11 +673,9 @@ export function TodoFilters() {
         <Text style={styles.statsText}>
           ✅ {completedTodosCount} completadas
         </Text>
-        <Text style={styles.statsText}>
-          ⏳ {activeTodosCount} pendientes
-        </Text>
+        <Text style={styles.statsText}>⏳ {activeTodosCount} pendientes</Text>
       </View>
-      
+
       {/* Filtros */}
       <View style={styles.filters}>
         {filters.map(({ key, label }) => (
@@ -765,7 +757,7 @@ Crea el archivo `src/screens/TodoScreen.tsx`:
 ```typescript
 /**
  * TodoScreen.tsx
- * 
+ *
  * Pantalla principal que ensambla todos los componentes
  */
 
@@ -804,7 +796,7 @@ Actualiza `App.tsx`:
 ```typescript
 /**
  * App.tsx
- * 
+ *
  * Envuelve la app con el TodoProvider
  */
 
@@ -824,6 +816,7 @@ export default function App() {
 ```
 
 **💡 Puntos clave:**
+
 - ✅ `TodoProvider` envuelve toda la app
 - ✅ Cualquier componente hijo puede usar `useTodos()`
 - ✅ No hay prop drilling
@@ -861,6 +854,7 @@ pnpm android
 Una vez completada la práctica básica, intenta:
 
 ### Desafío 1: Persistencia
+
 Integra AsyncStorage para guardar las tareas:
 
 ```typescript
@@ -885,19 +879,25 @@ useEffect(() => {
 ```
 
 ### Desafío 2: Ordenamiento
+
 Agrega opciones para ordenar tareas:
+
 - Por fecha (más reciente primero)
 - Por nombre (alfabético)
 - Por estado (completadas al final)
 
 ### Desafío 3: Categorías
+
 Agrega categorías/etiquetas a las tareas:
+
 - Trabajo, Personal, Urgente, etc.
 - Filtrar por categoría
 - Colores por categoría
 
 ### Desafío 4: Búsqueda
+
 Implementa un buscador de tareas:
+
 - Input de búsqueda
 - Filtrar por texto en tiempo real
 - Resaltar coincidencias
@@ -906,33 +906,36 @@ Implementa un buscador de tareas:
 
 ## 📊 Criterios de Evaluación
 
-| Criterio | Puntos | Descripción |
-|----------|--------|-------------|
-| **Estructura** | 2 pts | Archivos organizados correctamente |
-| **Context** | 3 pts | Context y Provider implementados |
-| **Custom Hook** | 2 pts | useTodos() funcional con validación |
-| **Componentes** | 3 pts | Todos los componentes funcionan |
-| **Funcionalidad** | 4 pts | CRUD completo de tareas |
-| **Filtros** | 2 pts | Filtros funcionando correctamente |
-| **UI/UX** | 2 pts | Interfaz limpia y usable |
-| **TypeScript** | 2 pts | Tipado correcto |
-| **TOTAL** | **20 pts** | |
+| Criterio          | Puntos     | Descripción                         |
+| ----------------- | ---------- | ----------------------------------- |
+| **Estructura**    | 2 pts      | Archivos organizados correctamente  |
+| **Context**       | 3 pts      | Context y Provider implementados    |
+| **Custom Hook**   | 2 pts      | useTodos() funcional con validación |
+| **Componentes**   | 3 pts      | Todos los componentes funcionan     |
+| **Funcionalidad** | 4 pts      | CRUD completo de tareas             |
+| **Filtros**       | 2 pts      | Filtros funcionando correctamente   |
+| **UI/UX**         | 2 pts      | Interfaz limpia y usable            |
+| **TypeScript**    | 2 pts      | Tipado correcto                     |
+| **TOTAL**         | **20 pts** |                                     |
 
 ---
 
 ## 💡 Conceptos Clave Aplicados
 
 ### Context API
+
 - ✅ `createContext()` para crear el contexto
 - ✅ `Provider` component para proveer el estado
 - ✅ `useContext()` para consumir (vía custom hook)
 
 ### Optimización
+
 - ✅ `useMemo()` para valores derivados
 - ✅ Memoización del valor del contexto
 - ✅ Evitar re-renders innecesarios
 
 ### Arquitectura
+
 - ✅ Separación de responsabilidades
 - ✅ Custom hook para encapsular lógica
 - ✅ Componentes presentacionales vs contenedores
@@ -946,6 +949,7 @@ Implementa un buscador de tareas:
 **Causa:** Intentas usar `useTodos()` fuera del `<TodoProvider>`
 
 **Solución:**
+
 ```typescript
 // ❌ MALO
 <TodoScreen /> // Sin Provider
@@ -961,6 +965,7 @@ Implementa un buscador de tareas:
 **Causa:** No estás usando el estado correctamente
 
 **Solución:** Usa funciones del contexto, no modifiques el estado directamente:
+
 ```typescript
 // ❌ MALO
 todos.push(newTodo)
@@ -974,12 +979,16 @@ addTodo(newTodo.title)
 **Causa:** Valor del contexto no está memoizado
 
 **Solución:**
+
 ```typescript
-const value = useMemo(() => ({
-  todos,
-  addTodo,
-  // ...
-}), [todos]) // Dependencias correctas
+const value = useMemo(
+  () => ({
+    todos,
+    addTodo,
+    // ...
+  }),
+  [todos]
+) // Dependencias correctas
 ```
 
 ---

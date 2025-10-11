@@ -90,7 +90,10 @@ export const initialCartState: CartState = {
 
 // Función helper para calcular total
 function calculateTotal(items: CartItem[]): number {
-  return items.reduce((sum, item) => sum + item.product.price * item.quantity, 0)
+  return items.reduce(
+    (sum, item) => sum + item.product.price * item.quantity,
+    0
+  )
 }
 
 // Reducer
@@ -98,9 +101,9 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
   switch (action.type) {
     case 'ADD_ITEM': {
       const existingIndex = state.items.findIndex(
-        item => item.product.id === action.payload.id
+        (item) => item.product.id === action.payload.id
       )
-      
+
       let newItems
       if (existingIndex >= 0) {
         // Incrementar cantidad si ya existe
@@ -113,23 +116,25 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
         // Agregar nuevo item
         newItems = [...state.items, { product: action.payload, quantity: 1 }]
       }
-      
+
       return {
         items: newItems,
         total: calculateTotal(newItems),
       }
     }
-    
+
     case 'REMOVE_ITEM': {
-      const newItems = state.items.filter(item => item.product.id !== action.payload)
+      const newItems = state.items.filter(
+        (item) => item.product.id !== action.payload
+      )
       return {
         items: newItems,
         total: calculateTotal(newItems),
       }
     }
-    
+
     case 'UPDATE_QUANTITY': {
-      const newItems = state.items.map(item =>
+      const newItems = state.items.map((item) =>
         item.product.id === action.payload.id
           ? { ...item, quantity: action.payload.quantity }
           : item
@@ -139,11 +144,11 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
         total: calculateTotal(newItems),
       }
     }
-    
+
     case 'CLEAR_CART': {
       return initialCartState
     }
-    
+
     default:
       return state
   }
@@ -151,6 +156,7 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
 ```
 
 **💡 Puntos clave:**
+
 - Cada case retorna un **nuevo estado** (inmutabilidad)
 - Lógica compleja centralizada en el reducer
 - TypeScript asegura que todos los cases están cubiertos
@@ -247,15 +253,15 @@ interface CartItemProps {
 
 export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
   const subtotal = item.product.price * item.quantity
-  
+
   return (
     <View style={styles.container}>
       <Image source={{ uri: item.product.image }} style={styles.image} />
-      
+
       <View style={styles.details}>
         <Text style={styles.name}>{item.product.name}</Text>
         <Text style={styles.price}>${item.product.price.toFixed(2)}</Text>
-        
+
         {/* Controles de cantidad */}
         <View style={styles.quantity}>
           <TouchableOpacity
@@ -265,9 +271,9 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
           >
             <Text style={styles.quantityButtonText}>-</Text>
           </TouchableOpacity>
-          
+
           <Text style={styles.quantityText}>{item.quantity}</Text>
-          
+
           <TouchableOpacity
             style={styles.quantityButton}
             onPress={() => onUpdateQuantity(item.product.id, item.quantity + 1)}
@@ -275,10 +281,10 @@ export function CartItem({ item, onUpdateQuantity, onRemove }: CartItemProps) {
             <Text style={styles.quantityButtonText}>+</Text>
           </TouchableOpacity>
         </View>
-        
+
         <Text style={styles.subtotal}>Subtotal: ${subtotal.toFixed(2)}</Text>
       </View>
-      
+
       <TouchableOpacity
         style={styles.removeButton}
         onPress={() => onRemove(item.product.id)}
@@ -402,11 +408,11 @@ const PRODUCTS: Product[] = [
 
 export function ShopScreen() {
   const [cart, dispatch] = useReducer(cartReducer, initialCartState)
-  
+
   const handleAddToCart = (product: Product) => {
     dispatch({ type: 'ADD_ITEM', payload: product })
   }
-  
+
   const handleUpdateQuantity = (id: string, quantity: number) => {
     if (quantity <= 0) {
       dispatch({ type: 'REMOVE_ITEM', payload: id })
@@ -414,15 +420,15 @@ export function ShopScreen() {
       dispatch({ type: 'UPDATE_QUANTITY', payload: { id, quantity } })
     }
   }
-  
+
   const handleRemoveItem = (id: string) => {
     dispatch({ type: 'REMOVE_ITEM', payload: id })
   }
-  
+
   const handleClearCart = () => {
     dispatch({ type: 'CLEAR_CART' })
   }
-  
+
   return (
     <SafeAreaView style={styles.container}>
       {/* Header */}
@@ -432,11 +438,11 @@ export function ShopScreen() {
           <Text style={styles.cartBadgeText}>🛒 {cart.items.length}</Text>
         </View>
       </View>
-      
+
       {/* Productos */}
       <FlatList
         data={PRODUCTS}
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <ProductCard product={item} onAdd={handleAddToCart} />
         )}
@@ -451,8 +457,8 @@ export function ShopScreen() {
                   <Text style={styles.clearButton}>Vaciar</Text>
                 </TouchableOpacity>
               </View>
-              
-              {cart.items.map(item => (
+
+              {cart.items.map((item) => (
                 <CartItem
                   key={item.product.id}
                   item={item}
@@ -460,7 +466,7 @@ export function ShopScreen() {
                   onRemove={handleRemoveItem}
                 />
               ))}
-              
+
               <View style={styles.totalContainer}>
                 <Text style={styles.totalLabel}>Total:</Text>
                 <Text style={styles.totalAmount}>${cart.total.toFixed(2)}</Text>
@@ -568,6 +574,7 @@ pnpm start
 ```
 
 ### Funcionalidades a verificar:
+
 - [ ] Agregar productos al carrito
 - [ ] Incrementar/decrementar cantidad
 - [ ] Calcular subtotales y total correctamente
@@ -579,27 +586,30 @@ pnpm start
 ## 🎯 Desafíos Adicionales (Opcionales)
 
 ### 1. Persistencia
+
 Guarda el carrito en AsyncStorage
 
 ### 2. Animaciones
+
 Agrega animaciones al agregar/remover items
 
 ### 3. Checkout
+
 Crea una pantalla de checkout con resumen
 
 ---
 
 ## 📊 Criterios de Evaluación
 
-| Criterio | Puntos |
-|----------|--------|
-| Reducer implementado correctamente | 5 pts |
-| Actions tipadas con TypeScript | 3 pts |
-| Componentes funcionando | 4 pts |
-| Cálculos correctos | 3 pts |
-| UI limpia y usable | 3 pts |
-| Manejo de edge cases | 2 pts |
-| **TOTAL** | **20 pts** |
+| Criterio                           | Puntos     |
+| ---------------------------------- | ---------- |
+| Reducer implementado correctamente | 5 pts      |
+| Actions tipadas con TypeScript     | 3 pts      |
+| Componentes funcionando            | 4 pts      |
+| Cálculos correctos                 | 3 pts      |
+| UI limpia y usable                 | 3 pts      |
+| Manejo de edge cases               | 2 pts      |
+| **TOTAL**                          | **20 pts** |
 
 ---
 

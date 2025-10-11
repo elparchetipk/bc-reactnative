@@ -65,7 +65,13 @@ export interface AuthContextType {
 **Archivo:** `src/contexts/AuthContext.tsx`
 
 ```typescript
-import React, { createContext, useState, useEffect, useContext, ReactNode } from 'react'
+import React, {
+  createContext,
+  useState,
+  useEffect,
+  useContext,
+  ReactNode,
+} from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { User, AuthContextType } from '../types/auth'
 
@@ -79,19 +85,19 @@ const STORAGE_KEYS = {
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [isLoading, setIsLoading] = useState(true)
-  
+
   // Cargar usuario al iniciar
   useEffect(() => {
     loadStoredUser()
   }, [])
-  
+
   async function loadStoredUser() {
     try {
       const [storedUser, storedToken] = await Promise.all([
         AsyncStorage.getItem(STORAGE_KEYS.USER),
         AsyncStorage.getItem(STORAGE_KEYS.TOKEN),
       ])
-      
+
       if (storedUser && storedToken) {
         setUser(JSON.parse(storedUser))
       }
@@ -101,33 +107,33 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setIsLoading(false)
     }
   }
-  
+
   async function login(email: string, password: string) {
     setIsLoading(true)
-    
+
     try {
       // Simular API call (en producción: llamar API real)
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
       // Validación simple (en producción: validar con backend)
       if (password !== 'password123') {
         throw new Error('Credenciales inválidas')
       }
-      
+
       const newUser: User = {
         id: '1',
         email,
         name: email.split('@')[0],
       }
-      
+
       const token = 'fake-jwt-token-' + Date.now()
-      
+
       // Guardar en AsyncStorage
       await Promise.all([
         AsyncStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(newUser)),
         AsyncStorage.setItem(STORAGE_KEYS.TOKEN, token),
       ])
-      
+
       setUser(newUser)
     } catch (error) {
       throw error
@@ -135,7 +141,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setIsLoading(false)
     }
   }
-  
+
   async function logout() {
     try {
       // Limpiar AsyncStorage
@@ -143,13 +149,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         AsyncStorage.removeItem(STORAGE_KEYS.USER),
         AsyncStorage.removeItem(STORAGE_KEYS.TOKEN),
       ])
-      
+
       setUser(null)
     } catch (error) {
       console.error('Error logging out:', error)
     }
   }
-  
+
   const value: AuthContextType = {
     user,
     isLoading,
@@ -157,7 +163,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     login,
     logout,
   }
-  
+
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
@@ -172,6 +178,7 @@ export function useAuth() {
 ```
 
 **💡 Puntos clave:**
+
 - Carga automática del usuario al iniciar
 - Persistencia con AsyncStorage
 - Estado de loading para mejor UX
@@ -200,25 +207,25 @@ export function LoginScreen() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const { login, isLoading } = useAuth()
-  
+
   const handleLogin = async () => {
     if (!email || !password) {
       Alert.alert('Error', 'Por favor completa todos los campos')
       return
     }
-    
+
     try {
       await login(email, password)
     } catch (error) {
       Alert.alert('Error', error.message || 'Error al iniciar sesión')
     }
   }
-  
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>🔐 Login</Text>
       <Text style={styles.subtitle}>Bienvenido de vuelta</Text>
-      
+
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -227,7 +234,7 @@ export function LoginScreen() {
         autoCapitalize="none"
         keyboardType="email-address"
       />
-      
+
       <TextInput
         style={styles.input}
         placeholder="Password"
@@ -235,7 +242,7 @@ export function LoginScreen() {
         onChangeText={setPassword}
         secureTextEntry
       />
-      
+
       <TouchableOpacity
         style={styles.button}
         onPress={handleLogin}
@@ -247,7 +254,7 @@ export function LoginScreen() {
           <Text style={styles.buttonText}>Iniciar Sesión</Text>
         )}
       </TouchableOpacity>
-      
+
       <Text style={styles.hint}>
         💡 Usa cualquier email y password: "password123"
       </Text>
@@ -312,19 +319,25 @@ const styles = StyleSheet.create({
 
 ```typescript
 import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native'
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  SafeAreaView,
+} from 'react-native'
 import { useAuth } from '../contexts/AuthContext'
 
 export function HomeScreen() {
   const { user, logout } = useAuth()
-  
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
         <Text style={styles.welcome}>👋 Hola!</Text>
         <Text style={styles.name}>{user?.name}</Text>
         <Text style={styles.email}>{user?.email}</Text>
-        
+
         <View style={styles.card}>
           <Text style={styles.cardTitle}>✅ Sesión activa</Text>
           <Text style={styles.cardText}>
@@ -332,7 +345,7 @@ export function HomeScreen() {
             {'\n'}Puedes cerrar la app y seguirás autenticado.
           </Text>
         </View>
-        
+
         <TouchableOpacity style={styles.logoutButton} onPress={logout}>
           <Text style={styles.logoutText}>Cerrar Sesión</Text>
         </TouchableOpacity>
@@ -413,7 +426,7 @@ import { HomeScreen } from './src/screens/HomeScreen'
 
 function AppContent() {
   const { isAuthenticated, isLoading } = useAuth()
-  
+
   if (isLoading) {
     return (
       <View style={styles.loading}>
@@ -421,7 +434,7 @@ function AppContent() {
       </View>
     )
   }
-  
+
   return isAuthenticated ? <HomeScreen /> : <LoginScreen />
 }
 
@@ -444,6 +457,7 @@ const styles = StyleSheet.create({
 ```
 
 **💡 Navegación condicional:**
+
 - Muestra `LoginScreen` si no está autenticado
 - Muestra `HomeScreen` si está autenticado
 - Muestra loading mientras verifica la sesión
@@ -459,11 +473,13 @@ pnpm start
 ### Flujo de prueba:
 
 1. **Primera vez:**
+
    - [ ] Ingresa cualquier email
    - [ ] Password: `password123`
    - [ ] Verifica que entras a HomeScreen
 
 2. **Persistencia:**
+
    - [ ] Cierra la app completamente
    - [ ] Vuelve a abrirla
    - [ ] ✅ Deberías seguir autenticado
@@ -479,6 +495,7 @@ pnpm start
 ## 🎯 Desafíos Adicionales
 
 ### 1. Token Expiration
+
 Implementa expiración de tokens:
 
 ```typescript
@@ -489,24 +506,26 @@ const tokenData = {
 ```
 
 ### 2. Refresh Token
+
 Implementa renovación automática de tokens
 
 ### 3. Biometric Auth
+
 Integra autenticación biométrica con expo-local-authentication
 
 ---
 
 ## 📊 Criterios de Evaluación
 
-| Criterio | Puntos |
-|----------|--------|
-| Context implementado | 4 pts |
-| AsyncStorage funcionando | 4 pts |
-| Login/Logout funcional | 4 pts |
-| Persistencia correcta | 4 pts |
-| Estados de loading | 2 pts |
-| UI limpia | 2 pts |
-| **TOTAL** | **20 pts** |
+| Criterio                 | Puntos     |
+| ------------------------ | ---------- |
+| Context implementado     | 4 pts      |
+| AsyncStorage funcionando | 4 pts      |
+| Login/Logout funcional   | 4 pts      |
+| Persistencia correcta    | 4 pts      |
+| Estados de loading       | 2 pts      |
+| UI limpia                | 2 pts      |
+| **TOTAL**                | **20 pts** |
 
 ---
 
