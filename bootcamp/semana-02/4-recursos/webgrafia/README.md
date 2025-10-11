@@ -13,6 +13,7 @@
 **Actualización:** Constante
 
 **Secciones Clave:**
+
 - [Getting Started](https://reactnavigation.org/docs/getting-started)
 - [Stack Navigator](https://reactnavigation.org/docs/stack-navigator)
 - [Bottom Tab Navigator](https://reactnavigation.org/docs/bottom-tab-navigator)
@@ -22,6 +23,7 @@
 - [Troubleshooting](https://reactnavigation.org/docs/troubleshooting)
 
 **Por qué consultarla:**
+
 > La fuente de verdad absoluta. Siempre actualizada y con ejemplos funcionales.
 
 ---
@@ -33,11 +35,13 @@
 **Actualización:** Constante
 
 **Secciones Relevantes:**
+
 - [Expo Router](https://docs.expo.dev/router/introduction/)
 - [Navigation with Expo](https://docs.expo.dev/guides/routing-and-navigation/)
 - [Config Plugins](https://docs.expo.dev/guides/config-plugins/)
 
 **Por qué consultarla:**
+
 > Si usas Expo (que es el caso), aquí está todo sobre integración.
 
 ---
@@ -48,6 +52,7 @@
 **Idioma:** 🇬🇧 Inglés / 🇪🇸 Español (parcial)
 
 **Secciones Relevantes:**
+
 - [Navigation](https://reactnative.dev/docs/navigation)
 - [Components](https://reactnative.dev/docs/components-and-apis)
 - [APIs](https://reactnative.dev/docs/accessibilityinfo)
@@ -60,6 +65,7 @@
 **Idioma:** 🇬🇧 Inglés
 
 **Secciones Clave:**
+
 - [Basic Types](https://www.typescriptlang.org/docs/handbook/2/basic-types.html)
 - [Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html)
 - [Type Inference](https://www.typescriptlang.org/docs/handbook/type-inference.html)
@@ -72,6 +78,7 @@
 **Idioma:** 🇬🇧 Inglés / 🇪🇸 Español
 
 **Secciones Relevantes:**
+
 - [Context](https://react.dev/learn/passing-data-deeply-with-context)
 - [Hooks](https://react.dev/reference/react)
 - [Thinking in React](https://react.dev/learn/thinking-in-react)
@@ -83,11 +90,13 @@
 ### Stack Navigator
 
 #### "Understanding React Navigation Stack Navigator"
+
 **Autor:** React Navigation Team  
 **URL:** https://reactnavigation.org/blog/2020/02/06/react-navigation-5.0/  
 **Tiempo de lectura:** 10 min
 
 **Contenido:**
+
 - Conceptos de Stack
 - Push vs Navigate
 - Passing parameters
@@ -96,11 +105,13 @@
 ---
 
 #### "Stack Navigator Best Practices"
+
 **Autor:** LogRocket Blog  
 **URL:** https://blog.logrocket.com/react-navigation-tutorial/  
 **Tiempo de lectura:** 15 min
 
 **Contenido:**
+
 - Common patterns
 - Performance tips
 - Memory management
@@ -111,11 +122,13 @@
 ### Tab Navigator
 
 #### "Bottom Tab Navigation in React Native"
+
 **Autor:** Medium - React Native School  
 **URL:** https://medium.com/react-native-school  
 **Tiempo de lectura:** 12 min
 
 **Contenido:**
+
 - Setup básico
 - Custom icons
 - Badge implementation
@@ -124,11 +137,13 @@
 ---
 
 #### "Creating Beautiful Tab Bars"
+
 **Autor:** William Candillon Blog  
 **URL:** https://wcandillon.com  
 **Tiempo de lectura:** 18 min
 
 **Contenido:**
+
 - Custom animations
 - Gesture handling
 - Performance optimization
@@ -138,11 +153,13 @@
 ### Drawer Navigator
 
 #### "Custom Drawer Content in React Navigation"
+
 **Autor:** React Navigation Docs  
 **URL:** https://reactnavigation.org/docs/drawer-navigator#providing-a-custom-drawercontent  
 **Tiempo de lectura:** 8 min
 
 **Contenido:**
+
 - DrawerContent component
 - Custom header
 - Menu items
@@ -153,11 +170,13 @@
 ### Nested Navigation
 
 #### "Mastering Nested Navigation"
+
 **Autor:** Notjust.dev Blog  
 **URL:** https://notjust.dev/blog  
 **Tiempo de lectura:** 20 min
 
 **Contenido:**
+
 - When to nest
 - Common patterns
 - Stack + Tab + Drawer
@@ -168,11 +187,13 @@
 ### Context API
 
 #### "How to Use React Context Effectively"
+
 **Autor:** Kent C. Dodds  
 **URL:** https://kentcdodds.com/blog/how-to-use-react-context-effectively  
 **Tiempo de lectura:** 15 min
 
 **Contenido:**
+
 - Context basics
 - Performance optimization
 - When NOT to use Context
@@ -181,11 +202,13 @@
 ---
 
 #### "React Context API vs Redux"
+
 **Autor:** LogRocket Blog  
 **URL:** https://blog.logrocket.com/react-context-api-vs-redux/  
 **Tiempo de lectura:** 12 min
 
 **Contenido:**
+
 - Comparison
 - Use cases
 - Performance
@@ -196,11 +219,13 @@
 ### TypeScript
 
 #### "TypeScript with React Navigation"
+
 **Autor:** React Navigation Docs  
 **URL:** https://reactnavigation.org/docs/typescript  
 **Tiempo de lectura:** 25 min
 
 **Contenido:**
+
 - Type-safe navigation
 - ParamList types
 - useNavigation hook
@@ -217,6 +242,7 @@
 **Tiempo:** 45 min (lectura y código)
 
 **Proyecto completo:**
+
 - Setup navigation
 - Product screens
 - Shopping cart
@@ -231,6 +257,7 @@
 **Tiempo:** 30 min
 
 **Implementa:**
+
 - Login screen
 - Protected routes
 - Token management
@@ -245,6 +272,7 @@
 **Tiempo:** 20 min
 
 **Configura:**
+
 - URL schemes
 - Universal links
 - Navigation from links
@@ -259,12 +287,14 @@
 **URL:** https://reactnavigation.org/blog  
 **Frecuencia:** Mensual  
 **Contenido:**
+
 - Release notes
 - New features
 - Migration guides
 - Best practices
 
 **Por qué seguirlo:**
+
 > Información oficial de primera mano
 
 ---
@@ -276,12 +306,14 @@
 **Frecuencia:** Semanal
 
 **Temas:**
+
 - Tutorials
 - Performance
 - State management
 - Testing
 
 **Por qué seguirlo:**
+
 > Artículos técnicos profundos con ejemplos
 
 ---
@@ -292,6 +324,7 @@
 **Frecuencia:** Variable
 
 **Temas:**
+
 - Navigation patterns
 - UI components
 - Performance tips
@@ -305,6 +338,7 @@
 **Frecuencia:** Diaria
 
 **Contenido:**
+
 - Community posts
 - Quick tips
 - Problem solving
@@ -318,6 +352,7 @@
 **Frecuencia:** Semanal
 
 **Contenido:**
+
 - Step-by-step tutorials
 - Project breakdowns
 - Code reviews
@@ -333,12 +368,14 @@
 **Tipo:** Editor interactivo en línea
 
 **Características:**
+
 - Código editable
 - Preview en tiempo real
 - Compartir snippets
 - Múltiples ejemplos
 
 **Úsalo para:**
+
 - Probar código rápidamente
 - Experimentar con navegación
 - Compartir problemas
@@ -352,12 +389,14 @@
 **Tipo:** IDE en línea
 
 **Características:**
+
 - Entorno completo
 - Preview móvil real
 - Guardar proyectos
 - Compartir links
 
 **Úsalo para:**
+
 - Prototipar apps
 - Testear en dispositivo real
 - Compartir código con compañeros
@@ -371,12 +410,14 @@
 **Tipo:** Editor TypeScript
 
 **Características:**
+
 - Compilador en línea
 - Type checking
 - Config options
 - Examples
 
 **Úsalo para:**
+
 - Entender tipos
 - Probar sintaxis
 - Ver errores
@@ -392,6 +433,7 @@
 **Total:** ~15,000 preguntas
 
 **Preguntas Frecuentes:**
+
 1. How to pass parameters between screens
 2. Navigation not working after upgrade
 3. TypeScript types for navigation
@@ -399,6 +441,7 @@
 5. Nested navigation issues
 
 **Cómo buscar:**
+
 ```
 [react-navigation] your problem
 Example: [react-navigation] tab badge not updating
@@ -414,12 +457,14 @@ Example: [react-navigation] tab badge not updating
 **Tipo:** Foro oficial
 
 **Categorías:**
+
 - Help
 - Ideas
 - Show and tell
 - General
 
 **Por qué participar:**
+
 > Respuestas del equipo oficial y comunidad experta
 
 ---
@@ -430,6 +475,7 @@ Example: [react-navigation] tab badge not updating
 **Tipo:** Chat en tiempo real
 
 **Canales relevantes:**
+
 - #react-native
 - #help-react-native
 - #react-navigation
@@ -442,6 +488,7 @@ Example: [react-navigation] tab badge not updating
 **Miembros:** ~200,000
 
 **Contenido:**
+
 - Preguntas y respuestas
 - Project showcases
 - News y releases
@@ -455,6 +502,7 @@ Example: [react-navigation] tab badge not updating
 **Tipo:** Portal comunitario
 
 **Recursos:**
+
 - Directorio de librerías
 - Meetups
 - Job board
@@ -469,9 +517,11 @@ Example: [react-navigation] tab badge not updating
 #### "Cannot read property 'navigate'"
 
 **Solución:**
+
 - https://reactnavigation.org/docs/troubleshooting#i-get-the-error-undefined-is-not-an-object-evaluating-this-props-navigation-navigate
 
 **Causas comunes:**
+
 1. Screen no está dentro del Navigator
 2. useNavigation usado fuera del contexto
 3. Navigation prop no pasado correctamente
@@ -481,9 +531,11 @@ Example: [react-navigation] tab badge not updating
 #### "Invariant Violation: requireNativeComponent"
 
 **Solución:**
+
 - https://reactnavigation.org/docs/troubleshooting#invariant-violation-native-module-cannot-be-null
 
 **Causas:**
+
 1. Dependencias nativas no instaladas
 2. Pod install no ejecutado (iOS)
 3. Cache no limpiado
@@ -493,9 +545,11 @@ Example: [react-navigation] tab badge not updating
 #### TypeScript Type Errors
 
 **Solución:**
+
 - https://reactnavigation.org/docs/typescript#type-checking-screens
 
 **Recursos:**
+
 - Type definitions
 - Param list setup
 - Common patterns
@@ -510,6 +564,7 @@ Example: [react-navigation] tab badge not updating
 **Tiempo:** 30 min lectura
 
 **Cambios principales:**
+
 - New API
 - TypeScript improvements
 - Performance enhancements
@@ -522,6 +577,7 @@ Example: [react-navigation] tab badge not updating
 **Tiempo:** 45 min
 
 **Breaking changes:**
+
 - Complete rewrite
 - New navigation patterns
 - Updated dependencies
@@ -537,6 +593,7 @@ Example: [react-navigation] tab badge not updating
 **Tiempo:** 20 min
 
 **Temas:**
+
 - Lazy loading screens
 - Memoization
 - FlatList optimization
@@ -551,6 +608,7 @@ Example: [react-navigation] tab badge not updating
 **Tiempo:** 25 min
 
 **Incluye:**
+
 - Profiling tools
 - Common bottlenecks
 - Optimization strategies
@@ -560,6 +618,7 @@ Example: [react-navigation] tab badge not updating
 ## ✅ Checklist de Lectura Web
 
 ### Documentación Oficial (Must Read):
+
 - [ ] React Navigation - Getting Started
 - [ ] React Navigation - Stack Navigator
 - [ ] React Navigation - Tab Navigator
@@ -568,6 +627,7 @@ Example: [react-navigation] tab badge not updating
 - [ ] React Context API docs
 
 ### Artículos Clave (Recommended):
+
 - [ ] Understanding Stack Navigator
 - [ ] Custom Drawer Content
 - [ ] Nested Navigation Patterns
@@ -575,11 +635,13 @@ Example: [react-navigation] tab badge not updating
 - [ ] TypeScript with Navigation
 
 ### Recursos Interactivos (Practice):
+
 - [ ] React Navigation Playground - 5 ejemplos
 - [ ] Expo Snack - Crear 1 proyecto
 - [ ] TypeScript Playground - Probar tipos
 
 ### Troubleshooting (When Needed):
+
 - [ ] Buscar tu error específico en Stack Overflow
 - [ ] Leer sección de troubleshooting oficial
 - [ ] Revisar GitHub issues similares
@@ -588,14 +650,14 @@ Example: [react-navigation] tab badge not updating
 
 ## 🔗 Links Rápidos de Referencia
 
-| Recurso | URL | Uso |
-|---------|-----|-----|
-| React Navigation Docs | reactnavigation.org/docs | Referencia principal |
-| Expo Docs | docs.expo.dev | Integración Expo |
-| Stack Overflow | stackoverflow.com/questions/tagged/react-navigation | Problemas comunes |
-| GitHub Discussions | github.com/react-navigation/.../discussions | Preguntas avanzadas |
-| Playground | reactnavigation.org/playground | Experimentar |
-| Snack | snack.expo.dev | Prototipar |
+| Recurso               | URL                                                 | Uso                  |
+| --------------------- | --------------------------------------------------- | -------------------- |
+| React Navigation Docs | reactnavigation.org/docs                            | Referencia principal |
+| Expo Docs             | docs.expo.dev                                       | Integración Expo     |
+| Stack Overflow        | stackoverflow.com/questions/tagged/react-navigation | Problemas comunes    |
+| GitHub Discussions    | github.com/react-navigation/.../discussions         | Preguntas avanzadas  |
+| Playground            | reactnavigation.org/playground                      | Experimentar         |
+| Snack                 | snack.expo.dev                                      | Prototipar           |
 
 ---
 
@@ -607,6 +669,7 @@ Example: [react-navigation] tab badge not updating
 **Descargable:** Sí
 
 **Incluye:**
+
 - Todos los tipos de navegación
 - Ejemplos funcionales
 - Código comentado
@@ -617,16 +680,19 @@ Example: [react-navigation] tab badge not updating
 ## 🌟 Artículos por Nivel
 
 ### Principiante:
+
 1. React Navigation - Getting Started Guide
 2. Stack Navigator Basics
 3. How Context API Works
 
 ### Intermedio:
+
 1. Nested Navigation Patterns
 2. Custom Navigation Components
 3. TypeScript Integration
 
 ### Avanzado:
+
 1. Performance Optimization
 2. Custom Navigators
 3. Advanced TypeScript Patterns
