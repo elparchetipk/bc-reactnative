@@ -27,24 +27,28 @@ Crear una **aplicación de e-commerce funcional** que demuestre el dominio de:
 ### Must Have (Obligatorios):
 
 #### 1. Navegación Principal (Tab Navigator)
+
 - [ ] **Home Tab**: Listado de productos destacados
 - [ ] **Categories Tab**: Categorías de productos (con Drawer)
 - [ ] **Cart Tab**: Carrito de compras con badge de cantidad
 - [ ] **Profile Tab**: Perfil del usuario con Stack anidado
 
 #### 2. Drawer Navigator (Categorías)
+
 - [ ] Menú lateral con lista de categorías
 - [ ] Custom drawer con header de usuario
 - [ ] Navegación a pantallas de categoría específica
 - [ ] Cerrar drawer al seleccionar categoría
 
 #### 3. Stack Navigator (Flujo de Producto)
+
 - [ ] ProductList → ProductDetail
 - [ ] ProductDetail → Reviews
 - [ ] ProductDetail → Agregar al carrito
 - [ ] Checkout flow (Cart → Shipping → Payment → Confirmation)
 
 #### 4. Carrito de Compras (Context API)
+
 - [ ] Agregar productos al carrito
 - [ ] Eliminar productos del carrito
 - [ ] Actualizar cantidad de productos
@@ -52,6 +56,7 @@ Crear una **aplicación de e-commerce funcional** que demuestre el dominio de:
 - [ ] Badge con número de items en el tab
 
 #### 5. Datos y Mock API
+
 - [ ] Mínimo 20 productos
 - [ ] 5 categorías diferentes
 - [ ] Información de usuario
@@ -170,12 +175,14 @@ ecommerce-app/
 ### Fase 1: Setup y Datos (30 min presencial)
 
 **En clase:**
+
 1. Crear estructura de carpetas
 2. Definir tipos TypeScript
 3. Crear mock data (productos, categorías, usuario)
 4. Configurar navegación básica
 
 **Archivos a crear:**
+
 - `src/types/index.ts`
 - `src/data/products.ts`
 - `src/data/categories.ts`
@@ -188,12 +195,14 @@ ecommerce-app/
 ### Fase 2: Context y State (1h autónomo)
 
 **En casa:**
+
 1. Implementar CartContext
 2. Crear funciones de agregar/eliminar del carrito
 3. Calcular totales
 4. Integrar Provider en App.tsx
 
 **Archivos a crear:**
+
 - `src/context/CartContext.tsx`
 
 [👉 Ver guía detallada: FASE-02-CONTEXT.md](./FASE-02-CONTEXT.md)
@@ -203,12 +212,14 @@ ecommerce-app/
 ### Fase 3: Componentes Reutilizables (1h autónomo)
 
 **En casa:**
+
 1. ProductCard component
 2. CartItem component
 3. ReviewCard component
 4. CustomDrawer component
 
 **Archivos a crear:**
+
 - `src/components/ProductCard.tsx`
 - `src/components/CartItem.tsx`
 - `src/components/ReviewCard.tsx`
@@ -221,11 +232,13 @@ ecommerce-app/
 ### Fase 4: Pantallas - Home Stack (1.5h autónomo)
 
 **En casa:**
+
 1. HomeScreen (lista de productos)
 2. ProductDetailScreen (detalle con botón de agregar al carrito)
 3. ReviewsScreen (lista de reviews)
 
 **Archivos a crear:**
+
 - `src/screens/home/HomeScreen.tsx`
 - `src/screens/home/ProductDetailScreen.tsx`
 - `src/screens/home/ReviewsScreen.tsx`
@@ -237,12 +250,14 @@ ecommerce-app/
 ### Fase 5: Pantallas - Cart Stack (1.5h autónomo)
 
 **En casa:**
+
 1. CartScreen (lista de items en carrito)
 2. ShippingScreen (formulario de envío)
 3. PaymentScreen (selección de método de pago)
 4. ConfirmationScreen (confirmación de pedido)
 
 **Archivos a crear:**
+
 - `src/screens/cart/CartScreen.tsx`
 - `src/screens/cart/ShippingScreen.tsx`
 - `src/screens/cart/PaymentScreen.tsx`
@@ -255,12 +270,14 @@ ecommerce-app/
 ### Fase 6: Pantallas - Profile Stack (1h autónomo)
 
 **En casa:**
+
 1. ProfileScreen (info del usuario)
 2. EditProfileScreen (editar perfil)
 3. OrdersScreen (historial de pedidos)
 4. SettingsScreen (configuraciones)
 
 **Archivos a crear:**
+
 - `src/screens/profile/ProfileScreen.tsx`
 - `src/screens/profile/EditProfileScreen.tsx`
 - `src/screens/profile/OrdersScreen.tsx`
@@ -273,12 +290,14 @@ ecommerce-app/
 ### Fase 7: Navegación Completa (1h autónomo)
 
 **En casa:**
+
 1. DrawerNavigator con categorías
 2. TabNavigator con badge dinámico
 3. Stacks anidados
 4. Integración final
 
 **Archivos a crear:**
+
 - `src/navigation/DrawerNavigator.tsx`
 - `src/navigation/TabNavigator.tsx`
 - `src/navigation/stacks/HomeStack.tsx`
@@ -295,13 +314,13 @@ ecommerce-app/
 
 ```typescript
 const colors = {
-  primary: '#3b82f6',      // Azul principal
-  secondary: '#8b5cf6',    // Púrpura
-  success: '#10b981',      // Verde
-  danger: '#ef4444',       // Rojo
-  warning: '#f59e0b',      // Amarillo
-  dark: '#1f2937',         // Gris oscuro
-  light: '#f3f4f6',        // Gris claro
+  primary: '#3b82f6', // Azul principal
+  secondary: '#8b5cf6', // Púrpura
+  success: '#10b981', // Verde
+  danger: '#ef4444', // Rojo
+  warning: '#f59e0b', // Amarillo
+  dark: '#1f2937', // Gris oscuro
+  light: '#f3f4f6', // Gris claro
   white: '#ffffff',
   black: '#000000',
 }
@@ -322,57 +341,57 @@ const colors = {
 
 ### 1. Navegación (25 puntos)
 
-| Criterio | Puntos |
-|----------|--------|
-| Drawer Navigator implementado correctamente | 6 |
-| Tab Navigator con badge dinámico | 6 |
-| Stacks anidados funcionando | 7 |
-| Navegación entre pantallas fluida | 6 |
+| Criterio                                    | Puntos |
+| ------------------------------------------- | ------ |
+| Drawer Navigator implementado correctamente | 6      |
+| Tab Navigator con badge dinámico            | 6      |
+| Stacks anidados funcionando                 | 7      |
+| Navegación entre pantallas fluida           | 6      |
 
 ### 2. Funcionalidad (30 puntos)
 
-| Criterio | Puntos |
-|----------|--------|
-| Agregar productos al carrito | 8 |
-| Eliminar productos del carrito | 5 |
-| Actualizar cantidades | 5 |
-| Cálculo de totales correcto | 6 |
-| Flujo de checkout completo | 6 |
+| Criterio                       | Puntos |
+| ------------------------------ | ------ |
+| Agregar productos al carrito   | 8      |
+| Eliminar productos del carrito | 5      |
+| Actualizar cantidades          | 5      |
+| Cálculo de totales correcto    | 6      |
+| Flujo de checkout completo     | 6      |
 
 ### 3. Context API (15 puntos)
 
-| Criterio | Puntos |
-|----------|--------|
-| CartContext implementado | 7 |
-| Provider configurado correctamente | 4 |
-| Estado compartido entre pantallas | 4 |
+| Criterio                           | Puntos |
+| ---------------------------------- | ------ |
+| CartContext implementado           | 7      |
+| Provider configurado correctamente | 4      |
+| Estado compartido entre pantallas  | 4      |
 
 ### 4. UI/UX (15 puntos)
 
-| Criterio | Puntos |
-|----------|--------|
-| Diseño atractivo y profesional | 5 |
-| Componentes reutilizables | 4 |
-| Responsive y bien estructurado | 3 |
-| Loading states y feedback | 3 |
+| Criterio                       | Puntos |
+| ------------------------------ | ------ |
+| Diseño atractivo y profesional | 5      |
+| Componentes reutilizables      | 4      |
+| Responsive y bien estructurado | 3      |
+| Loading states y feedback      | 3      |
 
 ### 5. Código y Buenas Prácticas (15 puntos)
 
-| Criterio | Puntos |
-|----------|--------|
-| TypeScript bien implementado | 5 |
-| Código limpio y organizado | 4 |
-| Nomenclatura en inglés | 3 |
-| Comentarios explicativos | 3 |
+| Criterio                     | Puntos |
+| ---------------------------- | ------ |
+| TypeScript bien implementado | 5      |
+| Código limpio y organizado   | 4      |
+| Nomenclatura en inglés       | 3      |
+| Comentarios explicativos     | 3      |
 
 ### Puntuación Extra (Máximo +10 puntos)
 
-| Feature Opcional | Puntos |
-|------------------|--------|
-| Búsqueda de productos | +3 |
-| Filtros funcionales | +3 |
-| Lista de favoritos | +2 |
-| Animaciones personalizadas | +2 |
+| Feature Opcional           | Puntos |
+| -------------------------- | ------ |
+| Búsqueda de productos      | +3     |
+| Filtros funcionales        | +3     |
+| Lista de favoritos         | +2     |
+| Animaciones personalizadas | +2     |
 
 **Total Base:** 100 puntos  
 **Total con extras:** Hasta 110 puntos (máximo 100)
@@ -382,6 +401,7 @@ const colors = {
 ## ✅ Checklist de Entrega
 
 ### Funcionalidad Básica:
+
 - [ ] Navegación entre todos los tabs funciona
 - [ ] Drawer se abre y navega a categorías
 - [ ] Se pueden ver detalles de productos
@@ -391,6 +411,7 @@ const colors = {
 - [ ] El flujo de checkout funciona completo
 
 ### Código:
+
 - [ ] Todo el código en inglés (variables, funciones, componentes)
 - [ ] Tipos TypeScript definidos correctamente
 - [ ] No hay errores de compilación
@@ -398,6 +419,7 @@ const colors = {
 - [ ] Código bien comentado
 
 ### UI/UX:
+
 - [ ] La app se ve profesional
 - [ ] Los componentes son consistentes
 - [ ] Hay feedback visual (loading, errores, éxito)
@@ -405,6 +427,7 @@ const colors = {
 - [ ] Los botones tienen estados visuales
 
 ### Documentación:
+
 - [ ] README.md con instrucciones de instalación
 - [ ] Comentarios explicativos en código complejo
 - [ ] Tipos documentados
@@ -445,10 +468,7 @@ pnpm add --save-dev typescript @types/react @types/react-native
 // babel.config.js
 module.exports = {
   presets: ['babel-preset-expo'],
-  plugins: [
-    'nativewind/babel',
-    'react-native-reanimated/plugin',
-  ],
+  plugins: ['nativewind/babel', 'react-native-reanimated/plugin'],
 }
 ```
 
@@ -463,6 +483,7 @@ mkdir -p src/navigation/stacks
 ### 4. Seguir las Fases
 
 Sigue cada fase en orden:
+
 1. [Fase 1: Setup](./FASE-01-SETUP.md)
 2. [Fase 2: Context](./FASE-02-CONTEXT.md)
 3. [Fase 3: Componentes](./FASE-03-COMPONENTES.md)
@@ -478,11 +499,13 @@ Sigue cada fase en orden:
 ### Formato de Entrega:
 
 1. **Repositorio Git:**
+
    - Crear repo en GitHub
    - Commits organizados por fase
    - README.md con instrucciones
 
 2. **Video Demo (3-5 min):**
+
    - Mostrar navegación completa
    - Demostrar agregar/eliminar del carrito
    - Mostrar flujo de checkout
@@ -567,15 +590,18 @@ import { useNavigation } from '@react-navigation/native'
 ## 📚 Recursos Adicionales
 
 ### Documentación:
+
 - [React Navigation Docs](https://reactnavigation.org)
 - [Context API](https://react.dev/learn/passing-data-deeply-with-context)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 
 ### Inspiración de Diseño:
+
 - [Dribbble - E-commerce](https://dribbble.com/tags/ecommerce-app)
 - [Mobbin - Shopping Apps](https://mobbin.com)
 
 ### Herramientas:
+
 - [React Navigation Playground](https://reactnavigation.org/playground)
 - [TypeScript Playground](https://www.typescriptlang.org/play)
 

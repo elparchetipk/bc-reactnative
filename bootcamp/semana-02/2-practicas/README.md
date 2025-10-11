@@ -6,11 +6,11 @@
 
 ## 📋 Índice de Prácticas
 
-| # | Práctica | Navigator | Duración | Dificultad | Estado |
-|---|----------|-----------|----------|------------|--------|
-| 1 | [Blog App](./practica-01-stack-navigator.md) | Stack Navigator | 45 min | ⭐⭐ | 📝 |
-| 2 | [Dashboard App](./practica-02-tab-navigator.md) | Tab Navigator | 45 min | ⭐⭐ | 📝 |
-| 3 | [Settings App](./practica-03-drawer-navigator.md) | Drawer Navigator | 30 min | ⭐⭐⭐ | 📝 |
+| #   | Práctica                                          | Navigator        | Duración | Dificultad | Estado |
+| --- | ------------------------------------------------- | ---------------- | -------- | ---------- | ------ |
+| 1   | [Blog App](./practica-01-stack-navigator.md)      | Stack Navigator  | 45 min   | ⭐⭐       | 📝     |
+| 2   | [Dashboard App](./practica-02-tab-navigator.md)   | Tab Navigator    | 45 min   | ⭐⭐       | 📝     |
+| 3   | [Settings App](./practica-03-drawer-navigator.md) | Drawer Navigator | 30 min   | ⭐⭐⭐     | 📝     |
 
 **Tiempo Total:** ~2 horas en clase presencial
 
@@ -34,6 +34,7 @@ Al completar las 3 prácticas, serás capaz de:
 ## 📝 Práctica 1: Stack Navigator - Blog App
 
 ### 🎯 Qué aprenderás:
+
 - Navegación apilada (push/pop)
 - Pasar parámetros entre pantallas
 - Presentación modal
@@ -41,6 +42,7 @@ Al completar las 3 prácticas, serás capaz de:
 - TypeScript para tipos de navegación
 
 ### 🏗️ Estructura:
+
 ```
 blog-app/
 ├── 3 pantallas: PostList, PostDetail, CreatePost
@@ -51,6 +53,7 @@ blog-app/
 ```
 
 ### 📊 Evaluación:
+
 - **Funcionalidad:** 40 pts
 - **Navegación:** 30 pts
 - **UI/UX:** 20 pts
@@ -63,6 +66,7 @@ blog-app/
 ## 📝 Práctica 2: Tab Navigator - Dashboard App
 
 ### 🎯 Qué aprenderás:
+
 - Bottom Tab Navigator
 - Íconos personalizados (Ionicons)
 - Badges de notificaciones
@@ -70,6 +74,7 @@ blog-app/
 - Navegación anidada (Stack dentro de Tabs)
 
 ### 🏗️ Estructura:
+
 ```
 dashboard-app/
 ├── 3 tabs: Home, Search, Profile
@@ -80,6 +85,7 @@ dashboard-app/
 ```
 
 ### 📊 Evaluación:
+
 - **Tabs funcionando:** 30 pts
 - **Íconos personalizados:** 20 pts
 - **Badge notificaciones:** 15 pts
@@ -93,6 +99,7 @@ dashboard-app/
 ## 📝 Práctica 3: Drawer Navigator - Settings App
 
 ### 🎯 Qué aprenderás:
+
 - Drawer Navigator (menú lateral)
 - Custom Drawer Content
 - Avatar y perfil en drawer
@@ -100,6 +107,7 @@ dashboard-app/
 - Confirmación de logout
 
 ### 🏗️ Estructura:
+
 ```
 settings-app/
 ├── 4 pantallas: Home, Settings, About, Help
@@ -110,6 +118,7 @@ settings-app/
 ```
 
 ### 📊 Evaluación:
+
 - **Drawer funcional:** 30 pts
 - **Custom drawer:** 25 pts
 - **Íconos y estilos:** 20 pts
@@ -123,12 +132,14 @@ settings-app/
 ## 📚 Requisitos Previos
 
 ### Conocimientos:
+
 - ✅ React Native básico
 - ✅ Componentes funcionales y hooks
 - ✅ TypeScript básico (recomendado)
 - ✅ Teoría de React Navigation (Semana 2)
 
 ### Dependencias:
+
 ```bash
 # Instalar React Navigation y dependencias
 pnpm add @react-navigation/native
@@ -197,13 +208,13 @@ Cada código incluye comentarios explicativos:
 ```typescript
 /**
  * ComponentName - Descripción breve
- * 
+ *
  * ¿Qué hace?
  * Explicación de la funcionalidad
- * 
+ *
  * ¿Para qué?
  * Propósito y beneficios
- * 
+ *
  * ¿Cómo funciona?
  * Pasos del proceso (cuando aplique)
  */
@@ -214,17 +225,20 @@ Cada código incluye comentarios explicativos:
 ## 📊 Sistema de Evaluación
 
 ### Por Práctica:
+
 - Cada práctica vale **100 puntos**
 - Se evalúan múltiples criterios (ver detalles en cada práctica)
 - Hay checkboxes de verificación
 
 ### Calificación General:
+
 - **Práctica 1:** 33.33% (Stack Navigator)
 - **Práctica 2:** 33.33% (Tab Navigator)
 - **Práctica 3:** 33.34% (Drawer Navigator)
 - **Total:** 100% de la nota de prácticas
 
 ### Escala:
+
 - **90-100:** ⭐⭐⭐⭐⭐ Excelente
 - **80-89:** ⭐⭐⭐⭐ Muy Bueno
 - **70-79:** ⭐⭐⭐ Bueno
@@ -238,16 +252,19 @@ Cada código incluye comentarios explicativos:
 Cada práctica incluye 3 niveles de mejoras:
 
 ### 🟢 Nivel 1 (Fácil):
+
 - Cambios visuales básicos
 - Agregar más datos
 - Modificar estilos
 
 ### 🟡 Nivel 2 (Medio):
+
 - Nuevas funcionalidades
 - Integración de APIs
 - Optimizaciones
 
 ### 🔴 Nivel 3 (Avanzado):
+
 - Características complejas
 - Animaciones personalizadas
 - Arquitectura avanzada
@@ -293,17 +310,20 @@ pnpm start --clear
 ## 📖 Recursos Adicionales
 
 ### Documentación Oficial:
+
 - [React Navigation Docs](https://reactnavigation.org/docs/getting-started)
 - [Stack Navigator](https://reactnavigation.org/docs/stack-navigator)
 - [Bottom Tabs](https://reactnavigation.org/docs/bottom-tab-navigator)
 - [Drawer Navigator](https://reactnavigation.org/docs/drawer-navigator)
 
 ### Videos Recomendados:
+
 - React Navigation 6 - Complete Tutorial
 - Nested Navigation in React Native
 - Custom Drawer in React Navigation
 
 ### Comunidad:
+
 - [React Navigation Discord](https://discord.gg/reactiflux)
 - [Stack Overflow - React Navigation](https://stackoverflow.com/questions/tagged/react-navigation)
 
@@ -316,6 +336,7 @@ Una vez completadas las 3 prácticas, estarás listo para el:
 ### 🚀 [Proyecto Integrador - Semana 2](../3-proyecto/README.md)
 
 **E-Commerce App** que combina:
+
 - ✅ Stack Navigator (flujo de compra)
 - ✅ Tab Navigator (categorías)
 - ✅ Drawer Navigator (perfil y configuración)
@@ -325,6 +346,7 @@ Una vez completadas las 3 prácticas, estarás listo para el:
 ## ⏱️ Distribución de Tiempo
 
 ### Sesión Presencial (6 horas):
+
 - **Práctica 1:** 1h 15min (45min + 30min Q&A)
 - **Práctica 2:** 1h 15min (45min + 30min Q&A)
 - **Práctica 3:** 1h (30min + 30min Q&A)
@@ -332,6 +354,7 @@ Una vez completadas las 3 prácticas, estarás listo para el:
 - **Integración y dudas:** 2h
 
 ### Trabajo Autónomo (recomendado):
+
 - **Completar prácticas:** 2-3h
 - **Mejoras opcionales:** 1-2h
 - **Investigación adicional:** 1h
@@ -343,12 +366,14 @@ Una vez completadas las 3 prácticas, estarás listo para el:
 ## ✅ Checklist de Progreso
 
 ### Antes de empezar:
+
 - [ ] Leí la teoría de React Navigation
 - [ ] Instalé todas las dependencias
 - [ ] Mi entorno de desarrollo funciona
 - [ ] Entiendo los conceptos de navegación
 
 ### Durante las prácticas:
+
 - [ ] Práctica 1: Stack Navigator completada
 - [ ] Práctica 2: Tab Navigator completada
 - [ ] Práctica 3: Drawer Navigator completada
@@ -356,6 +381,7 @@ Una vez completadas las 3 prácticas, estarás listo para el:
 - [ ] Probé cada app en mi dispositivo/emulador
 
 ### Después de las prácticas:
+
 - [ ] Entiendo cuándo usar cada tipo de navegación
 - [ ] Puedo anidar navegadores correctamente
 - [ ] Sé cómo personalizar la navegación
@@ -366,6 +392,7 @@ Una vez completadas las 3 prácticas, estarás listo para el:
 ## 💡 Consejos del Instructor
 
 ### 🎯 Para Aprender Mejor:
+
 1. **No copies y pegues** - Escribe cada línea
 2. **Lee los comentarios** - Explican el QUÉ, PARA QUÉ y CÓMO
 3. **Experimenta** - Cambia valores y observa resultados
@@ -373,6 +400,7 @@ Una vez completadas las 3 prácticas, estarás listo para el:
 5. **Practica** - Repite las prácticas varias veces
 
 ### ⚠️ Errores Comunes:
+
 - Olvidar el `NavigationContainer`
 - No instalar todas las dependencias
 - No configurar Babel para Drawer
@@ -380,6 +408,7 @@ Una vez completadas las 3 prácticas, estarás listo para el:
 - No leer la documentación de errores
 
 ### 🚀 Para Destacar:
+
 - Completa las mejoras opcionales
 - Personaliza los estilos
 - Agrega features adicionales
@@ -391,11 +420,13 @@ Una vez completadas las 3 prácticas, estarás listo para el:
 ## 📞 Soporte
 
 ### Durante la Clase:
+
 - 🙋 Levanta la mano
 - 💬 Pregunta al instructor
 - 👥 Colabora con compañeros
 
 ### Fuera de Clase:
+
 - 📧 Email al instructor
 - 💻 Foro del bootcamp
 - 🤝 Grupo de estudio

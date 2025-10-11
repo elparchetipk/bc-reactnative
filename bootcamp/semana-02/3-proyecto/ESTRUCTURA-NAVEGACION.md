@@ -93,6 +93,7 @@ HomeScreen
 ```
 
 **Flujo de Navegación:**
+
 ```
 Home → [Tap en producto] → ProductDetail
                             ├─→ [Tap "Ver Reviews"] → Reviews → [Back] → ProductDetail
@@ -139,6 +140,7 @@ CartScreen
 ```
 
 **Flujo de Navegación:**
+
 ```
 Cart → [Empty] → Empty state con botón "Explorar Productos"
        │
@@ -147,11 +149,12 @@ Cart → [Empty] → Empty state con botón "Explorar Productos"
 ```
 
 **Badge Lógico:**
+
 ```typescript
 // Badge muestra: cart.itemCount
 Badge = {
   value: cart.itemCount > 0 ? cart.itemCount : undefined,
-  backgroundColor: '#ef4444'
+  backgroundColor: '#ef4444',
 }
 ```
 
@@ -193,6 +196,7 @@ ProfileScreen
 ```
 
 **Flujo de Navegación:**
+
 ```
 Profile → [Tap opción] → Pantalla específica → [Back] → Profile
 ```
@@ -230,6 +234,7 @@ CustomDrawer Content
 ```
 
 **CategoryScreen (Generic):**
+
 ```typescript
 // Una sola pantalla reutilizable para todas las categorías
 
@@ -305,18 +310,21 @@ CategoryScreen
 ## 🎨 Interacciones Visuales
 
 ### Tab Navigator:
+
 - **Active Tab:** Color azul (#3b82f6), ícono filled
 - **Inactive Tab:** Color gris (#9ca3af), ícono outline
 - **Badge:** Fondo rojo (#ef4444), texto blanco, circular
 - **Tab Bar:** Altura 60px, borde superior gris
 
 ### Drawer Navigator:
+
 - **Open:** Swipe desde izquierda o tap ícono menú
 - **Width:** 80% del ancho de pantalla
 - **Overlay:** Fondo semi-transparente
 - **Close:** Tap overlay, Back button, o seleccionar item
 
 ### Stack Navigator:
+
 - **Header:** Fondo azul, texto blanco
 - **Back Button:** Flecha izquierda, automático
 - **Modal:** Desliza desde abajo (CreatePost ejemplo)
@@ -327,20 +335,20 @@ CategoryScreen
 
 ### Total de Pantallas: 16
 
-| Navigator | Pantalla | Ruta | Params |
-|-----------|----------|------|--------|
-| HomeStack | HomeScreen | Home | - |
-| HomeStack | ProductDetailScreen | ProductDetail | { productId } |
-| HomeStack | ReviewsScreen | Reviews | { productId } |
-| CartStack | CartScreen | Cart | - |
-| CartStack | ShippingScreen | Shipping | - |
-| CartStack | PaymentScreen | Payment | - |
-| CartStack | ConfirmationScreen | Confirmation | { orderId } |
-| ProfileStack | ProfileScreen | Profile | - |
-| ProfileStack | EditProfileScreen | EditProfile | - |
-| ProfileStack | OrdersScreen | Orders | - |
-| ProfileStack | SettingsScreen | Settings | - |
-| Drawer | CategoryScreen (x5) | Category[Name] | - |
+| Navigator    | Pantalla            | Ruta           | Params        |
+| ------------ | ------------------- | -------------- | ------------- |
+| HomeStack    | HomeScreen          | Home           | -             |
+| HomeStack    | ProductDetailScreen | ProductDetail  | { productId } |
+| HomeStack    | ReviewsScreen       | Reviews        | { productId } |
+| CartStack    | CartScreen          | Cart           | -             |
+| CartStack    | ShippingScreen      | Shipping       | -             |
+| CartStack    | PaymentScreen       | Payment        | -             |
+| CartStack    | ConfirmationScreen  | Confirmation   | { orderId }   |
+| ProfileStack | ProfileScreen       | Profile        | -             |
+| ProfileStack | EditProfileScreen   | EditProfile    | -             |
+| ProfileStack | OrdersScreen        | Orders         | -             |
+| ProfileStack | SettingsScreen      | Settings       | -             |
+| Drawer       | CategoryScreen (x5) | Category[Name] | -             |
 
 ---
 
@@ -367,29 +375,34 @@ CartScreen → [removeFromCart()] → CartContext
 ## ✅ Checklist de Navegación
 
 ### Configuración:
+
 - [ ] NavigationContainer envuelve todo
 - [ ] CartProvider está por encima de NavigationContainer
 - [ ] Todos los tipos en `types.ts` coinciden con pantallas
 
 ### Stacks:
+
 - [ ] HomeStack con 3 pantallas
 - [ ] CartStack con 4 pantallas
 - [ ] ProfileStack con 4 pantallas
 - [ ] Navegación entre pantallas funciona
 
 ### Tab Navigator:
+
 - [ ] 3 tabs configurados
 - [ ] Íconos correctos (Ionicons)
 - [ ] Badge dinámico en CartTab
 - [ ] Tab activo se destaca visualmente
 
 ### Drawer Navigator:
+
 - [ ] CustomDrawer implementado
 - [ ] 5 categorías en el drawer
 - [ ] MainTabs dentro del drawer
 - [ ] Drawer se abre/cierra correctamente
 
 ### Funcionalidad:
+
 - [ ] Todas las pantallas accesibles
 - [ ] Parámetros se pasan correctamente
 - [ ] Badge se actualiza con el carrito

@@ -7,7 +7,9 @@
 ## 📖 Documentos del Proyecto
 
 ### 📘 Principal
+
 **[README.md](./README.md)** - Documento principal del proyecto
+
 - Descripción general
 - Requisitos funcionales
 - Arquitectura de navegación
@@ -20,12 +22,14 @@
 ### 📗 Fases de Desarrollo
 
 #### **[FASE-01-SETUP.md](./FASE-01-SETUP.md)** (30 min presencial)
+
 - ✅ Crear estructura de carpetas
 - ✅ Definir tipos TypeScript globales
 - ✅ Crear mock data (productos, categorías, reviews, usuario)
 - ✅ Definir tipos de navegación
 
 #### **[FASE-02-CONTEXT.md](./FASE-02-CONTEXT.md)** (1h autónomo)
+
 - ✅ Implementar CartContext
 - ✅ Funciones de agregar/eliminar/actualizar carrito
 - ✅ Calcular totales automáticamente
@@ -33,6 +37,7 @@
 - ✅ Crear utilidades de formateo
 
 #### **[FASES-RESUMEN.md](./FASES-RESUMEN.md)** (Resumen de Fases 3-7)
+
 - 📝 Fase 3: Componentes Reutilizables (1h)
   - ProductCard, CartItem, ReviewCard, CustomDrawer
 - 📝 Fase 4: Home Stack (1.5h)
@@ -49,6 +54,7 @@
 ### 📐 Arquitectura
 
 #### **[ESTRUCTURA-NAVEGACION.md](./ESTRUCTURA-NAVEGACION.md)**
+
 - Diagrama completo de navegación
 - Detalle por Tab (Home, Cart, Profile)
 - Drawer Navigator con categorías
@@ -117,6 +123,7 @@ Semana 2 - Días 1-7
 Al completar este proyecto, dominarás:
 
 ### Navegación:
+
 - [x] Stack Navigator (flujos lineales)
 - [x] Tab Navigator (navegación principal)
 - [x] Drawer Navigator (menú lateral)
@@ -125,12 +132,14 @@ Al completar este proyecto, dominarás:
 - [x] TypeScript en navegación
 
 ### State Management:
+
 - [x] Context API
 - [x] Custom hooks (useCart)
 - [x] Estado global compartido
 - [x] Actualización reactiva de UI
 
 ### UI/UX:
+
 - [x] Componentes reutilizables
 - [x] Diseño consistente
 - [x] Loading states
@@ -138,6 +147,7 @@ Al completar este proyecto, dominarás:
 - [x] Feedback visual
 
 ### Buenas Prácticas:
+
 - [x] Código limpio y organizado
 - [x] TypeScript strict
 - [x] Comentarios explicativos
@@ -212,6 +222,7 @@ ecommerce-app/
 ### Checklist General:
 
 #### Setup y Configuración (Fase 1):
+
 - [ ] Proyecto Expo creado
 - [ ] Dependencias instaladas
 - [ ] Babel configurado
@@ -220,35 +231,41 @@ ecommerce-app/
 - [ ] Mock data creado (21 productos, 5 categorías)
 
 #### State Management (Fase 2):
+
 - [ ] CartContext implementado
 - [ ] Funciones del carrito funcionando
 - [ ] CartProvider integrado en App
 - [ ] Utilidades de formateo creadas
 
 #### Componentes (Fase 3):
+
 - [ ] ProductCard
 - [ ] CartItem
 - [ ] ReviewCard
 - [ ] CustomDrawer
 
 #### Pantallas - Home (Fase 4):
+
 - [ ] HomeScreen
 - [ ] ProductDetailScreen
 - [ ] ReviewsScreen
 
 #### Pantallas - Cart (Fase 5):
+
 - [ ] CartScreen
 - [ ] ShippingScreen
 - [ ] PaymentScreen
 - [ ] ConfirmationScreen
 
 #### Pantallas - Profile (Fase 6):
+
 - [ ] ProfileScreen
 - [ ] EditProfileScreen
 - [ ] OrdersScreen
 - [ ] SettingsScreen
 
 #### Navegación (Fase 7):
+
 - [ ] HomeStack
 - [ ] CartStack
 - [ ] ProfileStack
@@ -258,6 +275,7 @@ ecommerce-app/
 - [ ] Integración completa
 
 #### Funcionalidad:
+
 - [ ] Ver productos
 - [ ] Ver detalles de producto
 - [ ] Agregar al carrito
@@ -269,6 +287,7 @@ ecommerce-app/
 - [ ] Ver reviews
 
 #### Calidad:
+
 - [ ] Sin errores TypeScript
 - [ ] Sin warnings críticos
 - [ ] Código en inglés
@@ -281,36 +300,37 @@ ecommerce-app/
 
 ### Distribución de Puntos (100 pts):
 
-| Criterio | Puntos | Documento |
-|----------|--------|-----------|
-| **Navegación** | 25 | [README.md](./README.md#criterios-de-evaluación) |
-| Drawer implementado | 6 | |
-| Tab con badge dinámico | 6 | |
-| Stacks anidados | 7 | |
-| Navegación fluida | 6 | |
-| **Funcionalidad** | 30 | |
-| Agregar al carrito | 8 | |
-| Eliminar del carrito | 5 | |
-| Actualizar cantidades | 5 | |
-| Cálculo de totales | 6 | |
-| Flujo checkout | 6 | |
-| **Context API** | 15 | |
-| Context implementado | 7 | |
-| Provider configurado | 4 | |
-| Estado compartido | 4 | |
-| **UI/UX** | 15 | |
-| Diseño profesional | 5 | |
-| Componentes reutilizables | 4 | |
-| Responsive | 3 | |
-| Feedback visual | 3 | |
-| **Código** | 15 | |
-| TypeScript correcto | 5 | |
-| Código limpio | 4 | |
-| Nomenclatura inglés | 3 | |
-| Comentarios | 3 | |
-| **TOTAL** | **100** | |
+| Criterio                  | Puntos  | Documento                                        |
+| ------------------------- | ------- | ------------------------------------------------ |
+| **Navegación**            | 25      | [README.md](./README.md#criterios-de-evaluación) |
+| Drawer implementado       | 6       |                                                  |
+| Tab con badge dinámico    | 6       |                                                  |
+| Stacks anidados           | 7       |                                                  |
+| Navegación fluida         | 6       |                                                  |
+| **Funcionalidad**         | 30      |                                                  |
+| Agregar al carrito        | 8       |                                                  |
+| Eliminar del carrito      | 5       |                                                  |
+| Actualizar cantidades     | 5       |                                                  |
+| Cálculo de totales        | 6       |                                                  |
+| Flujo checkout            | 6       |                                                  |
+| **Context API**           | 15      |                                                  |
+| Context implementado      | 7       |                                                  |
+| Provider configurado      | 4       |                                                  |
+| Estado compartido         | 4       |                                                  |
+| **UI/UX**                 | 15      |                                                  |
+| Diseño profesional        | 5       |                                                  |
+| Componentes reutilizables | 4       |                                                  |
+| Responsive                | 3       |                                                  |
+| Feedback visual           | 3       |                                                  |
+| **Código**                | 15      |                                                  |
+| TypeScript correcto       | 5       |                                                  |
+| Código limpio             | 4       |                                                  |
+| Nomenclatura inglés       | 3       |                                                  |
+| Comentarios               | 3       |                                                  |
+| **TOTAL**                 | **100** |                                                  |
 
 ### Extras (+10 pts máximo):
+
 - Búsqueda de productos: +3
 - Filtros funcionales: +3
 - Lista de favoritos: +2
@@ -321,6 +341,7 @@ ecommerce-app/
 ## 🚀 Cómo Empezar
 
 ### 1. Leer Documentación:
+
 ```
 1. README.md (visión general)
 2. FASE-01-SETUP.md (setup inicial)
@@ -329,6 +350,7 @@ ecommerce-app/
 ```
 
 ### 2. Setup del Proyecto:
+
 ```bash
 # Crear proyecto
 npx create-expo-app ecommerce-app
@@ -346,17 +368,20 @@ pnpm add --save-dev tailwindcss
 ```
 
 ### 3. Seguir Fases:
+
 ```
 Fase 1 → Fase 2 → Fase 3 → Fase 4 → Fase 5 → Fase 6 → Fase 7
 ```
 
 ### 4. Probar Constantemente:
+
 ```bash
 pnpm start
 # Presiona 'a' para Android o 'i' para iOS
 ```
 
 ### 5. Commit Regular:
+
 ```bash
 git add .
 git commit -m "feat(phase-1): setup and mock data"
@@ -370,14 +395,17 @@ git push
 ### Durante el Proyecto:
 
 **Documentación:**
+
 - Revisa los archivos de fase correspondiente
 - Consulta ESTRUCTURA-NAVEGACION.md para entender flujos
 
 **Problemas Comunes:**
+
 - Ver sección "Troubleshooting" en cada fase
 - Revisar checklist de verificación
 
 **Ayuda:**
+
 - Foro del bootcamp
 - Office hours virtuales
 - Compañeros de estudio
@@ -387,17 +415,20 @@ git push
 ## 📚 Recursos Adicionales
 
 ### Documentación Oficial:
+
 - [React Navigation](https://reactnavigation.org)
 - [React Native](https://reactnative.dev)
 - [TypeScript](https://www.typescriptlang.org)
 - [Expo](https://docs.expo.dev)
 
 ### Tutoriales:
+
 - React Navigation 6 Guide
 - Context API Deep Dive
 - TypeScript for React Native
 
 ### Herramientas:
+
 - [React Navigation Playground](https://reactnavigation.org/playground)
 - [TypeScript Playground](https://www.typescriptlang.org/play)
 
@@ -406,15 +437,19 @@ git push
 ## 📅 Entrega
 
 ### Fecha Límite:
+
 **Viernes de Semana 2 - 23:59h**
 
 ### Qué Entregar:
+
 1. **Repositorio GitHub:**
+
    - Código completo
    - README.md con instrucciones
    - Commits organizados por fase
 
 2. **Video Demo (3-5 min):**
+
    - Navegación completa
    - Agregar/eliminar del carrito
    - Flujo de checkout
@@ -427,6 +462,7 @@ git push
    - Mejoras futuras
 
 ### Formato de Entrega:
+
 ```
 Enviar por formulario del bootcamp:
 ├─ Link GitHub repo
@@ -441,6 +477,7 @@ Enviar por formulario del bootcamp:
 > _"El mejor proyecto es el que completas. No busques perfección, busca funcionalidad primero."_
 
 **Tips Finales:**
+
 - ✅ Empieza simple, agrega complejidad gradualmente
 - ✅ Prueba cada fase antes de continuar
 - ✅ Commit frecuentemente

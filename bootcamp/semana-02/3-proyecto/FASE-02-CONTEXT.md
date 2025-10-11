@@ -20,16 +20,22 @@
 
 ```typescript
 // src/context/CartContext.tsx
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from 'react'
 import type { CartItem, CartState, Product } from '../types'
 
 /**
  * CartContext - Context para gestionar el carrito de compras
- * 
+ *
  * ¿Para qué?
  * Compartir el estado del carrito entre todas las pantallas
  * sin necesidad de prop drilling
- * 
+ *
  * ¿Cómo funciona?
  * 1. Mantiene un array de CartItem
  * 2. Calcula totales automáticamente
@@ -43,13 +49,13 @@ import type { CartItem, CartState, Product } from '../types'
 interface CartContextType {
   // Estado
   cart: CartState
-  
+
   // Acciones
   addToCart: (product: Product, quantity?: number) => void
   removeFromCart: (productId: number) => void
   updateQuantity: (productId: number, quantity: number) => void
   clearCart: () => void
-  
+
   // Helpers
   isInCart: (productId: number) => boolean
   getItemQuantity: (productId: number) => number
@@ -73,7 +79,7 @@ export function CartProvider({ children }: CartProviderProps) {
   const [items, setItems] = useState<CartItem[]>([])
   const [total, setTotal] = useState(0)
   const [itemCount, setItemCount] = useState(0)
-  
+
   /**
    * Efecto para calcular totales
    * Se ejecuta cada vez que items cambia
@@ -81,46 +87,46 @@ export function CartProvider({ children }: CartProviderProps) {
   useEffect(() => {
     calculateTotals()
   }, [items])
-  
+
   /**
    * Calcula el total del carrito y la cantidad de items
    */
   const calculateTotals = () => {
     let newTotal = 0
     let newItemCount = 0
-    
-    items.forEach(item => {
+
+    items.forEach((item) => {
       // Calcular precio con descuento si aplica
       const itemPrice = item.product.discount
         ? item.product.price * (1 - item.product.discount / 100)
         : item.product.price
-      
+
       newTotal += itemPrice * item.quantity
       newItemCount += item.quantity
     })
-    
+
     setTotal(newTotal)
     setItemCount(newItemCount)
   }
-  
+
   /**
    * Agregar producto al carrito
-   * 
+   *
    * ¿Cómo funciona?
    * 1. Busca si el producto ya está en el carrito
    * 2. Si está, incrementa la cantidad
    * 3. Si no está, lo agrega como nuevo item
    */
   const addToCart = (product: Product, quantity: number = 1) => {
-    setItems(prevItems => {
+    setItems((prevItems) => {
       // Buscar si el producto ya existe
       const existingItem = prevItems.find(
-        item => item.product.id === product.id
+        (item) => item.product.id === product.id
       )
-      
+
       if (existingItem) {
         // Si existe, actualizar cantidad
-        return prevItems.map(item =>
+        return prevItems.map((item) =>
           item.product.id === product.id
             ? { ...item, quantity: item.quantity + quantity }
             : item
@@ -131,19 +137,19 @@ export function CartProvider({ children }: CartProviderProps) {
       }
     })
   }
-  
+
   /**
    * Eliminar producto del carrito
    */
   const removeFromCart = (productId: number) => {
-    setItems(prevItems =>
-      prevItems.filter(item => item.product.id !== productId)
+    setItems((prevItems) =>
+      prevItems.filter((item) => item.product.id !== productId)
     )
   }
-  
+
   /**
    * Actualizar cantidad de un producto
-   * 
+   *
    * ¿Qué hace?
    * - Si quantity es 0, elimina el producto
    * - Si quantity > 0, actualiza la cantidad
@@ -153,38 +159,36 @@ export function CartProvider({ children }: CartProviderProps) {
       removeFromCart(productId)
       return
     }
-    
-    setItems(prevItems =>
-      prevItems.map(item =>
-        item.product.id === productId
-          ? { ...item, quantity }
-          : item
+
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.product.id === productId ? { ...item, quantity } : item
       )
     )
   }
-  
+
   /**
    * Vaciar el carrito completamente
    */
   const clearCart = () => {
     setItems([])
   }
-  
+
   /**
    * Verificar si un producto está en el carrito
    */
   const isInCart = (productId: number): boolean => {
-    return items.some(item => item.product.id === productId)
+    return items.some((item) => item.product.id === productId)
   }
-  
+
   /**
    * Obtener la cantidad de un producto en el carrito
    */
   const getItemQuantity = (productId: number): number => {
-    const item = items.find(item => item.product.id === productId)
+    const item = items.find((item) => item.product.id === productId)
     return item ? item.quantity : 0
   }
-  
+
   // Valor del contexto
   const value: CartContextType = {
     cart: { items, total, itemCount },
@@ -193,14 +197,10 @@ export function CartProvider({ children }: CartProviderProps) {
     updateQuantity,
     clearCart,
     isInCart,
-    getItemQuantity
+    getItemQuantity,
   }
-  
-  return (
-    <CartContext.Provider value={value}>
-      {children}
-    </CartContext.Provider>
-  )
+
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }
 
 // ============================================
@@ -209,20 +209,20 @@ export function CartProvider({ children }: CartProviderProps) {
 
 /**
  * Hook personalizado para usar el CartContext
- * 
+ *
  * ¿Para qué?
  * Simplificar el uso del contexto y agregar validación
- * 
+ *
  * Uso:
  * const { cart, addToCart, removeFromCart } = useCart()
  */
 export function useCart() {
   const context = useContext(CartContext)
-  
+
   if (context === undefined) {
     throw new Error('useCart must be used within a CartProvider')
   }
-  
+
   return context
 }
 ```
@@ -239,11 +239,11 @@ import { CartProvider } from './src/context/CartContext'
 
 /**
  * App Principal
- * 
+ *
  * ¿Qué hace?
  * Envuelve la navegación con el CartProvider para que
  * todas las pantallas tengan acceso al estado del carrito
- * 
+ *
  * Orden importante:
  * CartProvider debe estar por ENCIMA del NavigationContainer
  * para que el badge del tab pueda acceder al estado
@@ -274,7 +274,7 @@ export default function App() {
 
 /**
  * Formatear precio a moneda
- * 
+ *
  * @param price - Precio numérico
  * @returns String formateado como moneda (ej: "$99.99")
  */
@@ -284,19 +284,22 @@ export function formatPrice(price: number): string {
 
 /**
  * Calcular precio con descuento
- * 
+ *
  * @param price - Precio original
  * @param discount - Porcentaje de descuento
  * @returns Precio final con descuento aplicado
  */
-export function calculateDiscountedPrice(price: number, discount?: number): number {
+export function calculateDiscountedPrice(
+  price: number,
+  discount?: number
+): number {
   if (!discount) return price
   return price * (1 - discount / 100)
 }
 
 /**
  * Formatear fecha
- * 
+ *
  * @param dateString - String de fecha ISO
  * @returns Fecha formateada (ej: "15 Jan 2025")
  */
@@ -305,14 +308,14 @@ export function formatDate(dateString: string): string {
   const options: Intl.DateTimeFormatOptions = {
     day: 'numeric',
     month: 'short',
-    year: 'numeric'
+    year: 'numeric',
   }
   return date.toLocaleDateString('en-US', options)
 }
 
 /**
  * Calcular ahorro por descuento
- * 
+ *
  * @param price - Precio original
  * @param discount - Porcentaje de descuento
  * @returns Cantidad ahorrada
@@ -324,7 +327,7 @@ export function calculateSavings(price: number, discount?: number): number {
 
 /**
  * Obtener badge de estado del pedido
- * 
+ *
  * @param status - Estado del pedido
  * @returns Objeto con color y texto para UI
  */
@@ -335,30 +338,30 @@ export function getOrderStatusBadge(
     pending: {
       color: '#f59e0b',
       text: 'Pendiente',
-      bgColor: '#fef3c7'
+      bgColor: '#fef3c7',
     },
     processing: {
       color: '#3b82f6',
       text: 'Procesando',
-      bgColor: '#dbeafe'
+      bgColor: '#dbeafe',
     },
     shipped: {
       color: '#8b5cf6',
       text: 'Enviado',
-      bgColor: '#ede9fe'
+      bgColor: '#ede9fe',
     },
     delivered: {
       color: '#10b981',
       text: 'Entregado',
-      bgColor: '#d1fae5'
+      bgColor: '#d1fae5',
     },
     cancelled: {
       color: '#ef4444',
       text: 'Cancelado',
-      bgColor: '#fee2e2'
-    }
+      bgColor: '#fee2e2',
+    },
   }
-  
+
   return badges[status]
 }
 ```
@@ -378,46 +381,39 @@ import { PRODUCTS } from '../data/products'
 
 /**
  * Componente de prueba para el CartContext
- * 
+ *
  * SOLO PARA DESARROLLO - Eliminar en producción
  */
 
 export function CartTest() {
   const { cart, addToCart, removeFromCart, clearCart } = useCart()
-  
+
   const testProduct = PRODUCTS[0] // iPhone 15 Pro
-  
+
   return (
     <View style={{ padding: 20 }}>
       <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>
         Cart Test
       </Text>
-      
+
       <Text>Items en carrito: {cart.itemCount}</Text>
       <Text>Total: ${cart.total.toFixed(2)}</Text>
-      
+
       <View style={{ marginTop: 20, gap: 10 }}>
-        <Button
-          title="Agregar iPhone"
-          onPress={() => addToCart(testProduct)}
-        />
-        
+        <Button title="Agregar iPhone" onPress={() => addToCart(testProduct)} />
+
         <Button
           title="Eliminar iPhone"
           onPress={() => removeFromCart(testProduct.id)}
           color="#ef4444"
         />
-        
-        <Button
-          title="Vaciar Carrito"
-          onPress={clearCart}
-          color="#f59e0b"
-        />
+
+        <Button title="Vaciar Carrito" onPress={clearCart} color="#f59e0b" />
       </View>
-      
+
       <View style={{ marginTop: 20 }}>
         <Text style={{ fontWeight: 'bold' }}>Items:</Text>
-        {cart.items.map(item => (
+        {cart.items.map((item) => (
           <Text key={item.product.id}>
             {item.product.name} x{item.quantity}
           </Text>
@@ -455,11 +451,13 @@ export default function App() {
 Una forma de compartir datos entre componentes sin pasar props manualmente en cada nivel (prop drilling).
 
 **¿Cuándo usarlo?**
+
 - Estado global (tema, autenticación, carrito)
 - Datos que muchos componentes necesitan
 - Evitar prop drilling profundo
 
 **¿Cómo funciona?**
+
 1. **createContext**: Crea el contexto
 2. **Provider**: Componente que provee el valor
 3. **useContext**: Hook para consumir el valor
@@ -467,6 +465,7 @@ Una forma de compartir datos entre componentes sin pasar props manualmente en ca
 ### Custom Hooks
 
 **¿Por qué crear `useCart()`?**
+
 - Encapsula la lógica del contexto
 - Agrega validación (error si se usa fuera del Provider)
 - Simplifica el uso en componentes
@@ -485,6 +484,7 @@ Para recalcular automáticamente cuando items cambia.
 ## ✅ Verificación de la Fase 2
 
 ### Checklist:
+
 - [ ] `CartContext.tsx` creado con todas las funciones
 - [ ] `CartProvider` envuelve `NavigationContainer` en App.tsx
 - [ ] `useCart` hook funciona correctamente
@@ -532,12 +532,12 @@ const addToCart = (product: Product, quantity: number = 1) => {
     console.error('Invalid product')
     return
   }
-  
+
   if (quantity < 1) {
     console.error('Quantity must be at least 1')
     return
   }
-  
+
   // ... resto del código
 }
 ```
@@ -547,7 +547,7 @@ const addToCart = (product: Product, quantity: number = 1) => {
 ```typescript
 // Usar callbacks para evitar closures innecesarias
 const addToCart = useCallback((product: Product, quantity: number = 1) => {
-  setItems(prevItems => {
+  setItems((prevItems) => {
     // ...
   })
 }, []) // No dependencies
@@ -565,7 +565,7 @@ useEffect(() => {
 
 // Cargar carrito al iniciar
 useEffect(() => {
-  AsyncStorage.getItem('cart').then(data => {
+  AsyncStorage.getItem('cart').then((data) => {
     if (data) {
       setItems(JSON.parse(data))
     }
@@ -582,6 +582,7 @@ useEffect(() => {
 **Causa:** Intentas usar `useCart()` fuera del `<CartProvider>`
 
 **Solución:**
+
 ```typescript
 // ✅ Correcto
 <CartProvider>
@@ -603,6 +604,7 @@ useEffect(() => {
 **Causa:** Olvidaste el `useEffect` para calcular totales
 
 **Solución:**
+
 ```typescript
 useEffect(() => {
   calculateTotals()
@@ -614,6 +616,7 @@ useEffect(() => {
 **Causa:** `setState` es asíncrono
 
 **Solución:**
+
 ```typescript
 // ❌ Incorrecto
 addToCart(product)
