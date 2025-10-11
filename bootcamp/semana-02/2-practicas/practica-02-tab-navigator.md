@@ -67,7 +67,7 @@ dashboard-app/
 
 /**
  * Datos de ejemplo para el Dashboard
- * 
+ *
  * ¿Para qué?
  * Simular datos de notificaciones, búsquedas y perfil
  */
@@ -105,29 +105,29 @@ export const NOTIFICATIONS: Notification[] = [
     title: 'Nuevo seguidor',
     message: 'Juan Pérez comenzó a seguirte',
     time: 'Hace 5 minutos',
-    read: false
+    read: false,
   },
   {
     id: 2,
     title: 'Comentario en tu post',
     message: 'María comentó: "¡Excelente artículo!"',
     time: 'Hace 1 hora',
-    read: false
+    read: false,
   },
   {
     id: 3,
     title: 'Nueva actualización',
     message: 'Hay una nueva versión disponible',
     time: 'Hace 2 horas',
-    read: true
+    read: true,
   },
   {
     id: 4,
     title: 'Me gusta en tu foto',
     message: 'A Carlos le gustó tu publicación',
     time: 'Ayer',
-    read: true
-  }
+    read: true,
+  },
 ]
 
 export const SEARCH_RESULTS: SearchResult[] = [
@@ -135,20 +135,20 @@ export const SEARCH_RESULTS: SearchResult[] = [
     id: 1,
     title: 'React Native Basics',
     category: 'Tutorial',
-    description: 'Learn the fundamentals of React Native development'
+    description: 'Learn the fundamentals of React Native development',
   },
   {
     id: 2,
     title: 'Advanced Navigation',
     category: 'Guide',
-    description: 'Master complex navigation patterns'
+    description: 'Master complex navigation patterns',
   },
   {
     id: 3,
     title: 'State Management',
     category: 'Tutorial',
-    description: 'Handle app state with Context and Redux'
-  }
+    description: 'Handle app state with Context and Redux',
+  },
 ]
 
 export const USER_PROFILE: UserProfile = {
@@ -159,12 +159,12 @@ export const USER_PROFILE: UserProfile = {
   stats: {
     posts: 42,
     followers: 1234,
-    following: 567
-  }
+    following: 567,
+  },
 }
 
 export const getUnreadNotificationsCount = (): number => {
-  return NOTIFICATIONS.filter(n => !n.read).length
+  return NOTIFICATIONS.filter((n) => !n.read).length
 }
 ```
 
@@ -179,7 +179,7 @@ export const getUnreadNotificationsCount = (): number => {
 
 /**
  * Tipos de navegación del Dashboard
- * 
+ *
  * Estructura:
  * - TabParamList: Navegación principal de tabs
  * - HomeStackParamList: Stack anidado en tab Home
@@ -224,7 +224,7 @@ import { getUnreadNotificationsCount } from '../../data/mockData'
 
 /**
  * HomeScreen - Pantalla principal del dashboard
- * 
+ *
  * ¿Qué muestra?
  * Resumen de actividad y acceso rápido a notificaciones
  */
@@ -233,7 +233,7 @@ type Props = NativeStackScreenProps<HomeStackParamList, 'Home'>
 
 export function HomeScreen({ navigation }: Props) {
   const unreadCount = getUnreadNotificationsCount()
-  
+
   return (
     <ScrollView className="flex-1 bg-gray-50">
       <View className="p-4">
@@ -242,11 +242,9 @@ export function HomeScreen({ navigation }: Props) {
           <Text className="text-3xl font-bold text-gray-900 mb-2">
             👋 ¡Bienvenido!
           </Text>
-          <Text className="text-gray-600">
-            Aquí está tu resumen de hoy
-          </Text>
+          <Text className="text-gray-600">Aquí está tu resumen de hoy</Text>
         </View>
-        
+
         {/* Stats Cards */}
         <View className="flex-row gap-3 mb-6">
           <View className="flex-1 bg-blue-500 p-4 rounded-xl">
@@ -258,7 +256,7 @@ export function HomeScreen({ navigation }: Props) {
             <Text className="text-green-100">Completadas</Text>
           </View>
         </View>
-        
+
         {/* Notifications Card */}
         <TouchableOpacity
           onPress={() => navigation.navigate('Notifications')}
@@ -283,34 +281,38 @@ export function HomeScreen({ navigation }: Props) {
             <Text className="text-gray-400">→</Text>
           </View>
         </TouchableOpacity>
-        
+
         {/* Quick Actions */}
         <Text className="text-lg font-bold text-gray-900 mb-3">
           Acciones Rápidas
         </Text>
-        
+
         <View className="flex-row gap-3">
           <TouchableOpacity className="flex-1 bg-white p-4 rounded-xl items-center shadow-sm">
             <Text className="text-3xl mb-2">📝</Text>
-            <Text className="text-sm font-semibold text-gray-700">Nueva Nota</Text>
+            <Text className="text-sm font-semibold text-gray-700">
+              Nueva Nota
+            </Text>
           </TouchableOpacity>
-          
+
           <TouchableOpacity className="flex-1 bg-white p-4 rounded-xl items-center shadow-sm">
             <Text className="text-3xl mb-2">📷</Text>
             <Text className="text-sm font-semibold text-gray-700">Foto</Text>
           </TouchableOpacity>
-          
+
           <TouchableOpacity className="flex-1 bg-white p-4 rounded-xl items-center shadow-sm">
             <Text className="text-3xl mb-2">📊</Text>
-            <Text className="text-sm font-semibold text-gray-700">Reportes</Text>
+            <Text className="text-sm font-semibold text-gray-700">
+              Reportes
+            </Text>
           </TouchableOpacity>
         </View>
-        
+
         {/* Recent Activity */}
         <Text className="text-lg font-bold text-gray-900 mt-6 mb-3">
           Actividad Reciente
         </Text>
-        
+
         {[1, 2, 3].map((item) => (
           <View key={item} className="bg-white p-4 rounded-xl mb-3 shadow-sm">
             <Text className="font-semibold text-gray-900 mb-1">
@@ -342,13 +344,18 @@ import { NOTIFICATIONS, type Notification } from '../../data/mockData'
 type Props = NativeStackScreenProps<HomeStackParamList, 'Notifications'>
 
 export function NotificationsScreen({ navigation }: Props) {
-  
   const renderNotification = ({ item }: { item: Notification }) => (
     <TouchableOpacity
-      className={`p-4 border-b border-gray-200 ${!item.read ? 'bg-blue-50' : 'bg-white'}`}
+      className={`p-4 border-b border-gray-200 ${
+        !item.read ? 'bg-blue-50' : 'bg-white'
+      }`}
     >
       <View className="flex-row items-start gap-3">
-        <View className={`w-3 h-3 rounded-full mt-1 ${!item.read ? 'bg-blue-500' : 'bg-gray-300'}`} />
+        <View
+          className={`w-3 h-3 rounded-full mt-1 ${
+            !item.read ? 'bg-blue-500' : 'bg-gray-300'
+          }`}
+        />
         <View className="flex-1">
           <Text className="font-bold text-gray-900 mb-1">{item.title}</Text>
           <Text className="text-gray-600 mb-2">{item.message}</Text>
@@ -357,7 +364,7 @@ export function NotificationsScreen({ navigation }: Props) {
       </View>
     </TouchableOpacity>
   )
-  
+
   return (
     <View className="flex-1 bg-white">
       <FlatList
@@ -367,7 +374,8 @@ export function NotificationsScreen({ navigation }: Props) {
         ListHeaderComponent={
           <View className="p-4 bg-gray-50 border-b border-gray-200">
             <Text className="text-sm text-gray-600">
-              {NOTIFICATIONS.filter(n => !n.read).length} notificaciones sin leer
+              {NOTIFICATIONS.filter((n) => !n.read).length} notificaciones sin
+              leer
             </Text>
           </View>
         }
@@ -395,11 +403,11 @@ import { SEARCH_RESULTS } from '../../data/mockData'
 
 export function SearchScreen() {
   const [query, setQuery] = useState('')
-  
-  const filteredResults = SEARCH_RESULTS.filter(result =>
+
+  const filteredResults = SEARCH_RESULTS.filter((result) =>
     result.title.toLowerCase().includes(query.toLowerCase())
   )
-  
+
   return (
     <View className="flex-1 bg-white">
       {/* Search Bar */}
@@ -412,7 +420,7 @@ export function SearchScreen() {
           placeholderTextColor="#9ca3af"
         />
       </View>
-      
+
       {/* Results */}
       <FlatList
         data={filteredResults}
@@ -479,7 +487,7 @@ export function ProfileScreen({ navigation }: Props) {
         </Text>
         <Text className="text-gray-600">{USER_PROFILE.email}</Text>
       </View>
-      
+
       {/* Stats */}
       <View className="flex-row border-y border-gray-200 bg-white">
         <View className="flex-1 py-4 items-center">
@@ -501,12 +509,12 @@ export function ProfileScreen({ navigation }: Props) {
           <Text className="text-sm text-gray-600">Siguiendo</Text>
         </View>
       </View>
-      
+
       {/* Bio */}
       <View className="p-4">
         <Text className="text-gray-700 leading-5">{USER_PROFILE.bio}</Text>
       </View>
-      
+
       {/* Edit Button */}
       <View className="px-4 pb-4">
         <TouchableOpacity
@@ -516,18 +524,20 @@ export function ProfileScreen({ navigation }: Props) {
           <Text className="text-white font-semibold">Editar Perfil</Text>
         </TouchableOpacity>
       </View>
-      
+
       {/* Options */}
       <View className="mt-4">
-        {['Configuración', 'Privacidad', 'Ayuda', 'Cerrar Sesión'].map((option, index) => (
-          <TouchableOpacity
-            key={index}
-            className="px-4 py-4 border-b border-gray-200 flex-row justify-between items-center"
-          >
-            <Text className="text-gray-900">{option}</Text>
-            <Text className="text-gray-400">→</Text>
-          </TouchableOpacity>
-        ))}
+        {['Configuración', 'Privacidad', 'Ayuda', 'Cerrar Sesión'].map(
+          (option, index) => (
+            <TouchableOpacity
+              key={index}
+              className="px-4 py-4 border-b border-gray-200 flex-row justify-between items-center"
+            >
+              <Text className="text-gray-900">{option}</Text>
+              <Text className="text-gray-400">→</Text>
+            </TouchableOpacity>
+          )
+        )}
       </View>
     </ScrollView>
   )
@@ -539,7 +549,14 @@ export function ProfileScreen({ navigation }: Props) {
 ```typescript
 // src/screens/profile/EditProfileScreen.tsx
 import React, { useState } from 'react'
-import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native'
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  ScrollView,
+  Alert,
+} from 'react-native'
 import { USER_PROFILE } from '../../data/mockData'
 
 /**
@@ -549,27 +566,31 @@ import { USER_PROFILE } from '../../data/mockData'
 export function EditProfileScreen({ navigation }: any) {
   const [name, setName] = useState(USER_PROFILE.name)
   const [bio, setBio] = useState(USER_PROFILE.bio)
-  
+
   const handleSave = () => {
     Alert.alert('✅ Guardado', 'Tu perfil se actualizó correctamente', [
-      { text: 'OK', onPress: () => navigation.goBack() }
+      { text: 'OK', onPress: () => navigation.goBack() },
     ])
   }
-  
+
   return (
     <ScrollView className="flex-1 bg-white">
       <View className="p-4">
         <View className="mb-4">
-          <Text className="text-sm font-semibold text-gray-700 mb-2">Nombre</Text>
+          <Text className="text-sm font-semibold text-gray-700 mb-2">
+            Nombre
+          </Text>
           <TextInput
             value={name}
             onChangeText={setName}
             className="border border-gray-300 rounded-lg px-4 py-3"
           />
         </View>
-        
+
         <View className="mb-6">
-          <Text className="text-sm font-semibold text-gray-700 mb-2">Biografía</Text>
+          <Text className="text-sm font-semibold text-gray-700 mb-2">
+            Biografía
+          </Text>
           <TextInput
             value={bio}
             onChangeText={setBio}
@@ -579,7 +600,7 @@ export function EditProfileScreen({ navigation }: any) {
             textAlignVertical="top"
           />
         </View>
-        
+
         <TouchableOpacity
           onPress={handleSave}
           className="bg-blue-500 py-4 rounded-lg items-center"
@@ -616,8 +637,8 @@ export function HomeStack() {
       }}
     >
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen 
-        name="Notifications" 
+      <Stack.Screen
+        name="Notifications"
         component={NotificationsScreen}
         options={{
           headerShown: true,
@@ -649,8 +670,8 @@ export function ProfileStack() {
       }}
     >
       <Stack.Screen name="Profile" component={ProfileScreen} />
-      <Stack.Screen 
-        name="EditProfile" 
+      <Stack.Screen
+        name="EditProfile"
         component={EditProfileScreen}
         options={{
           headerShown: true,
@@ -681,10 +702,10 @@ import { getUnreadNotificationsCount } from '../data/mockData'
 
 /**
  * TabNavigator - Navegación principal con tabs
- * 
+ *
  * ¿Qué hace?
  * Define los 3 tabs principales: Home, Search, Profile
- * 
+ *
  * ¿Cómo?
  * - Íconos personalizados con Ionicons
  * - Badge en Home para notificaciones
@@ -695,13 +716,13 @@ const Tab = createBottomTabNavigator<TabParamList>()
 
 export function TabNavigator() {
   const unreadCount = getUnreadNotificationsCount()
-  
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName: keyof typeof Ionicons.glyphMap
-          
+
           if (route.name === 'HomeTab') {
             iconName = focused ? 'home' : 'home-outline'
           } else if (route.name === 'SearchTab') {
@@ -711,7 +732,7 @@ export function TabNavigator() {
           } else {
             iconName = 'help-outline'
           }
-          
+
           return <Ionicons name={iconName} size={size} color={color} />
         },
         tabBarActiveTintColor: '#3b82f6',
@@ -749,7 +770,7 @@ export function TabNavigator() {
           },
         }}
       />
-      
+
       <Tab.Screen
         name="SearchTab"
         component={SearchScreen}
@@ -757,7 +778,7 @@ export function TabNavigator() {
           title: 'Buscar',
         }}
       />
-      
+
       <Tab.Screen
         name="ProfileTab"
         component={ProfileStack}
@@ -796,6 +817,7 @@ export default function App() {
 ## ✅ Checklist de Verificación
 
 ### Funcionalidad:
+
 - [ ] Los 3 tabs se muestran correctamente
 - [ ] Íconos cambian entre filled/outline según estado
 - [ ] Badge de notificaciones aparece en Home tab
@@ -804,12 +826,14 @@ export default function App() {
 - [ ] Búsqueda filtra resultados en tiempo real
 
 ### Navegación:
+
 - [ ] Los tabs mantienen su estado al cambiar
 - [ ] Stack anidado funciona dentro de cada tab
 - [ ] Botón "atrás" funciona en pantallas internas
 - [ ] No hay conflictos entre Tab y Stack headers
 
 ### UI/UX:
+
 - [ ] Los íconos son claros y apropiados
 - [ ] El badge es visible pero no intrusivo
 - [ ] Los colores activo/inactivo son distinguibles
@@ -817,6 +841,7 @@ export default function App() {
 - [ ] Las transiciones son suaves
 
 ### TypeScript:
+
 - [ ] Tipos correctos para cada navigator
 - [ ] No hay errores de compilación
 - [ ] Autocompletado funciona en navigation
@@ -826,16 +851,19 @@ export default function App() {
 ## 🎨 Mejoras Opcionales
 
 ### Nivel 1:
+
 - [ ] Agregar más notificaciones
 - [ ] Cambiar colores del tema
 - [ ] Agregar más opciones en Profile
 
 ### Nivel 2:
+
 - [ ] Implementar búsqueda con debounce
 - [ ] Marcar notificaciones como leídas
 - [ ] Actualizar badge dinámicamente
 
 ### Nivel 3:
+
 - [ ] Persistir estado con AsyncStorage
 - [ ] Agregar animaciones personalizadas
 - [ ] Implementar pull-to-refresh
@@ -845,18 +873,21 @@ export default function App() {
 ## 🐛 Problemas Comunes
 
 ### 1. Badge no aparece
+
 ```typescript
 // ✅ Solución: Asegúrate de que sea > 0
 tabBarBadge: unreadCount > 0 ? unreadCount : undefined
 ```
 
 ### 2. Headers duplicados
+
 ```typescript
 // ✅ En el Stack anidado:
 screenOptions={{ headerShown: false }}
 ```
 
 ### 3. Íconos no se muestran
+
 ```bash
 # Asegúrate de tener @expo/vector-icons instalado
 pnpm add @expo/vector-icons
@@ -866,14 +897,14 @@ pnpm add @expo/vector-icons
 
 ## 🎯 Criterios de Evaluación
 
-| Criterio | Puntos |
-|----------|--------|
-| Tabs funcionan correctamente | 30 |
-| Íconos personalizados | 20 |
-| Badge de notificaciones | 15 |
-| Navegación anidada | 25 |
-| UI/UX pulida | 10 |
-| **TOTAL** | **100** |
+| Criterio                     | Puntos  |
+| ---------------------------- | ------- |
+| Tabs funcionan correctamente | 30      |
+| Íconos personalizados        | 20      |
+| Badge de notificaciones      | 15      |
+| Navegación anidada           | 25      |
+| UI/UX pulida                 | 10      |
+| **TOTAL**                    | **100** |
 
 ---
 

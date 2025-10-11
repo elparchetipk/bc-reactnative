@@ -51,6 +51,7 @@ module.exports = {
 ```
 
 **Importante:** Reinicia el servidor con caché limpio:
+
 ```bash
 pnpm start --clear
 ```
@@ -97,7 +98,7 @@ export const CURRENT_USER: User = {
   name: 'Carlos Rodríguez',
   email: 'carlos.rodriguez@example.com',
   avatar: 'https://i.pravatar.cc/150?img=12',
-  role: 'Desarrollador'
+  role: 'Desarrollador',
 }
 ```
 
@@ -146,7 +147,7 @@ export function HomeScreen({ navigation }: Props) {
         <Text className="text-gray-600 mb-6">
           Bienvenido a tu panel de control
         </Text>
-        
+
         {/* Cards */}
         <View className="gap-3">
           {[1, 2, 3].map((item) => (
@@ -158,13 +159,11 @@ export function HomeScreen({ navigation }: Props) {
               <Text className="text-lg font-bold text-gray-900 mb-2">
                 Item #{item}
               </Text>
-              <Text className="text-gray-600">
-                Toca para ver detalles
-              </Text>
+              <Text className="text-gray-600">Toca para ver detalles</Text>
             </TouchableOpacity>
           ))}
         </View>
-        
+
         {/* Info Card */}
         <View className="mt-6 bg-blue-50 p-4 rounded-xl">
           <Text className="text-blue-800 font-semibold mb-2">
@@ -191,7 +190,7 @@ export function SettingsScreen() {
   const [notifications, setNotifications] = useState(true)
   const [darkMode, setDarkMode] = useState(false)
   const [autoUpdate, setAutoUpdate] = useState(true)
-  
+
   const SettingItem = ({ title, description, value, onValueChange }: any) => (
     <View className="bg-white p-4 mb-2 rounded-lg flex-row justify-between items-center">
       <View className="flex-1 mr-3">
@@ -206,64 +205,66 @@ export function SettingsScreen() {
       />
     </View>
   )
-  
+
   return (
     <ScrollView className="flex-1 bg-gray-50">
       <View className="p-4">
         <Text className="text-2xl font-bold text-gray-900 mb-4">
           ⚙️ Configuración
         </Text>
-        
+
         {/* General */}
         <Text className="text-sm font-bold text-gray-600 mb-2 uppercase">
           General
         </Text>
-        
+
         <SettingItem
           title="Notificaciones"
           description="Recibir alertas push"
           value={notifications}
           onValueChange={setNotifications}
         />
-        
+
         <SettingItem
           title="Modo Oscuro"
           description="Usar tema oscuro"
           value={darkMode}
           onValueChange={setDarkMode}
         />
-        
+
         <SettingItem
           title="Actualización Automática"
           description="Descargar actualizaciones automáticamente"
           value={autoUpdate}
           onValueChange={setAutoUpdate}
         />
-        
+
         {/* Cuenta */}
         <Text className="text-sm font-bold text-gray-600 mt-6 mb-2 uppercase">
           Cuenta
         </Text>
-        
+
         <TouchableOpacity className="bg-white p-4 mb-2 rounded-lg flex-row justify-between items-center">
           <View>
-            <Text className="font-semibold text-gray-900">Cambiar Contraseña</Text>
+            <Text className="font-semibold text-gray-900">
+              Cambiar Contraseña
+            </Text>
           </View>
           <Text className="text-gray-400">→</Text>
         </TouchableOpacity>
-        
+
         <TouchableOpacity className="bg-white p-4 mb-2 rounded-lg flex-row justify-between items-center">
           <View>
             <Text className="font-semibold text-gray-900">Privacidad</Text>
           </View>
           <Text className="text-gray-400">→</Text>
         </TouchableOpacity>
-        
+
         {/* Peligro */}
         <Text className="text-sm font-bold text-red-600 mt-6 mb-2 uppercase">
           Zona de Peligro
         </Text>
-        
+
         <TouchableOpacity className="bg-red-50 p-4 rounded-lg border border-red-200">
           <Text className="font-semibold text-red-600">Eliminar Cuenta</Text>
           <Text className="text-sm text-red-500 mt-1">
@@ -294,24 +295,30 @@ export function AboutScreen() {
           </Text>
           <Text className="text-gray-600">Versión 1.0.0</Text>
         </View>
-        
+
         <View className="mt-4">
           <Text className="font-semibold text-gray-900 mb-2">
             Acerca de esta app
           </Text>
           <Text className="text-gray-600 leading-6">
-            Aplicación de ejemplo para demostrar el uso de Drawer Navigator 
-            con React Navigation. Incluye navegación anidada, drawer personalizado 
-            y mejores prácticas de desarrollo.
+            Aplicación de ejemplo para demostrar el uso de Drawer Navigator con
+            React Navigation. Incluye navegación anidada, drawer personalizado y
+            mejores prácticas de desarrollo.
           </Text>
         </View>
-        
+
         <View className="mt-6">
           <Text className="font-semibold text-gray-900 mb-2">
             Desarrollado con
           </Text>
           <View className="gap-2">
-            {['React Native 0.74+', 'Expo SDK 51+', 'React Navigation 6', 'NativeWind', 'TypeScript'].map((tech, i) => (
+            {[
+              'React Native 0.74+',
+              'Expo SDK 51+',
+              'React Navigation 6',
+              'NativeWind',
+              'TypeScript',
+            ].map((tech, i) => (
               <View key={i} className="flex-row items-center gap-2">
                 <Text className="text-blue-500">•</Text>
                 <Text className="text-gray-700">{tech}</Text>
@@ -332,41 +339,33 @@ export function HelpScreen() {
   const faqs = [
     {
       question: '¿Cómo abro el menú?',
-      answer: 'Desliza desde el borde izquierdo o toca el ícono de menú.'
+      answer: 'Desliza desde el borde izquierdo o toca el ícono de menú.',
     },
     {
       question: '¿Cómo cambio la configuración?',
-      answer: 'Ve a la sección Configuración en el menú lateral.'
+      answer: 'Ve a la sección Configuración en el menú lateral.',
     },
     {
       question: '¿Puedo personalizar el tema?',
-      answer: 'Sí, activa el modo oscuro en Configuración.'
-    }
+      answer: 'Sí, activa el modo oscuro en Configuración.',
+    },
   ]
-  
+
   return (
     <ScrollView className="flex-1 bg-gray-50">
       <View className="p-4">
-        <Text className="text-2xl font-bold text-gray-900 mb-2">
-          ❓ Ayuda
-        </Text>
-        <Text className="text-gray-600 mb-6">
-          Preguntas frecuentes
-        </Text>
-        
+        <Text className="text-2xl font-bold text-gray-900 mb-2">❓ Ayuda</Text>
+        <Text className="text-gray-600 mb-6">Preguntas frecuentes</Text>
+
         {faqs.map((faq, index) => (
           <View key={index} className="bg-white p-4 rounded-lg mb-3">
-            <Text className="font-bold text-gray-900 mb-2">
-              {faq.question}
-            </Text>
+            <Text className="font-bold text-gray-900 mb-2">{faq.question}</Text>
             <Text className="text-gray-600">{faq.answer}</Text>
           </View>
         ))}
-        
+
         <TouchableOpacity className="bg-blue-500 p-4 rounded-lg items-center mt-4">
-          <Text className="text-white font-semibold">
-            Contactar Soporte
-          </Text>
+          <Text className="text-white font-semibold">Contactar Soporte</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -392,33 +391,29 @@ import { CURRENT_USER } from '../data/userData'
 
 /**
  * CustomDrawer - Contenido personalizado del drawer
- * 
+ *
  * ¿Qué hace?
  * Muestra header con perfil, items del drawer y opciones adicionales
- * 
+ *
  * ¿Para qué?
  * Personalizar completamente la apariencia y funcionalidad del drawer
  */
 
 export function CustomDrawer(props: any) {
   const handleLogout = () => {
-    Alert.alert(
-      'Cerrar Sesión',
-      '¿Estás seguro de que quieres salir?',
-      [
-        { text: 'Cancelar', style: 'cancel' },
-        {
-          text: 'Salir',
-          style: 'destructive',
-          onPress: () => {
-            console.log('Logout')
-            // Aquí iría la lógica de logout real
-          }
-        }
-      ]
-    )
+    Alert.alert('Cerrar Sesión', '¿Estás seguro de que quieres salir?', [
+      { text: 'Cancelar', style: 'cancel' },
+      {
+        text: 'Salir',
+        style: 'destructive',
+        onPress: () => {
+          console.log('Logout')
+          // Aquí iría la lógica de logout real
+        },
+      },
+    ])
   }
-  
+
   return (
     <View className="flex-1">
       <DrawerContentScrollView {...props}>
@@ -444,16 +439,16 @@ export function CustomDrawer(props: any) {
             </View>
           </View>
         </View>
-        
+
         {/* Separador */}
         <View className="h-px bg-gray-200 my-2" />
-        
+
         {/* Items del drawer (generados automáticamente) */}
         <DrawerItemList {...props} />
-        
+
         {/* Separador */}
         <View className="h-px bg-gray-200 my-2" />
-        
+
         {/* Items personalizados adicionales */}
         <DrawerItem
           label="Favoritos"
@@ -463,7 +458,7 @@ export function CustomDrawer(props: any) {
           onPress={() => console.log('Favoritos')}
           labelStyle={{ color: '#374151' }}
         />
-        
+
         <DrawerItem
           label="Historial"
           icon={({ color, size }) => (
@@ -472,7 +467,7 @@ export function CustomDrawer(props: any) {
           onPress={() => console.log('Historial')}
           labelStyle={{ color: '#374151' }}
         />
-        
+
         <DrawerItem
           label="Compartir App"
           icon={({ color, size }) => (
@@ -482,7 +477,7 @@ export function CustomDrawer(props: any) {
           labelStyle={{ color: '#374151' }}
         />
       </DrawerContentScrollView>
-      
+
       {/* Footer con Logout */}
       <View className="border-t border-gray-200 p-4">
         <TouchableOpacity
@@ -492,7 +487,7 @@ export function CustomDrawer(props: any) {
           <Ionicons name="log-out-outline" size={24} color="#ef4444" />
           <Text className="text-red-600 font-semibold">Cerrar Sesión</Text>
         </TouchableOpacity>
-        
+
         <Text className="text-center text-xs text-gray-400 mt-3">
           Versión 1.0.0
         </Text>
@@ -546,10 +541,10 @@ import { CustomDrawer } from '../components/CustomDrawer'
 
 /**
  * DrawerNavigator - Navegador con menú lateral
- * 
+ *
  * ¿Qué hace?
  * Define las pantallas accesibles desde el drawer
- * 
+ *
  * ¿Cómo?
  * - Custom drawer content con perfil
  * - Íconos personalizados
@@ -592,7 +587,7 @@ export function DrawerNavigator() {
           ),
         }}
       />
-      
+
       <Drawer.Screen
         name="Settings"
         component={SettingsScreen}
@@ -603,7 +598,7 @@ export function DrawerNavigator() {
           ),
         }}
       />
-      
+
       <Drawer.Screen
         name="About"
         component={AboutScreen}
@@ -614,7 +609,7 @@ export function DrawerNavigator() {
           ),
         }}
       />
-      
+
       <Drawer.Screen
         name="Help"
         component={HelpScreen}
@@ -654,6 +649,7 @@ export default function App() {
 ## ✅ Checklist de Verificación
 
 ### Funcionalidad:
+
 - [ ] El drawer se abre deslizando desde la izquierda
 - [ ] El ícono de menú (hamburguesa) abre el drawer
 - [ ] Custom drawer muestra avatar y perfil
@@ -661,17 +657,20 @@ export default function App() {
 - [ ] Logout muestra confirmación
 
 ### Navegación:
+
 - [ ] El drawer se cierra al seleccionar un item
 - [ ] El item activo se destaca visualmente
 - [ ] Stack anidado funciona dentro del drawer
 
 ### UI/UX:
+
 - [ ] Los íconos son apropiados
 - [ ] El perfil se ve bien en el header
 - [ ] Los colores son consistentes
 - [ ] El footer con logout está fijo abajo
 
 ### TypeScript:
+
 - [ ] No hay errores de tipos
 - [ ] Props tipadas correctamente
 
@@ -680,16 +679,19 @@ export default function App() {
 ## 🎨 Mejoras Opcionales
 
 ### Nivel 1:
+
 - [ ] Cambiar el avatar
 - [ ] Agregar más items al drawer
 - [ ] Cambiar colores del tema
 
 ### Nivel 2:
+
 - [ ] Drawer desde la derecha
 - [ ] Animaciones personalizadas
 - [ ] Modo oscuro
 
 ### Nivel 3:
+
 - [ ] Drawer con width dinámico
 - [ ] Gestos personalizados
 - [ ] Múltiples perfiles
@@ -699,18 +701,21 @@ export default function App() {
 ## 🐛 Problemas Comunes
 
 ### 1. Error de Reanimated
+
 ```bash
 # Solución: Asegúrate de que el plugin esté al final
 'react-native-reanimated/plugin'
 ```
 
 ### 2. Drawer no se abre
+
 ```bash
 # Reinicia con caché limpio
 pnpm start --clear
 ```
 
 ### 3. Header duplicado
+
 ```typescript
 // En MainStack:
 screenOptions={{ headerShown: false }}
@@ -720,22 +725,23 @@ screenOptions={{ headerShown: false }}
 
 ## 🎯 Criterios de Evaluación
 
-| Criterio | Puntos |
-|----------|--------|
-| Drawer funciona correctamente | 30 |
-| Custom drawer implementado | 25 |
-| Íconos y estilos | 20 |
-| Navegación anidada | 15 |
-| Logout y confirmación | 10 |
-| **TOTAL** | **100** |
+| Criterio                      | Puntos  |
+| ----------------------------- | ------- |
+| Drawer funciona correctamente | 30      |
+| Custom drawer implementado    | 25      |
+| Íconos y estilos              | 20      |
+| Navegación anidada            | 15      |
+| Logout y confirmación         | 10      |
+| **TOTAL**                     | **100** |
 
 ---
 
 ## 🎉 ¡Felicidades!
 
 Has completado las 3 prácticas de navegación:
+
 - ✅ Stack Navigator
-- ✅ Tab Navigator  
+- ✅ Tab Navigator
 - ✅ Drawer Navigator
 
 Ahora estás listo para el **Proyecto Integrador** que combina los 3 tipos! 🚀
