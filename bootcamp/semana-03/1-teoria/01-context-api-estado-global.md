@@ -45,7 +45,7 @@ Al finalizar este tema, serás capaz de:
 // ❌ Estado LOCAL - Solo accesible en este componente
 function Counter() {
   const [count, setCount] = useState(0) // Solo Counter puede ver/modificar
-  
+
   return <Text>{count}</Text>
 }
 
@@ -57,6 +57,7 @@ const user = useAuth() // Cualquier componente puede acceder
 ### ¿Cuándo usar Estado Global?
 
 ✅ **Usa Estado Global cuando:**
+
 - Múltiples componentes necesitan el mismo dato
 - Datos de autenticación (usuario, token)
 - Tema de la aplicación (dark/light mode)
@@ -66,6 +67,7 @@ const user = useAuth() // Cualquier componente puede acceder
 - Datos frecuentemente accedidos
 
 ❌ **NO uses Estado Global para:**
+
 - Estado de formularios (usa estado local)
 - Valores temporales de UI (modals, tooltips)
 - Datos que solo usa un componente
@@ -85,14 +87,14 @@ const user = useAuth() // Cualquier componente puede acceder
 /**
  * Problema: UserProfile necesita 'user', pero tenemos que
  * pasarlo por App → Home → Header → UserProfile
- * 
+ *
  * Home y Header NO usan 'user', solo lo pasan
  */
 
 // ❌ Prop Drilling - Código tedioso y frágil
 function App() {
   const [user, setUser] = useState({ name: 'Juan', role: 'admin' })
-  
+
   return <Home user={user} setUser={setUser} />
 }
 
@@ -166,10 +168,10 @@ Cualquier "buzón" puede recibir cartas sin que tengas que pasar por cada casa i
 /**
  * ¿Qué hace?
  * Crea un contexto para compartir datos de autenticación
- * 
+ *
  * ¿Para qué?
  * Permitir que cualquier componente acceda a información del usuario
- * 
+ *
  * ¿Cómo funciona?
  * createContext() crea un "contenedor" de datos compartidos
  */
@@ -202,10 +204,10 @@ export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 /**
  * ¿Qué hace?
  * Componente que envuelve la app y provee el contexto
- * 
+ *
  * ¿Para qué?
  * Hacer que los datos de autenticación estén disponibles globalmente
- * 
+ *
  * ¿Cómo funciona?
  * 1. Mantiene el estado (user, loading)
  * 2. Define funciones (login, logout)
@@ -228,8 +230,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setLoading(true)
     try {
       // Simular llamada a API
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
       // Simular usuario autenticado
       const authenticatedUser: User = {
         id: '1',
@@ -237,7 +239,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         email,
         role: 'user',
       }
-      
+
       setUser(authenticatedUser)
     } catch (error) {
       console.error('Login failed:', error)
@@ -262,11 +264,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }
 
   // Provider envuelve a los children
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  )
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 ```
 
@@ -275,10 +273,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
 ```typescript
 /**
  * App.tsx
- * 
+ *
  * ¿Qué hace?
  * Envuelve toda la aplicación con el AuthProvider
- * 
+ *
  * ¿Para qué?
  * Hacer que el contexto esté disponible en toda la app
  */
@@ -308,10 +306,10 @@ export default function App() {
 /**
  * ¿Qué hace?
  * Accede al contexto desde cualquier componente
- * 
+ *
  * ¿Para qué?
  * Obtener datos del usuario sin prop drilling
- * 
+ *
  * ¿Cómo funciona?
  * useContext(AuthContext) retorna el valor del Provider más cercano
  */
@@ -323,18 +321,18 @@ import { AuthContext } from '../contexts/AuthContext'
 export function ProfileScreen() {
   // Consumir el contexto
   const auth = useContext(AuthContext)
-  
+
   // Validación (en caso de que no haya Provider)
   if (!auth) {
     throw new Error('useContext must be used within AuthProvider')
   }
-  
+
   const { user, logout, isAuthenticated } = auth
-  
+
   if (!isAuthenticated) {
     return <Text>No autenticado</Text>
   }
-  
+
   return (
     <View>
       <Text>Bienvenido, {user?.name}</Text>
@@ -360,7 +358,7 @@ export function ProfileScreen() {
     <AuthContext.Consumer>
       {(auth) => {
         if (!auth) return null
-        
+
         return (
           <View>
             <Text>{auth.user?.name}</Text>
@@ -390,13 +388,13 @@ Los custom hooks mejoran la experiencia de desarrollo:
 ```typescript
 /**
  * useAuth.ts
- * 
+ *
  * ¿Qué hace?
  * Hook personalizado para acceder al AuthContext
- * 
+ *
  * ¿Para qué?
  * Simplificar el consumo del contexto y agregar validación
- * 
+ *
  * ¿Cómo funciona?
  * 1. Llama a useContext internamente
  * 2. Valida que se use dentro del Provider
@@ -408,11 +406,11 @@ import { AuthContext } from '../contexts/AuthContext'
 
 export function useAuth() {
   const context = useContext(AuthContext)
-  
+
   if (context === undefined) {
     throw new Error('useAuth must be used within an AuthProvider')
   }
-  
+
   return context
 }
 ```
@@ -429,11 +427,11 @@ import { useAuth } from '../hooks/useAuth'
 export function ProfileScreen() {
   // ✅ Limpio, simple, type-safe
   const { user, logout, isAuthenticated } = useAuth()
-  
+
   if (!isAuthenticated) {
     return <Text>No autenticado</Text>
   }
-  
+
   return (
     <View>
       <Text>Hola, {user.name}</Text>
@@ -461,7 +459,7 @@ Separa contextos cuando gestionan **dominios diferentes**:
 ```typescript
 /**
  * ThemeContext.tsx
- * 
+ *
  * Contexto independiente para gestionar el tema
  */
 
@@ -483,26 +481,23 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>('light')
-  
+
   const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light')
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'))
   }
-  
-  const colors = theme === 'light'
-    ? { background: '#ffffff', text: '#000000', primary: '#007AFF' }
-    : { background: '#000000', text: '#ffffff', primary: '#0A84FF' }
-  
+
+  const colors =
+    theme === 'light'
+      ? { background: '#ffffff', text: '#000000', primary: '#007AFF' }
+      : { background: '#000000', text: '#ffffff', primary: '#0A84FF' }
+
   const value: ThemeContextType = {
     theme,
     toggleTheme,
     colors,
   }
-  
-  return (
-    <ThemeContext.Provider value={value}>
-      {children}
-    </ThemeContext.Provider>
-  )
+
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
 
 export function useTheme() {
@@ -519,13 +514,13 @@ export function useTheme() {
 ```typescript
 /**
  * App.tsx
- * 
+ *
  * ¿Qué hace?
  * Envuelve la app con múltiples providers
- * 
+ *
  * ¿Para qué?
  * Hacer disponibles múltiples contextos
- * 
+ *
  * ¿Cómo funciona?
  * Providers anidados - el orden generalmente no importa
  */
@@ -549,9 +544,7 @@ function AppProviders({ children }: { children: ReactNode }) {
   return (
     <AuthProvider>
       <ThemeProvider>
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        <LanguageProvider>{children}</LanguageProvider>
       </ThemeProvider>
     </AuthProvider>
   )
@@ -583,7 +576,7 @@ export function SettingsScreen() {
   const { user, logout } = useAuth()
   const { theme, toggleTheme, colors } = useTheme()
   const { language, changeLanguage, t } = useLanguage()
-  
+
   return (
     <View style={{ backgroundColor: colors.background }}>
       <Text style={{ color: colors.text }}>
@@ -605,7 +598,7 @@ export function SettingsScreen() {
 ```typescript
 /**
  * ❌ PROBLEMA
- * 
+ *
  * Cuando el contexto cambia, TODOS los componentes que lo usan
  * se re-renderizan, incluso si no usan el valor que cambió
  */
@@ -623,7 +616,7 @@ interface AppContextType {
 ```typescript
 /**
  * ✅ MEJOR
- * 
+ *
  * Separar en contextos independientes reduce re-renders
  */
 
@@ -644,9 +637,13 @@ const CartContext = createContext<CartItem[]>()
 
 import React, { memo } from 'react'
 
-const ExpensiveComponent = memo(function ExpensiveComponent({ user }: { user: User }) {
+const ExpensiveComponent = memo(function ExpensiveComponent({
+  user,
+}: {
+  user: User
+}) {
   console.log('ExpensiveComponent rendered')
-  
+
   return (
     <View>
       <Text>{user.name}</Text>
@@ -664,16 +661,16 @@ const ExpensiveComponent = memo(function ExpensiveComponent({ user }: { user: Us
 
 export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User | null>(null)
-  
+
   // ✅ Memoizar funciones con useCallback
   const login = useCallback(async (email: string, password: string) => {
     // ... lógica de login
   }, [])
-  
+
   const logout = useCallback(() => {
     setUser(null)
   }, [])
-  
+
   // ✅ Memoizar el valor del contexto
   const value = useMemo(
     () => ({
@@ -684,12 +681,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }),
     [user, login, logout]
   )
-  
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  )
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 ```
 
@@ -698,7 +691,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 ```typescript
 /**
  * ✅ Permitir suscripciones parciales
- * 
+ *
  * Usando librería: use-context-selector
  */
 
@@ -708,13 +701,13 @@ const AppContext = createContext({ user, theme, cart })
 
 // Solo se re-renderiza cuando 'user' cambia
 function UserProfile() {
-  const user = useContextSelector(AppContext, state => state.user)
+  const user = useContextSelector(AppContext, (state) => state.user)
   return <Text>{user.name}</Text>
 }
 
 // Solo se re-renderiza cuando 'cart' cambia
 function CartBadge() {
-  const cartCount = useContextSelector(AppContext, state => state.cart.length)
+  const cartCount = useContextSelector(AppContext, (state) => state.cart.length)
   return <Text>{cartCount}</Text>
 }
 ```
@@ -817,14 +810,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User | null>(null)
-  
+
   // Cargar user al iniciar
   useEffect(() => {
-    AsyncStorage.getItem('user').then(data => {
+    AsyncStorage.getItem('user').then((data) => {
       if (data) setUser(JSON.parse(data))
     })
   }, [])
-  
+
   // Guardar user cuando cambia
   useEffect(() => {
     if (user) {
@@ -833,7 +826,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       AsyncStorage.removeItem('user')
     }
   }, [user])
-  
+
   // ... resto del provider
 }
 ```
@@ -842,15 +835,15 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
 ## 📊 Comparación: Context vs Otras Soluciones
 
-| Aspecto              | Context API | Redux   | Zustand | MobX    |
-| -------------------- | ----------- | ------- | ------- | ------- |
-| **Curva aprendizaje**| Baja        | Alta    | Baja    | Media   |
-| **Boilerplate**      | Bajo        | Alto    | Muy bajo| Bajo    |
-| **Performance**      | Media       | Alta    | Alta    | Alta    |
-| **DevTools**         | No          | Sí      | Sí      | Sí      |
-| **TypeScript**       | Nativo      | Bueno   | Excelente| Bueno  |
-| **Bundle size**      | 0 (nativo)  | ~7KB    | ~1KB    | ~16KB   |
-| **Ideal para**       | Apps simples| Apps grandes| Apps medianas| Apps complejas|
+| Aspecto               | Context API  | Redux        | Zustand       | MobX           |
+| --------------------- | ------------ | ------------ | ------------- | -------------- |
+| **Curva aprendizaje** | Baja         | Alta         | Baja          | Media          |
+| **Boilerplate**       | Bajo         | Alto         | Muy bajo      | Bajo           |
+| **Performance**       | Media        | Alta         | Alta          | Alta           |
+| **DevTools**          | No           | Sí           | Sí            | Sí             |
+| **TypeScript**        | Nativo       | Bueno        | Excelente     | Bueno          |
+| **Bundle size**       | 0 (nativo)   | ~7KB         | ~1KB          | ~16KB          |
+| **Ideal para**        | Apps simples | Apps grandes | Apps medianas | Apps complejas |
 
 **Recomendación para el bootcamp:** Context API es suficiente para la mayoría de casos.
 
@@ -859,6 +852,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 ## ✅ Checklist de Comprensión
 
 ### Nivel Básico
+
 - [ ] Entiendo qué es el estado global
 - [ ] Identifico cuándo usar estado local vs global
 - [ ] Comprendo el problema del prop drilling
@@ -866,6 +860,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 - [ ] Sé cómo consumir un contexto con useContext
 
 ### Nivel Intermedio
+
 - [ ] Implemento providers completos con estado
 - [ ] Creo custom hooks para mis contextos
 - [ ] Uso múltiples contextos en una app
@@ -873,6 +868,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 - [ ] Aplico TypeScript a mis contextos
 
 ### Nivel Avanzado
+
 - [ ] Optimizo re-renders con useMemo/useCallback
 - [ ] Implemento persistencia con AsyncStorage
 - [ ] Separo contextos por dominio lógico
@@ -905,12 +901,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
 ### Cuándo Usar Context
 
 ✅ **Usa Context para:**
+
 - Autenticación
 - Tema
 - Idioma
 - Datos compartidos frecuentemente
 
 ❌ **No uses Context para:**
+
 - Estado muy local
 - Datos que cambian constantemente
 - Aplicaciones muy grandes y complejas (considera Redux/Zustand)
@@ -930,4 +928,3 @@ _Bootcamp React Native 2025 - EPTI_
 
 **Tiempo estimado:** 35-40 minutos  
 **Dificultad:** ⭐⭐⭐ Intermedia
-

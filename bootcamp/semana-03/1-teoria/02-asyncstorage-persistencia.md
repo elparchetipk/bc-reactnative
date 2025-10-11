@@ -63,6 +63,7 @@ Piensa en AsyncStorage como un **archivero digital**:
 ### ¿Cuándo usar AsyncStorage?
 
 ✅ **Usa AsyncStorage para:**
+
 - Preferencias de usuario (tema, idioma)
 - Tokens de autenticación
 - Cache de datos de API
@@ -72,6 +73,7 @@ Piensa en AsyncStorage como un **archivero digital**:
 - Configuraciones de la app
 
 ❌ **NO uses AsyncStorage para:**
+
 - Contraseñas en texto plano (usa Expo SecureStore)
 - Datos muy grandes (>10MB) (usa sistema de archivos)
 - Datos sensibles sin encriptar
@@ -104,7 +106,7 @@ Si usas **Expo**, la configuración es automática. No necesitas pasos adicional
 ```typescript
 /**
  * TestAsyncStorage.tsx
- * 
+ *
  * Componente simple para verificar que AsyncStorage funciona
  */
 
@@ -117,21 +119,21 @@ export function TestAsyncStorage() {
       try {
         // Guardar
         await AsyncStorage.setItem('test_key', 'test_value')
-        
+
         // Leer
         const value = await AsyncStorage.getItem('test_key')
         console.log('AsyncStorage funciona! Valor:', value)
-        
+
         // Limpiar
         await AsyncStorage.removeItem('test_key')
       } catch (error) {
         console.error('AsyncStorage NO funciona:', error)
       }
     }
-    
+
     test()
   }, [])
-  
+
   return null
 }
 ```
@@ -146,10 +148,10 @@ export function TestAsyncStorage() {
 /**
  * ¿Qué hace?
  * Guarda un par clave-valor en AsyncStorage
- * 
+ *
  * ¿Para qué?
  * Persistir datos simples como strings
- * 
+ *
  * ¿Cómo funciona?
  * Crea o actualiza una entrada en el almacenamiento
  */
@@ -176,10 +178,10 @@ saveUsername('juan_perez')
 /**
  * ¿Qué hace?
  * Recupera un valor guardado usando su clave
- * 
+ *
  * ¿Para qué?
  * Obtener datos guardados previamente
- * 
+ *
  * ¿Cómo funciona?
  * Retorna el valor o null si no existe
  */
@@ -187,7 +189,7 @@ saveUsername('juan_perez')
 async function getUsername(): Promise<string | null> {
   try {
     const username = await AsyncStorage.getItem('username')
-    
+
     if (username !== null) {
       console.log('Username encontrado:', username)
       return username
@@ -211,10 +213,10 @@ const username = await getUsername()
 /**
  * ¿Qué hace?
  * Elimina una entrada de AsyncStorage
- * 
+ *
  * ¿Para qué?
  * Borrar datos que ya no se necesitan (ej: logout)
- * 
+ *
  * ¿Cómo funciona?
  * Elimina la clave y su valor del almacenamiento
  */
@@ -238,10 +240,10 @@ await deleteUsername()
 /**
  * ¿Qué hace?
  * Elimina TODOS los datos de AsyncStorage
- * 
+ *
  * ¿Para qué?
  * Reset completo de la app (cuidado, es destructivo)
- * 
+ *
  * ¿Cómo funciona?
  * Borra todas las claves y valores
  */
@@ -265,10 +267,10 @@ await clearAllData()
 /**
  * ¿Qué hace?
  * Retorna un array con todas las claves guardadas
- * 
+ *
  * ¿Para qué?
  * Ver qué datos están almacenados (útil para debug)
- * 
+ *
  * ¿Cómo funciona?
  * Lee el índice de claves del almacenamiento
  */
@@ -299,7 +301,7 @@ async function saveMultiple() {
     await AsyncStorage.multiSet([
       ['username', 'juan'],
       ['email', 'juan@example.com'],
-      ['theme', 'dark']
+      ['theme', 'dark'],
     ])
     console.log('Múltiples valores guardados')
   } catch (error) {
@@ -345,10 +347,10 @@ AsyncStorage **solo guarda strings**. Para guardar objetos, arrays, números, et
 /**
  * ¿Qué hace?
  * Guarda y recupera objetos complejos
- * 
+ *
  * ¿Para qué?
  * Almacenar datos estructurados (objetos, arrays)
- * 
+ *
  * ¿Cómo funciona?
  * JSON.stringify() convierte objeto → string
  * JSON.parse() convierte string → objeto
@@ -380,11 +382,11 @@ async function saveUser(user: User) {
 async function getUser(): Promise<User | null> {
   try {
     const jsonValue = await AsyncStorage.getItem('user')
-    
+
     if (jsonValue === null) {
       return null
     }
-    
+
     const user: User = JSON.parse(jsonValue)
     console.log('Usuario recuperado:', user)
     return user
@@ -401,8 +403,8 @@ const user: User = {
   email: 'juan@example.com',
   preferences: {
     theme: 'dark',
-    notifications: true
-  }
+    notifications: true,
+  },
 }
 
 await saveUser(user)
@@ -414,7 +416,7 @@ const retrievedUser = await getUser()
 ```typescript
 /**
  * storage.ts
- * 
+ *
  * Funciones helper para simplificar el uso de AsyncStorage
  */
 
@@ -482,7 +484,9 @@ await storeData('settings', { theme: 'dark', notifications: true })
 
 // Recuperar con tipos
 const user = await getData<{ name: string; age: number }>('user')
-const settings = await getData<{ theme: string; notifications: boolean }>('settings')
+const settings = await getData<{ theme: string; notifications: boolean }>(
+  'settings'
+)
 
 // Eliminar
 await removeData('user')
@@ -527,12 +531,12 @@ async function saveUserWithValidation(user: User) {
   if (!user.id || !user.name || !user.email) {
     throw new Error('User data incomplete')
   }
-  
+
   // Validar formato de email
   if (!user.email.includes('@')) {
     throw new Error('Invalid email format')
   }
-  
+
   try {
     await storeData('user', user)
     return { success: true }
@@ -552,21 +556,21 @@ async function saveUserWithValidation(user: User) {
 async function getUserSafely(): Promise<User | null> {
   try {
     const jsonValue = await AsyncStorage.getItem('user')
-    
+
     if (jsonValue === null) {
       return null
     }
-    
+
     // Intentar parsear
     const user: User = JSON.parse(jsonValue)
-    
+
     // Validar estructura
     if (!user.id || !user.name) {
       console.warn('User data corrupted, clearing...')
       await AsyncStorage.removeItem('user')
       return null
     }
-    
+
     return user
   } catch (error) {
     console.error('Error parsing user data:', error)
@@ -586,20 +590,26 @@ async function getUserSafely(): Promise<User | null> {
 ```typescript
 /**
  * AuthContext.tsx
- * 
+ *
  * ¿Qué hace?
  * Context de autenticación con persistencia automática
- * 
+ *
  * ¿Para qué?
  * Mantener sesión del usuario entre reinicios de la app
- * 
+ *
  * ¿Cómo funciona?
  * 1. Al iniciar, carga user de AsyncStorage
  * 2. Al cambiar user, guarda en AsyncStorage
  * 3. Al logout, elimina de AsyncStorage
  */
 
-import React, { createContext, useState, useEffect, useContext, ReactNode } from 'react'
+import React, {
+  createContext,
+  useState,
+  useEffect,
+  useContext,
+  ReactNode,
+} from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 // Tipos
@@ -631,19 +641,19 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined)
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [isLoading, setIsLoading] = useState(true)
-  
+
   // Cargar usuario al iniciar
   useEffect(() => {
     loadStoredUser()
   }, [])
-  
+
   /**
    * Cargar usuario guardado de AsyncStorage
    */
   async function loadStoredUser() {
     try {
       const jsonValue = await AsyncStorage.getItem(STORAGE_KEYS.USER)
-      
+
       if (jsonValue !== null) {
         const storedUser: User = JSON.parse(jsonValue)
         setUser(storedUser)
@@ -655,17 +665,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setIsLoading(false)
     }
   }
-  
+
   /**
    * Login - Autentica y guarda en storage
    */
   async function login(email: string, password: string) {
     setIsLoading(true)
-    
+
     try {
       // Simular llamada a API
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
       // Usuario autenticado (simulado)
       const authenticatedUser: User = {
         id: '1',
@@ -673,16 +683,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         email,
         token: 'fake-jwt-token-' + Date.now(),
       }
-      
+
       // Guardar en estado
       setUser(authenticatedUser)
-      
+
       // Guardar en AsyncStorage
       await AsyncStorage.setItem(
         STORAGE_KEYS.USER,
         JSON.stringify(authenticatedUser)
       )
-      
+
       console.log('Login exitoso y guardado')
     } catch (error) {
       console.error('Login failed:', error)
@@ -691,7 +701,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setIsLoading(false)
     }
   }
-  
+
   /**
    * Logout - Limpia estado y storage
    */
@@ -699,20 +709,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       // Limpiar estado
       setUser(null)
-      
+
       // Eliminar de AsyncStorage
-      await AsyncStorage.multiRemove([
-        STORAGE_KEYS.USER,
-        STORAGE_KEYS.TOKEN,
-      ])
-      
+      await AsyncStorage.multiRemove([STORAGE_KEYS.USER, STORAGE_KEYS.TOKEN])
+
       console.log('Logout exitoso')
     } catch (error) {
       console.error('Logout failed:', error)
       throw error
     }
   }
-  
+
   const value: AuthContextType = {
     user,
     isAuthenticated: user !== null,
@@ -720,12 +727,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     login,
     logout,
   }
-  
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  )
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
 // Custom hook
@@ -743,7 +746,7 @@ export function useAuth() {
 ```typescript
 /**
  * LoginScreen.tsx
- * 
+ *
  * Pantalla de login con persistencia automática
  */
 
@@ -755,9 +758,9 @@ export function LoginScreen() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
-  
+
   const { login, isLoading } = useAuth()
-  
+
   async function handleLogin() {
     try {
       setError('')
@@ -767,11 +770,11 @@ export function LoginScreen() {
       setError('Login failed. Please try again.')
     }
   }
-  
+
   if (isLoading) {
     return <ActivityIndicator size="large" />
   }
-  
+
   return (
     <View>
       <TextInput
@@ -808,23 +811,23 @@ type Theme = 'light' | 'dark'
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>('light')
-  
+
   // Cargar tema guardado
   useEffect(() => {
-    AsyncStorage.getItem('theme').then(stored => {
+    AsyncStorage.getItem('theme').then((stored) => {
       if (stored === 'light' || stored === 'dark') {
         setTheme(stored)
       }
     })
   }, [])
-  
+
   // Guardar tema cuando cambia
   const toggleTheme = async () => {
     const newTheme = theme === 'light' ? 'dark' : 'light'
     setTheme(newTheme)
     await AsyncStorage.setItem('theme', newTheme)
   }
-  
+
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
@@ -854,29 +857,29 @@ async function fetchWithCache<T>(
   try {
     // Intentar obtener de cache
     const cached = await AsyncStorage.getItem(`cache:${key}`)
-    
+
     if (cached) {
       const entry: CacheEntry<T> = JSON.parse(cached)
       const age = Date.now() - entry.timestamp
-      
+
       // Si el cache es reciente, usar
       if (age < CACHE_DURATION) {
         console.log('Cache hit:', key)
         return entry.data
       }
     }
-    
+
     // Cache miss o expirado, fetch nuevo
     console.log('Cache miss:', key)
     const data = await fetcher()
-    
+
     // Guardar en cache
     const entry: CacheEntry<T> = {
       data,
       timestamp: Date.now(),
     }
     await AsyncStorage.setItem(`cache:${key}`, JSON.stringify(entry))
-    
+
     return data
   } catch (error) {
     console.error('Cache error:', error)
@@ -915,20 +918,24 @@ async function markOnboardingComplete() {
 // En App.tsx
 export default function App() {
   const [showOnboarding, setShowOnboarding] = useState(false)
-  
+
   useEffect(() => {
-    hasCompletedOnboarding().then(completed => {
+    hasCompletedOnboarding().then((completed) => {
       setShowOnboarding(!completed)
     })
   }, [])
-  
+
   if (showOnboarding) {
-    return <OnboardingScreen onComplete={() => {
-      markOnboardingComplete()
-      setShowOnboarding(false)
-    }} />
+    return (
+      <OnboardingScreen
+        onComplete={() => {
+          markOnboardingComplete()
+          setShowOnboarding(false)
+        }}
+      />
+    )
   }
-  
+
   return <MainApp />
 }
 ```
@@ -959,7 +966,7 @@ async function addFavorite(itemId: string) {
 
 async function removeFavorite(itemId: string) {
   const favorites = await getFavorites()
-  const updated = favorites.filter(id => id !== itemId)
+  const updated = favorites.filter((id) => id !== itemId)
   await AsyncStorage.setItem('favorites', JSON.stringify(updated))
 }
 
@@ -975,14 +982,14 @@ async function isFavorite(itemId: string): Promise<boolean> {
 
 ### Comparación de Opciones
 
-| Solución                 | Uso                          | Encriptado | Tamaño      | Sincronización |
-| ------------------------ | ---------------------------- | ---------- | ----------- | -------------- |
-| **AsyncStorage**         | Preferencias, cache simple   | ❌ No      | <10MB       | ❌ No          |
-| **Expo SecureStore**     | Tokens, contraseñas          | ✅ Sí      | Pequeño     | ❌ No          |
-| **SQLite**               | Bases de datos complejas     | ❌ No      | Grande      | ❌ No          |
-| **Realm**                | Bases de datos móviles       | ✅ Sí      | Grande      | ✅ Sí (Realm Sync) |
-| **MMKV**                 | High-performance key-value   | ✅ Sí      | Medio       | ❌ No          |
-| **Firebase Firestore**   | Datos en la nube             | ✅ Sí      | Ilimitado   | ✅ Sí          |
+| Solución               | Uso                        | Encriptado | Tamaño    | Sincronización     |
+| ---------------------- | -------------------------- | ---------- | --------- | ------------------ |
+| **AsyncStorage**       | Preferencias, cache simple | ❌ No      | <10MB     | ❌ No              |
+| **Expo SecureStore**   | Tokens, contraseñas        | ✅ Sí      | Pequeño   | ❌ No              |
+| **SQLite**             | Bases de datos complejas   | ❌ No      | Grande    | ❌ No              |
+| **Realm**              | Bases de datos móviles     | ✅ Sí      | Grande    | ✅ Sí (Realm Sync) |
+| **MMKV**               | High-performance key-value | ✅ Sí      | Medio     | ❌ No              |
+| **Firebase Firestore** | Datos en la nube           | ✅ Sí      | Ilimitado | ✅ Sí              |
 
 ### Expo SecureStore (Para Datos Sensibles)
 
@@ -1039,11 +1046,11 @@ const KEYS = {
   // Auth
   AUTH_USER: '@auth:user',
   AUTH_TOKEN: '@auth:token',
-  
+
   // Settings
   SETTINGS_THEME: '@settings:theme',
   SETTINGS_LANG: '@settings:language',
-  
+
   // Cache
   CACHE_PRODUCTS: '@cache:products',
   CACHE_CATEGORIES: '@cache:categories',
@@ -1072,18 +1079,18 @@ async function getData<T>(key: string, defaultValue: T): Promise<T> {
 export function App() {
   const [user, setUser] = useState<User | null>(null)
   const [isReady, setIsReady] = useState(false)
-  
+
   useEffect(() => {
-    loadUser().then(u => {
+    loadUser().then((u) => {
       setUser(u)
       setIsReady(true)
     })
   }, [])
-  
+
   if (!isReady) {
     return <SplashScreen />
   }
-  
+
   return user ? <AuthenticatedApp /> : <LoginScreen />
 }
 
@@ -1136,14 +1143,14 @@ async function loadUser() {
   try {
     const json = await AsyncStorage.getItem('user')
     if (!json) return null
-    
+
     const user = JSON.parse(json)
-    
+
     // Validar estructura
     if (!user.id || !user.name) {
       throw new Error('Invalid user data')
     }
-    
+
     return user
   } catch (error) {
     console.error('Error loading user:', error)
@@ -1183,6 +1190,7 @@ async function saveLargeArray(items: any[]) {
 ## ✅ Checklist de Comprensión
 
 ### Nivel Básico
+
 - [ ] Entiendo qué es AsyncStorage
 - [ ] Puedo guardar y leer strings simples
 - [ ] Sé usar setItem, getItem, removeItem
@@ -1190,6 +1198,7 @@ async function saveLargeArray(items: any[]) {
 - [ ] Manejo errores con try-catch
 
 ### Nivel Intermedio
+
 - [ ] Guardo objetos complejos con JSON.stringify/parse
 - [ ] Integro AsyncStorage con Context API
 - [ ] Implemento persistencia de sesión
@@ -1197,6 +1206,7 @@ async function saveLargeArray(items: any[]) {
 - [ ] Comprendo cuándo NO usar AsyncStorage
 
 ### Nivel Avanzado
+
 - [ ] Implemento cache con expiración
 - [ ] Optimizo performance con operaciones en lote
 - [ ] Valido y limpio datos corruptos
@@ -1236,11 +1246,11 @@ await AsyncStorage.clear()
 ✅ Preferencias de usuario  
 ✅ Cache simple  
 ✅ Flags de onboarding  
-✅ Favoritos  
+✅ Favoritos
 
 ❌ Contraseñas (usar SecureStore)  
 ❌ Datos muy grandes (usar SQLite)  
-❌ Sincronización en tiempo real (usar Firebase)  
+❌ Sincronización en tiempo real (usar Firebase)
 
 ---
 

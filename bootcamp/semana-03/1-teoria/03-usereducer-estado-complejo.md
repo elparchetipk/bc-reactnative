@@ -50,10 +50,10 @@ Piensa en useReducer como un **cajero de banco**:
 ```typescript
 /**
  * useReducer(reducer, initialState)
- * 
+ *
  * reducer: función pura que recibe (state, action) y retorna nuevo state
  * initialState: estado inicial
- * 
+ *
  * Retorna: [state, dispatch]
  * state: estado actual
  * dispatch: función para enviar acciones
@@ -114,47 +114,47 @@ function CartWithState() {
   const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  
+
   const addItem = (item: CartItem) => {
     setLoading(true)
-    setItems(prev => [...prev, item])
-    setTotal(prev => prev + item.price)
+    setItems((prev) => [...prev, item])
+    setTotal((prev) => prev + item.price)
     setLoading(false)
   }
-  
+
   const removeItem = (id: string) => {
     setLoading(true)
-    setItems(prev => prev.filter(i => i.id !== id))
-    const item = items.find(i => i.id === id)
-    if (item) setTotal(prev => prev - item.price)
+    setItems((prev) => prev.filter((i) => i.id !== id))
+    const item = items.find((i) => i.id === id)
+    if (item) setTotal((prev) => prev - item.price)
     setLoading(false)
   }
-  
+
   const clearCart = () => {
     setItems([])
     setTotal(0)
     setError(null)
   }
-  
+
   // ... más funciones
 }
 
 // ✅ useReducer - Lógica centralizada y predecible
 function CartWithReducer() {
   const [state, dispatch] = useReducer(cartReducer, initialState)
-  
+
   const addItem = (item: CartItem) => {
     dispatch({ type: 'ADD_ITEM', payload: item })
   }
-  
+
   const removeItem = (id: string) => {
     dispatch({ type: 'REMOVE_ITEM', payload: id })
   }
-  
+
   const clearCart = () => {
     dispatch({ type: 'CLEAR_CART' })
   }
-  
+
   // Lógica compleja en el reducer, componente limpio
 }
 ```
@@ -168,13 +168,13 @@ function CartWithReducer() {
 ```typescript
 /**
  * Reducer: función pura que define cómo el estado cambia
- * 
+ *
  * ¿Qué hace?
  * Toma el estado actual y una acción, retorna nuevo estado
- * 
+ *
  * ¿Para qué?
  * Centralizar toda la lógica de actualización de estado
- * 
+ *
  * ¿Cómo funciona?
  * Switch/case sobre action.type, retorna nuevo objeto de estado
  */
@@ -182,11 +182,11 @@ function CartWithReducer() {
 function reducer(state: State, action: Action): State {
   switch (action.type) {
     case 'ACTION_TYPE_1':
-      return { ...state, /* cambios */ }
-    
+      return { ...state /* cambios */ }
+
     case 'ACTION_TYPE_2':
-      return { ...state, /* cambios */ }
-    
+      return { ...state /* cambios */ }
+
     default:
       return state // Importante: retornar state sin cambios
   }
@@ -243,43 +243,41 @@ function cartReducer(state: CartState, action: CartAction): CartState {
         total: state.total + newItem.price * newItem.quantity,
         itemCount: state.itemCount + newItem.quantity,
       }
-    
+
     case 'REMOVE_ITEM':
-      const itemToRemove = state.items.find(i => i.id === action.payload)
+      const itemToRemove = state.items.find((i) => i.id === action.payload)
       if (!itemToRemove) return state
-      
+
       return {
         ...state,
-        items: state.items.filter(i => i.id !== action.payload),
-        total: state.total - (itemToRemove.price * itemToRemove.quantity),
+        items: state.items.filter((i) => i.id !== action.payload),
+        total: state.total - itemToRemove.price * itemToRemove.quantity,
         itemCount: state.itemCount - itemToRemove.quantity,
       }
-    
+
     case 'UPDATE_QUANTITY':
       const { id, quantity } = action.payload
-      const item = state.items.find(i => i.id === id)
+      const item = state.items.find((i) => i.id === id)
       if (!item) return state
-      
+
       const quantityDiff = quantity - item.quantity
-      
+
       return {
         ...state,
-        items: state.items.map(i =>
-          i.id === id ? { ...i, quantity } : i
-        ),
-        total: state.total + (item.price * quantityDiff),
+        items: state.items.map((i) => (i.id === id ? { ...i, quantity } : i)),
+        total: state.total + item.price * quantityDiff,
         itemCount: state.itemCount + quantityDiff,
       }
-    
+
     case 'CLEAR_CART':
       return initialState
-    
+
     case 'SET_LOADING':
       return { ...state, loading: action.payload }
-    
+
     case 'SET_ERROR':
       return { ...state, error: action.payload, loading: false }
-    
+
     default:
       return state
   }
@@ -295,7 +293,7 @@ function cartReducer(state: CartState, action: CartAction): CartState {
 ```typescript
 /**
  * CounterReducer.tsx
- * 
+ *
  * Ejemplo simple de useReducer
  */
 
@@ -321,7 +319,10 @@ const initialState: CounterState = {
 }
 
 // 3. Reducer
-function counterReducer(state: CounterState, action: CounterAction): CounterState {
+function counterReducer(
+  state: CounterState,
+  action: CounterAction
+): CounterState {
   switch (action.type) {
     case 'INCREMENT':
       const newCountInc = state.count + 1
@@ -329,23 +330,23 @@ function counterReducer(state: CounterState, action: CounterAction): CounterStat
         count: newCountInc,
         history: [...state.history, newCountInc],
       }
-    
+
     case 'DECREMENT':
       const newCountDec = state.count - 1
       return {
         count: newCountDec,
         history: [...state.history, newCountDec],
       }
-    
+
     case 'RESET':
       return initialState
-    
+
     case 'SET':
       return {
         count: action.payload,
         history: [...state.history, action.payload],
       }
-    
+
     default:
       return state
   }
@@ -354,12 +355,12 @@ function counterReducer(state: CounterState, action: CounterAction): CounterStat
 // 4. Componente
 export function CounterScreen() {
   const [state, dispatch] = useReducer(counterReducer, initialState)
-  
+
   return (
     <View>
       <Text>Count: {state.count}</Text>
       <Text>History: {state.history.join(', ')}</Text>
-      
+
       <Button
         title="Increment"
         onPress={() => dispatch({ type: 'INCREMENT' })}
@@ -368,10 +369,7 @@ export function CounterScreen() {
         title="Decrement"
         onPress={() => dispatch({ type: 'DECREMENT' })}
       />
-      <Button
-        title="Reset"
-        onPress={() => dispatch({ type: 'RESET' })}
-      />
+      <Button title="Reset" onPress={() => dispatch({ type: 'RESET' })} />
       <Button
         title="Set to 10"
         onPress={() => dispatch({ type: 'SET', payload: 10 })}
@@ -405,31 +403,34 @@ function todoReducer(state: TodoState, action: TodoAction): TodoState {
       // TypeScript sabe que action.payload tiene { text: string }
       return {
         ...state,
-        todos: [...state.todos, {
-          id: Date.now().toString(),
-          text: action.payload.text, // ✅ Autocompletado!
-          completed: false,
-        }],
+        todos: [
+          ...state.todos,
+          {
+            id: Date.now().toString(),
+            text: action.payload.text, // ✅ Autocompletado!
+            completed: false,
+          },
+        ],
       }
-    
+
     case 'TOGGLE_TODO':
       // TypeScript sabe que action.payload tiene { id: string }
       return {
         ...state,
-        todos: state.todos.map(todo =>
+        todos: state.todos.map((todo) =>
           todo.id === action.payload.id // ✅ Autocompletado!
             ? { ...todo, completed: !todo.completed }
             : todo
         ),
       }
-    
+
     case 'CLEAR_COMPLETED':
       // TypeScript sabe que NO hay payload
       return {
         ...state,
-        todos: state.todos.filter(todo => !todo.completed),
+        todos: state.todos.filter((todo) => !todo.completed),
       }
-    
+
     default:
       return state
   }
@@ -449,17 +450,17 @@ const todoActions = {
     type: 'ADD_TODO',
     payload: { text },
   }),
-  
+
   toggleTodo: (id: string): TodoAction => ({
     type: 'TOGGLE_TODO',
     payload: { id },
   }),
-  
+
   deleteTodo: (id: string): TodoAction => ({
     type: 'DELETE_TODO',
     payload: { id },
   }),
-  
+
   clearCompleted: (): TodoAction => ({
     type: 'CLEAR_COMPLETED',
   }),
@@ -468,15 +469,15 @@ const todoActions = {
 // Uso en componente
 function TodoList() {
   const [state, dispatch] = useReducer(todoReducer, initialState)
-  
+
   const handleAdd = () => {
     // ✅ Más limpio y menos propenso a errores
     dispatch(todoActions.addTodo('New task'))
-    
+
     // vs
     // dispatch({ type: 'ADD_TODO', payload: { text: 'New task' } })
   }
-  
+
   // ...
 }
 ```
@@ -490,13 +491,13 @@ function TodoList() {
 ```typescript
 /**
  * CartContext.tsx
- * 
+ *
  * ¿Qué hace?
  * Context con useReducer para estado global complejo
- * 
+ *
  * ¿Para qué?
  * Carrito de compras accesible desde toda la app
- * 
+ *
  * ¿Cómo funciona?
  * 1. useReducer gestiona el estado
  * 2. Context lo hace global
@@ -546,64 +547,64 @@ const initialState: CartState = {
 function cartReducer(state: CartState, action: CartAction): CartState {
   switch (action.type) {
     case 'ADD_ITEM': {
-      const existingItem = state.items.find(i => i.id === action.payload.id)
-      
+      const existingItem = state.items.find((i) => i.id === action.payload.id)
+
       if (existingItem) {
         // Item ya existe, incrementar cantidad
         return {
           ...state,
-          items: state.items.map(i =>
+          items: state.items.map((i) =>
             i.id === action.payload.id
               ? { ...i, quantity: i.quantity + action.payload.quantity }
               : i
           ),
-          total: state.total + (action.payload.price * action.payload.quantity),
+          total: state.total + action.payload.price * action.payload.quantity,
           itemCount: state.itemCount + action.payload.quantity,
         }
       }
-      
+
       // Item nuevo
       return {
         ...state,
         items: [...state.items, action.payload],
-        total: state.total + (action.payload.price * action.payload.quantity),
+        total: state.total + action.payload.price * action.payload.quantity,
         itemCount: state.itemCount + action.payload.quantity,
       }
     }
-    
+
     case 'REMOVE_ITEM': {
-      const item = state.items.find(i => i.id === action.payload)
+      const item = state.items.find((i) => i.id === action.payload)
       if (!item) return state
-      
+
       return {
         ...state,
-        items: state.items.filter(i => i.id !== action.payload),
-        total: state.total - (item.price * item.quantity),
+        items: state.items.filter((i) => i.id !== action.payload),
+        total: state.total - item.price * item.quantity,
         itemCount: state.itemCount - item.quantity,
       }
     }
-    
+
     case 'UPDATE_QUANTITY': {
-      const item = state.items.find(i => i.id === action.payload.id)
+      const item = state.items.find((i) => i.id === action.payload.id)
       if (!item) return state
-      
+
       const quantityDiff = action.payload.quantity - item.quantity
-      
+
       return {
         ...state,
-        items: state.items.map(i =>
+        items: state.items.map((i) =>
           i.id === action.payload.id
             ? { ...i, quantity: action.payload.quantity }
             : i
         ),
-        total: state.total + (item.price * quantityDiff),
+        total: state.total + item.price * quantityDiff,
         itemCount: state.itemCount + quantityDiff,
       }
     }
-    
+
     case 'CLEAR_CART':
       return initialState
-    
+
     default:
       return state
   }
@@ -615,24 +616,24 @@ const CartContext = createContext<CartContextType | undefined>(undefined)
 // ===== PROVIDER =====
 export function CartProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(cartReducer, initialState)
-  
+
   // Helper functions (opcional pero conveniente)
   const addItem = (item: CartItem) => {
     dispatch({ type: 'ADD_ITEM', payload: item })
   }
-  
+
   const removeItem = (id: string) => {
     dispatch({ type: 'REMOVE_ITEM', payload: id })
   }
-  
+
   const updateQuantity = (id: string, quantity: number) => {
     dispatch({ type: 'UPDATE_QUANTITY', payload: { id, quantity } })
   }
-  
+
   const clearCart = () => {
     dispatch({ type: 'CLEAR_CART' })
   }
-  
+
   const value: CartContextType = {
     state,
     dispatch,
@@ -641,12 +642,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
     updateQuantity,
     clearCart,
   }
-  
-  return (
-    <CartContext.Provider value={value}>
-      {children}
-    </CartContext.Provider>
-  )
+
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }
 
 // ===== CUSTOM HOOK =====
@@ -670,7 +667,7 @@ import { useCart } from '../contexts/CartContext'
 
 export function ProductDetailScreen({ product }: { product: Product }) {
   const { addItem, state } = useCart()
-  
+
   const handleAddToCart = () => {
     addItem({
       id: product.id,
@@ -680,7 +677,7 @@ export function ProductDetailScreen({ product }: { product: Product }) {
       image: product.image,
     })
   }
-  
+
   return (
     <View>
       <Text>{product.name}</Text>
@@ -697,16 +694,18 @@ export function ProductDetailScreen({ product }: { product: Product }) {
 
 export function CartScreen() {
   const { state, removeItem, updateQuantity, clearCart } = useCart()
-  
+
   return (
     <View>
       <Text>Total: ${state.total.toFixed(2)}</Text>
       <Text>{state.itemCount} items</Text>
-      
-      {state.items.map(item => (
+
+      {state.items.map((item) => (
         <View key={item.id}>
           <Text>{item.name}</Text>
-          <Text>${item.price} x {item.quantity}</Text>
+          <Text>
+            ${item.price} x {item.quantity}
+          </Text>
           <Button
             title="+"
             onPress={() => updateQuantity(item.id, item.quantity + 1)}
@@ -718,7 +717,7 @@ export function CartScreen() {
           <Button title="Remove" onPress={() => removeItem(item.id)} />
         </View>
       ))}
-      
+
       <Button title="Clear Cart" onPress={clearCart} />
     </View>
   )
@@ -761,14 +760,14 @@ function useReducerWithLogger<S, A>(
   initialState: S
 ): [S, React.Dispatch<A>] {
   const [state, dispatch] = useReducer(reducer, initialState)
-  
+
   const dispatchWithLogger = (action: A) => {
     console.log('Previous State:', state)
     console.log('Action:', action)
     dispatch(action)
     // Estado nuevo se verá en el siguiente render
   }
-  
+
   return [state, dispatchWithLogger as React.Dispatch<A>]
 }
 
@@ -785,14 +784,14 @@ const [state, dispatch] = useReducerWithLogger(cartReducer, initialState)
 
 function useTodos() {
   const [state, dispatch] = useReducer(todoReducer, initialState)
-  
+
   async function fetchTodos() {
     dispatch({ type: 'SET_LOADING', payload: true })
-    
+
     try {
       const response = await fetch('https://api.example.com/todos')
       const todos = await response.json()
-      
+
       dispatch({ type: 'SET_TODOS', payload: todos })
     } catch (error) {
       dispatch({
@@ -801,7 +800,7 @@ function useTodos() {
       })
     }
   }
-  
+
   return { state, dispatch, fetchTodos }
 }
 ```
@@ -869,9 +868,9 @@ describe('cartReducer', () => {
       type: 'ADD_ITEM' as const,
       payload: { id: '1', name: 'Product', price: 10, quantity: 1 },
     }
-    
+
     const newState = cartReducer(state, action)
-    
+
     expect(newState.items).toHaveLength(1)
     expect(newState.total).toBe(10)
   })
@@ -882,16 +881,16 @@ describe('cartReducer', () => {
 
 ## 📊 useReducer vs Redux
 
-| Aspecto                | useReducer      | Redux           |
-| ---------------------- | --------------- | --------------- |
-| **Setup**              | Mínimo          | Complejo        |
-| **Boilerplate**        | Bajo            | Alto            |
-| **DevTools**           | No (sin librería)| Sí             |
-| **Middleware**         | Manual          | Integrado       |
-| **Time Travel Debug**  | No              | Sí              |
-| **Performance**        | Buena           | Excelente       |
-| **Curva aprendizaje**  | Baja            | Alta            |
-| **Ideal para**         | Apps medianas   | Apps grandes    |
+| Aspecto               | useReducer        | Redux        |
+| --------------------- | ----------------- | ------------ |
+| **Setup**             | Mínimo            | Complejo     |
+| **Boilerplate**       | Bajo              | Alto         |
+| **DevTools**          | No (sin librería) | Sí           |
+| **Middleware**        | Manual            | Integrado    |
+| **Time Travel Debug** | No                | Sí           |
+| **Performance**       | Buena             | Excelente    |
+| **Curva aprendizaje** | Baja              | Alta         |
+| **Ideal para**        | Apps medianas     | Apps grandes |
 
 **Recomendación:** Empezar con useReducer, migrar a Redux si creces mucho.
 
@@ -900,6 +899,7 @@ describe('cartReducer', () => {
 ## ✅ Checklist de Comprensión
 
 ### Nivel Básico
+
 - [ ] Entiendo qué es useReducer
 - [ ] Sé cuándo usar useReducer vs useState
 - [ ] Puedo crear un reducer básico
@@ -907,6 +907,7 @@ describe('cartReducer', () => {
 - [ ] Manejo inmutabilidad en reducers
 
 ### Nivel Intermedio
+
 - [ ] Implemento reducers con TypeScript
 - [ ] Combino useReducer con Context API
 - [ ] Creo action creators
@@ -914,6 +915,7 @@ describe('cartReducer', () => {
 - [ ] Aplico patrones de separación de concerns
 
 ### Nivel Avanzado
+
 - [ ] Implemento lazy initialization
 - [ ] Creo middleware personalizado
 - [ ] Manejo acciones asíncronas
@@ -937,10 +939,10 @@ describe('cartReducer', () => {
 ✅ Estado complejo con múltiples sub-valores  
 ✅ Lógica de actualización compleja  
 ✅ Estado que necesita ser testeable  
-✅ Transiciones predecibles  
+✅ Transiciones predecibles
 
 ❌ Estado simple (usar useState)  
-❌ Apps muy grandes (considerar Redux)  
+❌ Apps muy grandes (considerar Redux)
 
 ---
 
