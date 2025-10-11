@@ -71,8 +71,7 @@ bc-reactnative/
 │   ├── referencias/            # Referencias rápidas
 │   ├── recursos/               # eBooks, videos, artículos
 │   ├── evaluacion/             # Criterios de evaluación
-│   ├── instructor/             # Material para instructores
-│   └── POLITICA_ANTICOPIA_DOMINIOS.md  # 🔒 Sistema de dominios únicos
+│   └── instructor/             # Material para instructores
 ├── _scripts/                    # 🔧 Scripts de automatización
 │   ├── setup/                  # Configuración inicial
 │   ├── generators/             # Generadores de contenido
@@ -340,8 +339,6 @@ Este bootcamp implementa un **sistema de dominios personalizados únicos** para 
 - ✅ Desarrolla pensamiento crítico y adaptación
 - ✅ Facilita la detección de copias
 - ✅ Crea portfolios únicos y profesionales
-
-Ver [Política Anticopia y Dominios Completa](./_docs/POLITICA_ANTICOPIA_DOMINIOS.md)
 
 Ver también [Criterios de Evaluación Detallados](./_docs/evaluacion/criterios-generales.md)
 

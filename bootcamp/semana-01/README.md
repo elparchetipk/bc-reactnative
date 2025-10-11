@@ -149,32 +149,6 @@ Diccionario completo de 60+ términos:
 
 ---
 
-### 6️⃣ [Asignación de Dominio Personal](./6-asignacion-dominios/) 🔒
-
-**PRIVADO - Solo tú y el instructor**
-
-Cada estudiante tiene asignado un **dominio de negocio único** para aplicar en todas las prácticas y proyectos:
-
-- 🍽️ Restaurante
-- 📚 Biblioteca
-- 🐾 Clínica Veterinaria
-- 💪 Gimnasio
-- 🏠 Inmobiliaria
-- ... y 35+ dominios más
-
-**Política Anticopia:**
-
-- ✅ Tu dominio es único y personal
-- ✅ Adapta TODOS los ejercicios a tu contexto
-- ❌ NO compartas tu dominio con compañeros
-- ❌ NO copies código de otros dominios
-
-Ver [Política Anticopia Completa](../../_docs/POLITICA_ANTICOPIA_DOMINIOS.md)
-
-**Busca tu archivo:** `6-asignacion-dominios/tu-nombre-apellido.md`
-
----
-
 ## ⏱️ Distribución del Tiempo
 
 ### 📍 Sesión Presencial (6 horas obligatorias)
@@ -631,9 +605,6 @@ Al terminar la Semana 1, habrás:
 - ✅ Trabajo individual en evaluaciones (salvo indicación contraria)
 - ✅ Citación de fuentes cuando uses código externo
 - ❌ Plagio o copia directa entre compañeros
-- ❌ Compartir asignaciones de dominios personales
-
-Ver [Política Anticopia](../../_docs/POLITICA_ANTICOPIA_DOMINIOS.md) para más detalles.
 
 ---
 

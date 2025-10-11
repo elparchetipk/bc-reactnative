@@ -75,7 +75,6 @@ Criterios y rúbricas de evaluación.
 - Guía de evaluación de código
 - Estándares de calidad
 - Sistema de calificación
-- [Política anticopia y dominios](./POLITICA_ANTICOPIA_DOMINIOS.md)
 
 ### 👨‍🏫 [Instructor](./instructor/)
 
