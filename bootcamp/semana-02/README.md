@@ -1,7 +1,20 @@
-# Semana 2: Navegación y Routing en React Native
+# 🧭 Semana 2: Navegación en React Native
 
-> **Domina la navegación entre pantallas** 🧭  
-> Aprende a crear flujos de navegación profesionales con React Navigation y Expo Router.
+> **Domina la navegación móvil** con React Navigation 6, implementando Stack, Tab y Drawer Navigators con arquitecturas anidadas profesionales.
+
+---
+
+## 📊 Vista General de la Semana
+
+| Aspecto              | Detalle                                                      |
+| -------------------- | ------------------------------------------------------------ |
+| 🎯 **Enfoque**       | Navegación entre pantallas con React Navigation              |
+| ⏱️ **Duración**      | 6 horas presenciales + 10-12h autónomas (recomendado)       |
+| 📚 **Temas**         | Stack, Tab, Drawer Navigator, Navegación Anidada, Context API|
+| 💻 **Prácticas**     | 3 apps completas (Blog, Dashboard, Settings)                 |
+| 🚀 **Proyecto**      | E-Commerce App con 16 pantallas                              |
+| 📈 **Dificultad**    | ⭐⭐⭐ Intermedia                                             |
+| ✅ **Evaluación**    | 100 puntos (20% teoría, 30% prácticas, 50% proyecto)        |
 
 ---
 
@@ -9,45 +22,44 @@
 
 Al finalizar esta semana, serás capaz de:
 
-- [x] Instalar y configurar React Navigation en tu proyecto
-- [x] Implementar Stack Navigator para navegación básica
-- [x] Crear Tab Navigator para navegación por pestañas
-- [x] Implementar Drawer Navigator para menú lateral
-- [x] Pasar parámetros entre pantallas
-- [x] Entender el ciclo de vida de la navegación
-- [x] Usar Expo Router (file-based routing)
-- [x] Implementar navegación anidada (nested navigation)
-- [x] Personalizar headers y opciones de pantalla
-- [x] Crear una app multi-pantalla completa
+### Conocimientos Fundamentales
+- [ ] **Comprender** los tres tipos principales de navegadores (Stack, Tab, Drawer)
+- [ ] **Identificar** cuándo usar cada tipo de navegador según el caso de uso
+- [ ] **Explicar** el concepto de navegación anidada y su arquitectura
+- [ ] **Entender** el paso de parámetros entre pantallas
+- [ ] **Dominar** los hooks principales de React Navigation
+
+### Habilidades Técnicas
+- [ ] **Implementar** Stack Navigator para flujos lineales
+- [ ] **Configurar** Tab Navigator con iconos y badges
+- [ ] **Crear** Drawer Navigator con menú lateral personalizado
+- [ ] **Anidar** navegadores para arquitecturas complejas (Drawer → Tab → Stack)
+- [ ] **Gestionar** estado global con Context API
+- [ ] **Tipar** navegación con TypeScript para mayor seguridad
+
+### Competencias Profesionales
+- [ ] **Diseñar** arquitecturas de navegación escalables
+- [ ] **Optimizar** flujos de usuario para mejor UX
+- [ ] **Aplicar** mejores prácticas de la industria
+- [ ] **Debuggear** problemas comunes de navegación
+- [ ] **Documentar** decisiones de arquitectura
 
 ---
 
 ## 📚 Contenido de la Semana
 
-### 1️⃣ [Teoría](./1-teoria/)
+### 1️⃣ Teoría (4 documentos)
 
-**Duración:** 4.5 horas presenciales
+Fundamentos teóricos de navegación móvil:
 
-Fundamentos de navegación presentados por el instructor:
+| Documento                                                          | Descripción                              | Tiempo  | Nivel      |
+| ------------------------------------------------------------------ | ---------------------------------------- | ------- | ---------- |
+| [01. Introducción a React Navigation](./1-teoria/01-introduccion-react-navigation.md) | Conceptos básicos, instalación, setup    | 25 min  | Básico     |
+| [02. Stack Navigator](./1-teoria/02-stack-navigator.md)            | Navegación apilada, métodos, params      | 30 min  | Básico     |
+| [03. Tab y Drawer Navigator](./1-teoria/03-tab-drawer-navigator.md)| Navegación por pestañas y menú lateral  | 35 min  | Intermedio |
+| [📖 Índice de Teoría](./1-teoria/README.md)                        | Guía completa de contenido teórico       | 5 min   | -          |
 
-1. **[Introducción a React Navigation](./1-teoria/01-introduccion-react-navigation.md)** (1 hora)
-
-   - ¿Por qué necesitamos navegación?
-   - React Navigation vs Expo Router
-   - Instalación y configuración básica
-   - Conceptos clave: Stack, Screen, Navigator
-
-2. **[Stack Navigator](./1-teoria/02-stack-navigator.md)** (1.5 horas)
-
-   - Navegación push/pop
-   - Pasar parámetros entre pantallas
-   - Headers personalizados
-   - Gestos y animaciones
-   - Demo en vivo: App con 4 pantallas
-
-3. **[Tab y Drawer Navigator](./1-teoria/03-tab-drawer-navigator.md)** (2 horas)
-   - Bottom Tab Navigator
-   - Material Top Tabs
+**Total:** ~95 minutos de lectura
    - Drawer Navigator (menú lateral)
    - Iconos y personalización
    - Navegación anidada
