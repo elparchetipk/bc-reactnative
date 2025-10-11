@@ -16,7 +16,14 @@
 # del seguimiento de versiones
 
 # ============================================
-# 📱 EXPO & REACT NATIVE
+# � DOCUMENTACIÓN INTERNA (NO SUBIR)
+# ============================================
+# Carpeta de documentos de análisis y trabajo interno
+# Visible en VS Code pero no trackeada en Git
+_docs/
+
+# ============================================
+# �📱 EXPO & REACT NATIVE
 # ============================================
 
 # Expo
