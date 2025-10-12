@@ -142,12 +142,12 @@ export const AuthContext = createContext<AuthContextType | undefined>(undefined)
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [isLoading, setIsLoading] = useState(true)
-  
+
   // Cargar usuario al iniciar
   useEffect(() => {
     loadUser()
   }, [])
-  
+
   async function loadUser() {
     try {
       const storedUser = await getData<User>(STORAGE_KEYS.USER)
@@ -160,34 +160,34 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setIsLoading(false)
     }
   }
-  
+
   async function register(name: string, email: string, password: string) {
     setIsLoading(true)
-    
+
     try {
       // Validaciones
       if (!name || !email || !password) {
         throw new Error('Todos los campos son requeridos')
       }
-      
+
       if (password.length < 6) {
         throw new Error('Password debe tener al menos 6 caracteres')
       }
-      
+
       // Simular registro (en producción: API call)
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
       const newUser: User = {
         id: Date.now().toString(),
         email,
         name,
         createdAt: new Date(),
       }
-      
+
       // Guardar en storage
       await saveData(STORAGE_KEYS.USER, newUser)
       await saveData(STORAGE_KEYS.TOKEN, 'fake-token-' + newUser.id)
-      
+
       setUser(newUser)
     } catch (error) {
       throw error
@@ -195,19 +195,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setIsLoading(false)
     }
   }
-  
+
   async function login(email: string, password: string) {
     setIsLoading(true)
-    
+
     try {
       // Validaciones
       if (!email || !password) {
         throw new Error('Email y password son requeridos')
       }
-      
+
       // Simular login (en producción: API call)
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
       // Por ahora, aceptar cualquier login
       const loggedUser: User = {
         id: Date.now().toString(),
@@ -215,11 +215,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         name: email.split('@')[0],
         createdAt: new Date(),
       }
-      
+
       // Guardar en storage
       await saveData(STORAGE_KEYS.USER, loggedUser)
       await saveData(STORAGE_KEYS.TOKEN, 'fake-token-' + loggedUser.id)
-      
+
       setUser(loggedUser)
     } catch (error) {
       throw error
@@ -227,19 +227,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setIsLoading(false)
     }
   }
-  
+
   async function logout() {
     try {
       // Limpiar storage (excepto tareas y preferencias)
       await removeData(STORAGE_KEYS.USER)
       await removeData(STORAGE_KEYS.TOKEN)
-      
+
       setUser(null)
     } catch (error) {
       console.error('Error logging out:', error)
     }
   }
-  
+
   const value: AuthContextType = {
     user,
     isLoading,
@@ -248,7 +248,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     login,
     logout,
   }
-  
+
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 ```
@@ -265,11 +265,11 @@ import { AuthContext } from '../contexts/AuthContext'
 
 export function useAuth() {
   const context = useContext(AuthContext)
-  
+
   if (!context) {
     throw new Error('useAuth must be used within AuthProvider')
   }
-  
+
   return context
 }
 ```
@@ -303,7 +303,7 @@ export function LoginScreen({ onSwitchToRegister }: LoginScreenProps) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const { login, isLoading } = useAuth()
-  
+
   const handleLogin = async () => {
     try {
       await login(email, password)
@@ -311,7 +311,7 @@ export function LoginScreen({ onSwitchToRegister }: LoginScreenProps) {
       Alert.alert('Error', error.message)
     }
   }
-  
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -320,7 +320,7 @@ export function LoginScreen({ onSwitchToRegister }: LoginScreenProps) {
       <View style={styles.content}>
         <Text style={styles.title}>✅ Task Manager</Text>
         <Text style={styles.subtitle}>Inicia sesión para continuar</Text>
-        
+
         <TextInput
           style={styles.input}
           placeholder="Email"
@@ -330,7 +330,7 @@ export function LoginScreen({ onSwitchToRegister }: LoginScreenProps) {
           keyboardType="email-address"
           editable={!isLoading}
         />
-        
+
         <TextInput
           style={styles.input}
           placeholder="Password"
@@ -339,7 +339,7 @@ export function LoginScreen({ onSwitchToRegister }: LoginScreenProps) {
           secureTextEntry
           editable={!isLoading}
         />
-        
+
         <TouchableOpacity
           style={[styles.button, isLoading && styles.buttonDisabled]}
           onPress={handleLogin}
@@ -351,7 +351,7 @@ export function LoginScreen({ onSwitchToRegister }: LoginScreenProps) {
             <Text style={styles.buttonText}>Iniciar Sesión</Text>
           )}
         </TouchableOpacity>
-        
+
         <TouchableOpacity
           style={styles.linkButton}
           onPress={onSwitchToRegister}
@@ -458,7 +458,7 @@ export function RegisterScreen({ onSwitchToLogin }: RegisterScreenProps) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const { register, isLoading } = useAuth()
-  
+
   const handleRegister = async () => {
     try {
       await register(name, email, password)
@@ -466,7 +466,7 @@ export function RegisterScreen({ onSwitchToLogin }: RegisterScreenProps) {
       Alert.alert('Error', error.message)
     }
   }
-  
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -475,7 +475,7 @@ export function RegisterScreen({ onSwitchToLogin }: RegisterScreenProps) {
       <View style={styles.content}>
         <Text style={styles.title}>✨ Crear Cuenta</Text>
         <Text style={styles.subtitle}>Regístrate para comenzar</Text>
-        
+
         <TextInput
           style={styles.input}
           placeholder="Nombre"
@@ -483,7 +483,7 @@ export function RegisterScreen({ onSwitchToLogin }: RegisterScreenProps) {
           onChangeText={setName}
           editable={!isLoading}
         />
-        
+
         <TextInput
           style={styles.input}
           placeholder="Email"
@@ -493,7 +493,7 @@ export function RegisterScreen({ onSwitchToLogin }: RegisterScreenProps) {
           keyboardType="email-address"
           editable={!isLoading}
         />
-        
+
         <TextInput
           style={styles.input}
           placeholder="Password (mínimo 6 caracteres)"
@@ -502,7 +502,7 @@ export function RegisterScreen({ onSwitchToLogin }: RegisterScreenProps) {
           secureTextEntry
           editable={!isLoading}
         />
-        
+
         <TouchableOpacity
           style={[styles.button, isLoading && styles.buttonDisabled]}
           onPress={handleRegister}
@@ -514,14 +514,15 @@ export function RegisterScreen({ onSwitchToLogin }: RegisterScreenProps) {
             <Text style={styles.buttonText}>Crear Cuenta</Text>
           )}
         </TouchableOpacity>
-        
+
         <TouchableOpacity
           style={styles.linkButton}
           onPress={onSwitchToLogin}
           disabled={isLoading}
         >
           <Text style={styles.linkText}>
-            ¿Ya tienes cuenta? <Text style={styles.linkBold}>Inicia sesión</Text>
+            ¿Ya tienes cuenta?{' '}
+            <Text style={styles.linkBold}>Inicia sesión</Text>
           </Text>
         </TouchableOpacity>
       </View>
@@ -599,12 +600,18 @@ const styles = StyleSheet.create({
 
 ```typescript
 import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native'
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  SafeAreaView,
+} from 'react-native'
 import { useAuth } from '../hooks/useAuth'
 
 export function HomeScreen() {
   const { user, logout } = useAuth()
-  
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -613,7 +620,7 @@ export function HomeScreen() {
           <Text style={styles.logoutText}>Salir</Text>
         </TouchableOpacity>
       </View>
-      
+
       <View style={styles.content}>
         <Text style={styles.title}>✅ Task Manager</Text>
         <Text style={styles.subtitle}>
@@ -699,7 +706,7 @@ import { HomeScreen } from './src/screens/HomeScreen'
 function AppContent() {
   const { isAuthenticated, isLoading } = useAuth()
   const [showRegister, setShowRegister] = useState(false)
-  
+
   if (isLoading) {
     return (
       <View style={styles.loading}>
@@ -707,7 +714,7 @@ function AppContent() {
       </View>
     )
   }
-  
+
   if (!isAuthenticated) {
     return showRegister ? (
       <RegisterScreen onSwitchToLogin={() => setShowRegister(false)} />
@@ -715,7 +722,7 @@ function AppContent() {
       <LoginScreen onSwitchToRegister={() => setShowRegister(true)} />
     )
   }
-  
+
   return <HomeScreen />
 }
 
@@ -749,16 +756,19 @@ pnpm start
 ### Verificaciones:
 
 1. **Registro:**
+
    - [ ] Crear cuenta con nombre, email, password
    - [ ] Validación de campos funciona
    - [ ] Redirecciona a HomeScreen
 
 2. **Persistencia:**
+
    - [ ] Cerrar la app completamente
    - [ ] Reabrir
    - [ ] Deberías seguir autenticado
 
 3. **Logout:**
+
    - [ ] Cerrar sesión funciona
    - [ ] Vuelve a LoginScreen
    - [ ] Datos se borran correctamente
@@ -795,7 +805,7 @@ pnpm start
 ✅ **Custom Hooks** - useAuth para API limpia  
 ✅ **TypeScript** - Tipado completo  
 ✅ **useState/useEffect** - Gestión de estado y efectos  
-✅ **Navegación condicional** - Login/Home según auth  
+✅ **Navegación condicional** - Login/Home según auth
 
 ---
 

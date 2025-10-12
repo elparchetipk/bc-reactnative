@@ -77,39 +77,39 @@ export function taskReducer(state: TaskState, action: TaskAction): TaskState {
         ...state,
         tasks: action.payload,
       }
-    
+
     case 'ADD_TASK':
       return {
         ...state,
         tasks: [action.payload, ...state.tasks],
       }
-    
+
     case 'UPDATE_TASK':
       return {
         ...state,
-        tasks: state.tasks.map(task =>
+        tasks: state.tasks.map((task) =>
           task.id === action.payload.id
             ? { ...task, ...action.payload.updates, updatedAt: new Date() }
             : task
         ),
       }
-    
+
     case 'DELETE_TASK':
       return {
         ...state,
-        tasks: state.tasks.filter(task => task.id !== action.payload),
+        tasks: state.tasks.filter((task) => task.id !== action.payload),
       }
-    
+
     case 'TOGGLE_TASK':
       return {
         ...state,
-        tasks: state.tasks.map(task =>
+        tasks: state.tasks.map((task) =>
           task.id === action.payload
             ? { ...task, completed: !task.completed, updatedAt: new Date() }
             : task
         ),
       }
-    
+
     default:
       return state
   }
@@ -133,19 +133,19 @@ export const TaskContext = createContext<TaskContextType | undefined>(undefined)
 export function TaskProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(taskReducer, initialTaskState)
   const [isLoading, setIsLoading] = React.useState(true)
-  
+
   // Cargar tareas al iniciar
   useEffect(() => {
     loadTasks()
   }, [])
-  
+
   // Guardar tareas cuando cambien
   useEffect(() => {
     if (!isLoading) {
       saveData(STORAGE_KEYS.TASKS, state.tasks)
     }
   }, [state.tasks, isLoading])
-  
+
   async function loadTasks() {
     try {
       const tasks = await getData<Task[]>(STORAGE_KEYS.TASKS)
@@ -158,7 +158,7 @@ export function TaskProvider({ children }: { children: ReactNode }) {
       setIsLoading(false)
     }
   }
-  
+
   function addTask(taskData: Omit<Task, 'id' | 'createdAt' | 'updatedAt'>) {
     const newTask: Task = {
       ...taskData,
@@ -166,22 +166,22 @@ export function TaskProvider({ children }: { children: ReactNode }) {
       createdAt: new Date(),
       updatedAt: new Date(),
     }
-    
+
     dispatch({ type: 'ADD_TASK', payload: newTask })
   }
-  
+
   function updateTask(id: string, updates: Partial<Task>) {
     dispatch({ type: 'UPDATE_TASK', payload: { id, updates } })
   }
-  
+
   function deleteTask(id: string) {
     dispatch({ type: 'DELETE_TASK', payload: id })
   }
-  
+
   function toggleTask(id: string) {
     dispatch({ type: 'TOGGLE_TASK', payload: id })
   }
-  
+
   const value: TaskContextType = {
     tasks: state.tasks,
     isLoading,
@@ -190,7 +190,7 @@ export function TaskProvider({ children }: { children: ReactNode }) {
     deleteTask,
     toggleTask,
   }
-  
+
   return <TaskContext.Provider value={value}>{children}</TaskContext.Provider>
 }
 ```
@@ -207,11 +207,11 @@ import { TaskContext } from '../contexts/TaskContext'
 
 export function useTasks() {
   const context = useContext(TaskContext)
-  
+
   if (!context) {
     throw new Error('useTasks must be used within TaskProvider')
   }
-  
+
   return context
 }
 ```
@@ -224,13 +224,7 @@ export function useTasks() {
 
 ```typescript
 import React from 'react'
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  Alert,
-} from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native'
 import { Task } from '../types/task'
 import { useTasks } from '../hooks/useTasks'
 
@@ -258,28 +252,21 @@ interface TaskCardProps {
 
 export function TaskCard({ task }: TaskCardProps) {
   const { toggleTask, deleteTask } = useTasks()
-  
+
   const handleDelete = () => {
-    Alert.alert(
-      'Eliminar tarea',
-      '¿Estás seguro?',
-      [
-        { text: 'Cancelar', style: 'cancel' },
-        {
-          text: 'Eliminar',
-          style: 'destructive',
-          onPress: () => deleteTask(task.id),
-        },
-      ]
-    )
+    Alert.alert('Eliminar tarea', '¿Estás seguro?', [
+      { text: 'Cancelar', style: 'cancel' },
+      {
+        text: 'Eliminar',
+        style: 'destructive',
+        onPress: () => deleteTask(task.id),
+      },
+    ])
   }
-  
+
   return (
     <TouchableOpacity
-      style={[
-        styles.card,
-        task.completed && styles.cardCompleted,
-      ]}
+      style={[styles.card, task.completed && styles.cardCompleted]}
       onPress={() => toggleTask(task.id)}
       onLongPress={handleDelete}
       activeOpacity={0.7}
@@ -291,7 +278,7 @@ export function TaskCard({ task }: TaskCardProps) {
           { backgroundColor: CATEGORY_COLORS[task.category] },
         ]}
       />
-      
+
       <View style={styles.content}>
         {/* Header */}
         <View style={styles.header}>
@@ -305,17 +292,20 @@ export function TaskCard({ task }: TaskCardProps) {
             {task.title}
           </Text>
         </View>
-        
+
         {/* Description */}
         {task.description ? (
           <Text
-            style={[styles.description, task.completed && styles.descriptionCompleted]}
+            style={[
+              styles.description,
+              task.completed && styles.descriptionCompleted,
+            ]}
             numberOfLines={2}
           >
             {task.description}
           </Text>
         ) : null}
-        
+
         {/* Tags */}
         <View style={styles.tags}>
           <View style={styles.tag}>
@@ -448,13 +438,13 @@ export function HomeScreen() {
   const [description, setDescription] = useState('')
   const [category, setCategory] = useState<TaskCategory>('personal')
   const [priority, setPriority] = useState<TaskPriority>('medium')
-  
+
   const handleAddTask = () => {
     if (!title.trim()) {
       Alert.alert('Error', 'El título es requerido')
       return
     }
-    
+
     addTask({
       title: title.trim(),
       description: description.trim(),
@@ -463,7 +453,7 @@ export function HomeScreen() {
       priority,
       dueDate: null,
     })
-    
+
     // Reset form
     setTitle('')
     setDescription('')
@@ -471,10 +461,10 @@ export function HomeScreen() {
     setPriority('medium')
     setShowModal(false)
   }
-  
-  const activeTasks = tasks.filter(t => !t.completed).length
-  const completedTasks = tasks.filter(t => t.completed).length
-  
+
+  const activeTasks = tasks.filter((t) => !t.completed).length
+  const completedTasks = tasks.filter((t) => t.completed).length
+
   return (
     <SafeAreaView style={styles.container}>
       {/* Header */}
@@ -489,11 +479,11 @@ export function HomeScreen() {
           <Text style={styles.logoutText}>Salir</Text>
         </TouchableOpacity>
       </View>
-      
+
       {/* Task List */}
       <FlatList
         data={tasks}
-        keyExtractor={item => item.id}
+        keyExtractor={(item) => item.id}
         renderItem={({ item }) => <TaskCard task={item} />}
         contentContainerStyle={styles.list}
         ListEmptyComponent={
@@ -506,15 +496,12 @@ export function HomeScreen() {
           </View>
         }
       />
-      
+
       {/* Add Button */}
-      <TouchableOpacity
-        style={styles.fab}
-        onPress={() => setShowModal(true)}
-      >
+      <TouchableOpacity style={styles.fab} onPress={() => setShowModal(true)}>
         <Text style={styles.fabText}>+</Text>
       </TouchableOpacity>
-      
+
       {/* Add Task Modal */}
       <Modal
         visible={showModal}
@@ -532,7 +519,7 @@ export function HomeScreen() {
               <Text style={styles.modalSave}>Guardar</Text>
             </TouchableOpacity>
           </View>
-          
+
           <View style={styles.modalContent}>
             <TextInput
               style={styles.input}
@@ -541,7 +528,7 @@ export function HomeScreen() {
               onChangeText={setTitle}
               autoFocus
             />
-            
+
             <TextInput
               style={[styles.input, styles.textArea]}
               placeholder="Descripción (opcional)"
@@ -550,10 +537,10 @@ export function HomeScreen() {
               multiline
               numberOfLines={3}
             />
-            
+
             <Text style={styles.label}>Categoría:</Text>
             <View style={styles.options}>
-              {(['work', 'personal', 'urgent'] as TaskCategory[]).map(cat => (
+              {(['work', 'personal', 'urgent'] as TaskCategory[]).map((cat) => (
                 <TouchableOpacity
                   key={cat}
                   style={[
@@ -570,10 +557,10 @@ export function HomeScreen() {
                 </TouchableOpacity>
               ))}
             </View>
-            
+
             <Text style={styles.label}>Prioridad:</Text>
             <View style={styles.options}>
-              {(['high', 'medium', 'low'] as TaskPriority[]).map(pri => (
+              {(['high', 'medium', 'low'] as TaskPriority[]).map((pri) => (
                 <TouchableOpacity
                   key={pri}
                   style={[
@@ -759,7 +746,7 @@ import { HomeScreen } from './src/screens/HomeScreen'
 function AppContent() {
   const { isAuthenticated, isLoading } = useAuth()
   const [showRegister, setShowRegister] = useState(false)
-  
+
   if (isLoading) {
     return (
       <View style={styles.loading}>
@@ -767,7 +754,7 @@ function AppContent() {
       </View>
     )
   }
-  
+
   if (!isAuthenticated) {
     return showRegister ? (
       <RegisterScreen onSwitchToLogin={() => setShowRegister(false)} />
@@ -775,7 +762,7 @@ function AppContent() {
       <LoginScreen onSwitchToRegister={() => setShowRegister(true)} />
     )
   }
-  
+
   return (
     <TaskProvider>
       <HomeScreen />

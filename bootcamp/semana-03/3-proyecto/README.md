@@ -21,26 +21,28 @@ Crear una **aplicación profesional de gestión de tareas** con las siguientes c
 
 Este proyecto integra **todos los temas de la semana**:
 
-| Concepto | Aplicación en el Proyecto |
-|----------|---------------------------|
-| **Context API** | AuthContext, TaskContext, ThemeContext |
-| **useReducer** | Gestión de tareas con lógica compleja |
-| **AsyncStorage** | Persistencia de auth, tareas y preferencias |
+| Concepto         | Aplicación en el Proyecto                    |
+| ---------------- | -------------------------------------------- |
+| **Context API**  | AuthContext, TaskContext, ThemeContext       |
+| **useReducer**   | Gestión de tareas con lógica compleja        |
+| **AsyncStorage** | Persistencia de auth, tareas y preferencias  |
 | **Custom Hooks** | useAuth, useTasks, useTheme, useLocalStorage |
-| **TypeScript** | Tipado completo en toda la app |
-| **Performance** | useMemo, useCallback, optimizaciones |
+| **TypeScript**   | Tipado completo en toda la app               |
+| **Performance**  | useMemo, useCallback, optimizaciones         |
 
 ---
 
 ## 📱 Funcionalidades
 
 ### 1. Autenticación
+
 - [x] Login con email/password
 - [x] Registro de nuevos usuarios
 - [x] Persistencia de sesión
 - [x] Logout
 
 ### 2. Gestión de Tareas
+
 - [x] Crear tareas con título y descripción
 - [x] Editar tareas existentes
 - [x] Marcar como completadas
@@ -50,18 +52,21 @@ Este proyecto integra **todos los temas de la semana**:
 - [x] Fechas de vencimiento
 
 ### 3. Filtros y Búsqueda
+
 - [x] Filtrar por estado (todas/activas/completadas)
 - [x] Filtrar por categoría
 - [x] Filtrar por prioridad
 - [x] Buscar por texto
 
 ### 4. Estadísticas
+
 - [x] Total de tareas
 - [x] Tareas completadas/pendientes
 - [x] Progreso por categoría
 - [x] Tareas vencidas
 
 ### 5. Configuración
+
 - [x] Tema claro/oscuro
 - [x] Editar perfil
 - [x] Borrar todas las tareas
@@ -115,6 +120,7 @@ task-manager-app/
 El proyecto se desarrolla en **4 fases incrementales**:
 
 ### [Fase 1: Setup y Autenticación](./FASE-1-SETUP-AUTH.md)
+
 - Configuración inicial del proyecto
 - Implementar AuthContext con AsyncStorage
 - Screens de Login y Register
@@ -125,6 +131,7 @@ El proyecto se desarrolla en **4 fases incrementales**:
 ---
 
 ### [Fase 2: Task Context y CRUD Básico](./FASE-2-TASK-CONTEXT.md)
+
 - Crear tipos de Task
 - Implementar TaskContext con useReducer
 - CRUD básico de tareas
@@ -135,6 +142,7 @@ El proyecto se desarrolla en **4 fases incrementales**:
 ---
 
 ### [Fase 3: Filtros y Estadísticas](./FASE-3-FILTERS-STATS.md)
+
 - Sistema de filtros avanzados
 - Componente de búsqueda
 - Estadísticas y progreso
@@ -145,6 +153,7 @@ El proyecto se desarrolla en **4 fases incrementales**:
 ---
 
 ### [Fase 4: Theme y Polish Final](./FASE-4-THEME-POLISH.md)
+
 - Implementar ThemeContext (dark/light)
 - Pantalla de configuración
 - Persistir preferencias
@@ -162,6 +171,7 @@ El proyecto se desarrolla en **4 fases incrementales**:
 - **TOTAL:** ~6-9 horas
 
 Distribuido en:
+
 - **Sesión presencial:** 3-4 horas (Fases 1 y 2)
 - **Trabajo autónomo:** 3-5 horas (Fases 3 y 4)
 
@@ -172,6 +182,7 @@ Distribuido en:
 ### Paleta de Colores
 
 **Tema Claro:**
+
 - Primary: `#007AFF`
 - Background: `#F5F5F5`
 - Card: `#FFFFFF`
@@ -179,6 +190,7 @@ Distribuido en:
 - Border: `#E0E0E0`
 
 **Tema Oscuro:**
+
 - Primary: `#0A84FF`
 - Background: `#1C1C1E`
 - Card: `#2C2C2E`
@@ -201,48 +213,54 @@ Distribuido en:
 
 ## 📊 Criterios de Evaluación
 
-| Criterio | Peso | Puntos |
-|----------|------|--------|
-| **Fase 1: Auth** | 20% | 20 pts |
-| **Fase 2: Tasks CRUD** | 30% | 30 pts |
-| **Fase 3: Filtros/Stats** | 20% | 20 pts |
-| **Fase 4: Theme/Polish** | 15% | 15 pts |
-| **Código Limpio** | 10% | 10 pts |
-| **Presentación** | 5% | 5 pts |
-| **TOTAL** | 100% | **100 pts** |
+| Criterio                  | Peso | Puntos      |
+| ------------------------- | ---- | ----------- |
+| **Fase 1: Auth**          | 20%  | 20 pts      |
+| **Fase 2: Tasks CRUD**    | 30%  | 30 pts      |
+| **Fase 3: Filtros/Stats** | 20%  | 20 pts      |
+| **Fase 4: Theme/Polish**  | 15%  | 15 pts      |
+| **Código Limpio**         | 10%  | 10 pts      |
+| **Presentación**          | 5%   | 5 pts       |
+| **TOTAL**                 | 100% | **100 pts** |
 
 ### Desglose Detallado
 
 **Fase 1 (20 pts):**
+
 - Context implementado (8 pts)
 - AsyncStorage funcionando (6 pts)
 - Login/Register (4 pts)
 - Navegación condicional (2 pts)
 
 **Fase 2 (30 pts):**
+
 - TaskContext + Reducer (10 pts)
 - CRUD completo (12 pts)
 - Persistencia (5 pts)
 - UI funcional (3 pts)
 
 **Fase 3 (20 pts):**
+
 - Filtros funcionando (8 pts)
 - Búsqueda (4 pts)
 - Estadísticas (6 pts)
 - UX mejorada (2 pts)
 
 **Fase 4 (15 pts):**
+
 - Theme system (8 pts)
 - Settings screen (4 pts)
 - Polish y detalles (3 pts)
 
 **Código Limpio (10 pts):**
+
 - TypeScript sin errores (3 pts)
 - Organización de archivos (3 pts)
 - Comentarios y documentación (2 pts)
 - Performance (2 pts)
 
 **Presentación (5 pts):**
+
 - Demo funcional (3 pts)
 - Explicación de decisiones (2 pts)
 
@@ -311,6 +329,7 @@ pnpm start
 **Causa:** Intentas acceder a datos antes de que se carguen
 
 **Solución:** Usa loading states:
+
 ```typescript
 if (isLoading) return <ActivityIndicator />
 if (!data) return <Text>No data</Text>
@@ -321,6 +340,7 @@ if (!data) return <Text>No data</Text>
 **Causa:** No usas `await` con AsyncStorage
 
 **Solución:**
+
 ```typescript
 await AsyncStorage.setItem(key, value)
 ```
@@ -330,6 +350,7 @@ await AsyncStorage.setItem(key, value)
 **Causa:** Valor del contexto no está memoizado
 
 **Solución:**
+
 ```typescript
 const value = useMemo(() => ({ ...state, ...actions }), [state])
 ```
@@ -356,6 +377,7 @@ const value = useMemo(() => ({ ...state, ...actions }), [state])
 ## ✅ Checklist de Completitud
 
 ### Funcionalidad
+
 - [ ] Login/Register funcional
 - [ ] Sesión persiste al cerrar app
 - [ ] CRUD completo de tareas
@@ -366,6 +388,7 @@ const value = useMemo(() => ({ ...state, ...actions }), [state])
 - [ ] Settings screen completa
 
 ### Calidad
+
 - [ ] TypeScript sin errores
 - [ ] Código bien organizado
 - [ ] Comentarios explicativos
@@ -375,6 +398,7 @@ const value = useMemo(() => ({ ...state, ...actions }), [state])
 - [ ] Edge cases cubiertos
 
 ### Testing
+
 - [ ] App funciona sin errores
 - [ ] Persistencia verificada
 - [ ] Todos los filtros probados
@@ -409,11 +433,13 @@ const value = useMemo(() => ({ ...state, ...actions }), [state])
 Si completas todo y quieres ir más allá:
 
 ### Performance
+
 - [ ] Implementar virtualización en listas largas
 - [ ] Lazy loading de datos
 - [ ] Optimizar imágenes
 
 ### Features
+
 - [ ] Notificaciones locales para deadlines
 - [ ] Compartir tareas
 - [ ] Export/Import de datos
@@ -421,6 +447,7 @@ Si completas todo y quieres ir más allá:
 - [ ] Modo offline completo
 
 ### UI/UX
+
 - [ ] Animations con Reanimated
 - [ ] Gestos con Gesture Handler
 - [ ] Skeleton loaders
