@@ -119,7 +119,7 @@ Cada app debe tener:
 - **Tabs con iconos relevantes** al negocio
 - **Drawer con menú temático** (si aplica)
 
-### 📱 Ejemplo: Delivery Food (ACERO PEREZ)
+### 📱 Ejemplo: Delivery Food (AREVALO CELIS)
 
 ```typescript
 // Tabs con iconos de comida
@@ -353,19 +353,19 @@ Cada dominio tiene:
 
 ## 💡 TIPS POR DOMINIO
 
-### 🍔 Delivery Food (ACERO PEREZ)
+### 🍔 Delivery Food (AREVALO CELIS)
 
 - **Tabs principales:** Home, Restaurants, Cart, Orders, Profile
 - **Stack interno:** Restaurant → Menu → Item Detail → Cart
 - **Parámetros:** restaurantId, itemId, cartItems
 
-### 💪 Fitness Tracker (ALFONSO MENDEZ)
+### 💪 Fitness Tracker (BUITRAGO CASALLAS)
 
 - **Drawer principal:** Dashboard, Workouts, Progress, Settings
 - **Stack interno:** Workout → Exercise Detail → Start → Timer
 - **Parámetros:** workoutId, exerciseId, duration
 
-### 🏠 Real Estate (AVILA PEREZ)
+### 🏠 Real Estate (BURITICA CALDERON)
 
 - **Tabs principales:** Properties, Search, Favorites, Messages, Account
 - **Stack interno:** Property List → Property Detail → Gallery → Contact
