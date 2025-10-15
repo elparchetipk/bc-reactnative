@@ -1409,9 +1409,7 @@ Al completar exitosamente el bootcamp (calificación ≥ 70%), el estudiante rec
 ### Durante el bootcamp
 
 - **Sesiones presenciales:** 6h semanales
-- **Office hours:** 2h semanales (virtual)
-- **Discord/Slack:** 24/7
-- **Email:** respuesta en 24h
+
 
 ### Después del bootcamp
 
