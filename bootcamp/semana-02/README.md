@@ -195,20 +195,20 @@ Material adicional para reforzar tu aprendizaje:
 
 ### 📅 Sesión Presencial (6 horas - Obligatoria)
 
-| Horario     | Actividad                                     | Duración | Tipo           |
-| ----------- | --------------------------------------------- | -------- | -------------- |
-| 09:00-09:15 | Bienvenida y objetivos de la semana           | 15 min   | Introducción   |
-| 09:15-09:45 | **Teoría 1:** Intro React Navigation + Demo   | 30 min   | Clase práctica |
-| 09:45-10:30 | **Práctica 1:** Stack Navigator (TODOS juntos)| 45 min   | Live coding    |
-| 10:30-10:45 | ☕ Break + Verificación de código             | 15 min   | Descanso       |
-| 10:45-11:30 | **Teoría 2:** Tab Navigator + Demo en vivo    | 45 min   | Clase práctica |
-| 11:30-12:15 | **Práctica 2:** Tab Navigator (TODOS juntos)  | 45 min   | Live coding    |
-| 12:15-13:15 | 🍽️ Almuerzo                                   | 60 min   | Descanso       |
-| 13:15-13:45 | **Teoría 3:** Drawer Navigator + Demo         | 30 min   | Clase práctica |
-| 13:45-14:15 | **Práctica 3:** Drawer (TODOS juntos)         | 30 min   | Live coding    |
-| 14:15-14:30 | ☕ Break                                      | 15 min   | Descanso       |
-| 14:30-16:30 | **Proyecto:** App completa guiada paso a paso | 2h       | Live coding    |
-| 16:30-17:00 | Verificación final, testing y cierre          | 30 min   | Q&A + Demo     |
+| Horario     | Actividad                                      | Duración | Tipo           |
+| ----------- | ---------------------------------------------- | -------- | -------------- |
+| 09:00-09:15 | Bienvenida y objetivos de la semana            | 15 min   | Introducción   |
+| 09:15-09:45 | **Teoría 1:** Intro React Navigation + Demo    | 30 min   | Clase práctica |
+| 09:45-10:30 | **Práctica 1:** Stack Navigator (TODOS juntos) | 45 min   | Live coding    |
+| 10:30-10:45 | ☕ Break + Verificación de código              | 15 min   | Descanso       |
+| 10:45-11:30 | **Teoría 2:** Tab Navigator + Demo en vivo     | 45 min   | Clase práctica |
+| 11:30-12:15 | **Práctica 2:** Tab Navigator (TODOS juntos)   | 45 min   | Live coding    |
+| 12:15-13:15 | 🍽️ Almuerzo                                    | 60 min   | Descanso       |
+| 13:15-13:45 | **Teoría 3:** Drawer Navigator + Demo          | 30 min   | Clase práctica |
+| 13:45-14:15 | **Práctica 3:** Drawer (TODOS juntos)          | 30 min   | Live coding    |
+| 14:15-14:30 | ☕ Break                                       | 15 min   | Descanso       |
+| 14:30-16:30 | **Proyecto:** App completa guiada paso a paso  | 2h       | Live coding    |
+| 16:30-17:00 | Verificación final, testing y cierre           | 30 min   | Q&A + Demo     |
 
 **Total:** 6 horas efectivas (sin contar breaks y almuerzo)
 
@@ -678,15 +678,15 @@ _Bootcamp React Native 2025 - EPTI_
 
 ## 📊 Estadísticas de la Semana
 
-| Métrica                  | Valor                              |
-| ------------------------ | ---------------------------------- |
-| ⏱️ **Sesión presencial** | **6 horas (todo se hace en clase)**|
-| 🏠 **Trabajo autónomo**  | **1-2h opcional (refuerzo)**       |
-| 💻 Líneas de código      | ~800 (guiadas en vivo)             |
-| 🎯 Objetivos aprendizaje | 8 esenciales                       |
-| ✅ Evaluación            | Participación + app funcional      |
-| 🔧 Tecnologías           | 4 principales                      |
-| 📱 Apps a desarrollar    | 3 prácticas + 1 proyecto (en clase)|
+| Métrica                  | Valor                               |
+| ------------------------ | ----------------------------------- |
+| ⏱️ **Sesión presencial** | **6 horas (todo se hace en clase)** |
+| 🏠 **Trabajo autónomo**  | **1-2h opcional (refuerzo)**        |
+| 💻 Líneas de código      | ~800 (guiadas en vivo)              |
+| 🎯 Objetivos aprendizaje | 8 esenciales                        |
+| ✅ Evaluación            | Participación + app funcional       |
+| 🔧 Tecnologías           | 4 principales                       |
+| 📱 Apps a desarrollar    | 3 prácticas + 1 proyecto (en clase) |
 
 ---
 

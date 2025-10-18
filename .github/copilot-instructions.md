@@ -279,19 +279,29 @@ Cada código debe servir como recurso de aprendizaje:
 
 ### Sesión Presencial (6 horas obligatorias)
 
-- Teoría y conceptos: 2-3 horas
-- Prácticas guiadas: 2-3 horas
-- Introducción al proyecto: 1 hora
+- Teoría con demos en vivo: 1.5-2 horas
+- Prácticas guiadas (live coding): 2-2.5 horas
+- Proyecto guiado paso a paso: 2-2.5 horas
+- **TODO se completa en clase**
 
-### Trabajo Autónomo (flexible, recomendación ~10-14h/semana)
+### Trabajo Autónomo (1-2h opcional - Solo refuerzo)
 
-- Repaso de teoría: ~2-3 horas
-- Prácticas adicionales: ~3-4 horas
-- Desarrollo del proyecto: ~5-7 horas
+> **IMPORTANTE:** El bootcamp está diseñado para completar TODO en la sesión presencial. El trabajo autónomo es **opcional** solo para reforzar.
 
-> **Nota:** Las horas de trabajo autónomo son **flexibles** y las define cada estudiante según su ritmo, experiencia previa y disponibilidad. Los tiempos indicados son recomendaciones promedio.
+- Revisar notas y documentación: 30-45 min (opcional)
+- Ver 1-2 videos recomendados: 30-45 min (opcional)
+- Pequeñas personalizaciones: 15-30 min (opcional)
 
-**Total Semanal Aproximado: ~16-20 horas** (6h obligatorias + ~10-14h opcionales)
+**NO necesitas:**
+
+- ❌ Completar código que no terminaste en clase (se termina en clase)
+- ❌ Hacer ejercicios extras extensos
+- ❌ Leer toda la documentación
+- ❌ Dedicar horas fuera de la sesión
+
+**Total Semanal: ~7-8 horas** (6h obligatorias en clase + 1-2h opcional refuerzo)
+
+> **Filosofía:** Este bootcamp NO es para desarrollar el proyecto formativo de 7mo trimestre. Es para aprender fundamentos en 6 semanas con práctica intensiva presencial.
 
 ## ✅ Criterios de Evaluación
 
