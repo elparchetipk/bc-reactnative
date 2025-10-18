@@ -4,17 +4,22 @@
 
 ---
 
+> **🐛 IMPORTANTE:** El código de ejemplo de esta semana contiene **7 bugs intencionales** que debes identificar, corregir y documentar. Esto previene la copia mecánica y fomenta el aprendizaje activo. Ver [Sistema de Bugs Pedagógicos](../../_docs/instructor/bugs-pedagogicos.md).
+
+---
+
 ## 📊 Vista General de la Semana
 
-| Aspecto           | Detalle                                                      |
-| ----------------- | ------------------------------------------------------------ |
-| 🎯 **Enfoque**    | State Management, Context API, Persistencia de Datos         |
-| ⏱️ **Duración**   | 6 horas presenciales + 1-2h autónomas (refuerzo opcional)    |
-| 📚 **Temas**      | useState, useEffect, Context API, AsyncStorage, Custom Hooks |
-| 💻 **Prácticas**  | 3 apps guiadas en clase (resultados inmediatos)              |
-| 🚀 **Proyecto**   | Task Manager App completada en sesión presencial             |
-| 📈 **Dificultad** | ⭐⭐⭐ Intermedia-Avanzada                                   |
-| ✅ **Evaluación** | 100 puntos (participación en clase + app funcional)          |
+| Aspecto            | Detalle                                                      |
+| ------------------ | ------------------------------------------------------------ |
+| 🎯 **Enfoque**     | State Management, Context API, Persistencia de Datos         |
+| ⏱️ **Duración**    | 6 horas presenciales + 1-2h autónomas (refuerzo opcional)    |
+| 📚 **Temas**       | useState, useEffect, Context API, AsyncStorage, Custom Hooks |
+| 💻 **Prácticas**   | 3 apps guiadas en clase (resultados inmediatos)              |
+| 🚀 **Proyecto**    | Task Manager App completada en sesión presencial             |
+| � **Bugs**         | 7 bugs pedagógicos a resolver y documentar                   |
+| �📈 **Dificultad** | ⭐⭐⭐ Intermedia-Avanzada                                   |
+| ✅ **Evaluación**  | 100 puntos (teoría + prácticas + proyecto + bugs)            |
 
 ---
 
@@ -186,14 +191,21 @@ Este bootcamp NO es para desarrollar el proyecto formativo de 7mo trimestre. Es 
 
 ## ✅ Evaluación y Calificación
 
+> **Nota:** Esta semana incluye **7 bugs pedagógicos intencionales** en el código de ejemplo que debes identificar y corregir como parte de la evaluación (20 puntos).
+
 ### 📊 Distribución de Puntos (100 puntos totales)
 
 | Componente    | Peso | Puntos  | Descripción                     |
 | ------------- | ---- | ------- | ------------------------------- |
-| **Teoría**    | 20%  | 20      | Comprensión de state management |
-| **Prácticas** | 30%  | 30      | 3 apps completadas (10 pts c/u) |
-| **Proyecto**  | 50%  | 50      | Task Manager App completo       |
+| **Teoría**    | 15%  | 15      | Comprensión de state management |
+| **Prácticas** | 25%  | 25      | 3 apps completadas              |
+| **Proyecto**  | 40%  | 40      | Task Manager App completo       |
+| **Bugs**      | 20%  | 20      | Identificación y corrección     |
 | **TOTAL**     | 100% | **100** | Puntuación máxima               |
+
+### 📋 Rúbrica Detallada
+
+**Ver:** [RUBRICA-EVALUACION.md](./RUBRICA-EVALUACION.md) para criterios completos de evaluación incluyendo bugs pedagógicos.
 
 ### 🎯 Escala de Calificación
 

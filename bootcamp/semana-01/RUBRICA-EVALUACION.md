@@ -503,47 +503,48 @@ Antes de entregar, verifica que cumples con todos estos puntos:
 
 ### 4.1 Bugs Identificados (8 puntos)
 
-| Bugs Encontrados | Puntos | Descripción                         |
-| ---------------- | ------ | ----------------------------------- |
-| **5 bugs (100%)** | 8 pts  | Encontraste todos los bugs          |
-| **4 bugs (80%)**  | 6 pts  | Encontraste la mayoría              |
-| **3 bugs (60%)**  | 4 pts  | Encontraste más de la mitad         |
-| **2 bugs (40%)**  | 2 pts  | Encontraste algunos bugs            |
-| **0-1 bug**       | 0 pts  | No identificaste suficientes bugs   |
+| Bugs Encontrados  | Puntos | Descripción                       |
+| ----------------- | ------ | --------------------------------- |
+| **5 bugs (100%)** | 8 pts  | Encontraste todos los bugs        |
+| **4 bugs (80%)**  | 6 pts  | Encontraste la mayoría            |
+| **3 bugs (60%)**  | 4 pts  | Encontraste más de la mitad       |
+| **2 bugs (40%)**  | 2 pts  | Encontraste algunos bugs          |
+| **0-1 bug**       | 0 pts  | No identificaste suficientes bugs |
 
 ### 4.2 Soluciones Correctas (6 puntos)
 
-| Criterio | Excelente (5-6) | Muy Bueno (4) | Bueno (2-3) | Insuficiente (0-1) |
-| -------- | --------------- | ------------- | ----------- | ------------------ |
+| Criterio       | Excelente (5-6)                                                         | Muy Bueno (4)                          | Bueno (2-3)                             | Insuficiente (0-1)                   |
+| -------------- | ----------------------------------------------------------------------- | -------------------------------------- | --------------------------------------- | ------------------------------------ |
 | **Corrección** | Todos los bugs corregidos apropiadamente, código funciona perfectamente | Mayoría corregidos bien, 1 error menor | Varios bugs corregidos pero con errores | Soluciones incorrectas o incompletas |
-| **Calidad** | Soluciones elegantes siguiendo mejores prácticas | Soluciones correctas y funcionales | Soluciones funcionales pero mejorables | Código de baja calidad |
+| **Calidad**    | Soluciones elegantes siguiendo mejores prácticas                        | Soluciones correctas y funcionales     | Soluciones funcionales pero mejorables  | Código de baja calidad               |
 
 ### 4.3 Documentación (4 puntos)
 
-| Criterio | Excelente (4) | Muy Bueno (3) | Bueno (2) | Insuficiente (0-1) |
-| -------- | ------------- | ------------- | --------- | ------------------ |
+| Criterio              | Excelente (4)                                                                                                | Muy Bueno (3)                            | Bueno (2)                               | Insuficiente (0-1)             |
+| --------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------- | --------------------------------------- | ------------------------------ |
 | **BUGS-RESUELTOS.md** | Documento completo siguiendo el template, incluye código before/after, screenshots, explicaciones detalladas | Documento completo con información clara | Documento básico con información mínima | Sin documento o muy incompleto |
-| **Commits** | Commits progresivos (1 por bug), mensajes descriptivos, historial limpio | Varios commits con mensajes claros | Pocos commits o mensajes poco claros | 1 solo commit o sin commits |
+| **Commits**           | Commits progresivos (1 por bug), mensajes descriptivos, historial limpio                                     | Varios commits con mensajes claros       | Pocos commits o mensajes poco claros    | 1 solo commit o sin commits    |
 
 ### 4.4 Explicaciones y Comprensión (2 puntos)
 
-| Criterio | Excelente (2) | Bueno (1) | Insuficiente (0) |
-| -------- | ------------- | --------- | ---------------- |
+| Criterio          | Excelente (2)                                                       | Bueno (1)                           | Insuficiente (0)                    |
+| ----------------- | ------------------------------------------------------------------- | ----------------------------------- | ----------------------------------- |
 | **Entendimiento** | Explica claramente por qué era bug, cómo lo solucionó, qué aprendió | Explica el bug y la solución básica | No explica o explicaciones confusas |
 
 ---
 
 ### 📋 Lista de Bugs - Semana 1 (5 bugs)
 
-| # | Ubicación | Tipo | Severidad | Descripción |
-| - | --------- | ---- | --------- | ----------- |
-| 1 | `App.js` línea 15 | **Obvio** | 🔴 Alta | Import incorrecto: `react-native` sin componentes específicos |
-| 2 | `components/Card.js` línea 8 | **Sutil** | 🟠 Media | Estado no se actualiza: mutación directa del array |
-| 3 | `screens/Home.js` línea 23 | **Mejores Prácticas** | 🟡 Baja | FlatList sin `keyExtractor`, genera warnings |
-| 4 | `styles/theme.js` línea 5 | **Sutil** | 🟠 Media | Colores hardcodeados en vez de usar constantes |
-| 5 | `utils/helpers.js` línea 12 | **Obvio** | 🔴 Alta | Función sin return, retorna `undefined` |
+| #   | Ubicación                    | Tipo                  | Severidad | Descripción                                                   |
+| --- | ---------------------------- | --------------------- | --------- | ------------------------------------------------------------- |
+| 1   | `App.js` línea 15            | **Obvio**             | 🔴 Alta   | Import incorrecto: `react-native` sin componentes específicos |
+| 2   | `components/Card.js` línea 8 | **Sutil**             | 🟠 Media  | Estado no se actualiza: mutación directa del array            |
+| 3   | `screens/Home.js` línea 23   | **Mejores Prácticas** | 🟡 Baja   | FlatList sin `keyExtractor`, genera warnings                  |
+| 4   | `styles/theme.js` línea 5    | **Sutil**             | 🟠 Media  | Colores hardcodeados en vez de usar constantes                |
+| 5   | `utils/helpers.js` línea 12  | **Obvio**             | 🔴 Alta   | Función sin return, retorna `undefined`                       |
 
 **Distribución:**
+
 - 40% Bugs Obvios (rompen la app o generan errores)
 - 40% Bugs Sutiles (app funciona pero con comportamiento incorrecto)
 - 20% Mejores Prácticas (funciona pero no es profesional)
@@ -561,6 +562,7 @@ Antes de entregar, verifica que cumples con todos estos puntos:
 - ✅ No hay evidencia de proceso de debugging (screenshots, pruebas)
 
 **Patrones sospechosos:**
+
 - Mismos nombres de variables en las correcciones
 - Orden idéntico de bugs encontrados
 - Explicaciones con fraseología idéntica
@@ -587,13 +589,13 @@ Antes de entregar, verifica:
 
 ## 📊 Tabla Resumen de Evaluación
 
-| Componente | Criterios | Puntos Máximos | Mi Puntuación |
-| ---------- | --------- | -------------- | ------------- |
-| **1. Teoría** | Conceptos (10) + Aplicación (5) | 15 pts | ___ / 15 |
-| **2. Prácticas** | Práctica 1 (8) + Práctica 2 (8) + Práctica 3 (9) | 25 pts | ___ / 25 |
-| **3. Proyecto** | Funcionalidad (16) + Código (12) + UI (8) + Docs (4) | 40 pts | ___ / 40 |
-| **4. Bugs** | Identificados (8) + Soluciones (6) + Docs (4) + Explicaciones (2) | 20 pts | ___ / 20 |
-| **TOTAL** | | **100 pts** | **___ / 100** |
+| Componente       | Criterios                                                         | Puntos Máximos | Mi Puntuación    |
+| ---------------- | ----------------------------------------------------------------- | -------------- | ---------------- |
+| **1. Teoría**    | Conceptos (10) + Aplicación (5)                                   | 15 pts         | \_\_\_ / 15      |
+| **2. Prácticas** | Práctica 1 (8) + Práctica 2 (8) + Práctica 3 (9)                  | 25 pts         | \_\_\_ / 25      |
+| **3. Proyecto**  | Funcionalidad (16) + Código (12) + UI (8) + Docs (4)              | 40 pts         | \_\_\_ / 40      |
+| **4. Bugs**      | Identificados (8) + Soluciones (6) + Docs (4) + Explicaciones (2) | 20 pts         | \_\_\_ / 20      |
+| **TOTAL**        |                                                                   | **100 pts**    | **\_\_\_ / 100** |
 
 ---
 
