@@ -90,8 +90,13 @@ Piensa en AsyncStorage como un **archivero digital**:
 # Con pnpm (recomendado en el bootcamp)
 pnpm add @react-native-async-storage/async-storage
 
-# Con npm
+```bash
+# Con pnpm (recomendado - 3x más rápido)
+pnpm add @react-native-async-storage/async-storage
+
+# O con npm (no recomendado en este bootcamp)
 npm install @react-native-async-storage/async-storage
+```
 
 # Con yarn
 yarn add @react-native-async-storage/async-storage

@@ -387,7 +387,7 @@ Este bootcamp NO es para desarrollar el proyecto formativo de 7mo trimestre. Es 
 | **Expo**             | SDK 51+ | Plataforma de desarrollo         |
 | **React Navigation** | 6.x     | Sistema de navegación            |
 | **TypeScript**       | 5.x     | Tipado estático (opcional)       |
-| **pnpm**             | 8.x     | Gestor de paquetes (obligatorio) |
+| **pnpm**             | 8.x     | Gestor de paquetes (**obligatorio**, 3x más rápido que npm) |
 | **Node.js**          | 18.x+   | Runtime de JavaScript            |
 
 ### Librerías de Navegación
@@ -426,7 +426,7 @@ react-native-reanimated
 - JavaScript ES6+ (arrow functions, destructuring, modules)
 - React básico (componentes, props, state, hooks)
 - React Native fundamentos (View, Text, ScrollView, FlatList)
-- npm/pnpm comandos básicos
+- pnpm comandos básicos (ver [¿Por qué pnpm?](../../_docs/guias/por-que-pnpm.md))
 - Git básico
 
 ⚠️ **Recomendados:**
@@ -446,13 +446,15 @@ react-native-reanimated
 
 **Antes de empezar la semana, asegúrate de tener:**
 
-✅ Node.js 18+ instalado
-✅ pnpm instalado globalmente (`npm install -g pnpm`)
-✅ Expo CLI instalado (`pnpm add -g expo-cli`)
-✅ Expo Go app en tu dispositivo móvil
-✅ Cuenta de Expo creada
-✅ Editor de código configurado (VS Code recomendado)
+✅ Node.js 18+ instalado  
+✅ **pnpm instalado globalmente** (`npm install -g pnpm`) - [¿Por qué pnpm?](../../_docs/guias/por-que-pnpm.md)  
+✅ Expo CLI instalado (`pnpm add -g expo-cli`)  
+✅ Expo Go app en tu dispositivo móvil  
+✅ Cuenta de Expo creada  
+✅ Editor de código configurado (VS Code recomendado)  
 ✅ Git configurado
+
+> **⚡ IMPORTANTE:** Este bootcamp usa **pnpm exclusivamente** por su velocidad superior (3x más rápido) y eficiencia de espacio (80% menos). **NO uses npm**. Lee [¿Por qué pnpm?](../../_docs/guias/por-que-pnpm.md) para entender las ventajas.
 
 **Verificar instalación:**
 

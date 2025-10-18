@@ -352,8 +352,8 @@ ecommerce-app/
 ### 2. Setup del Proyecto:
 
 ```bash
-# Crear proyecto
-npx create-expo-app ecommerce-app
+# Crear proyecto (usa pnpx, NO npx - 3x más rápido)
+pnpx create-expo-app ecommerce-app
 cd ecommerce-app
 
 # Instalar dependencias
