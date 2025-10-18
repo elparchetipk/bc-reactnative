@@ -4,6 +4,10 @@
 
 ---
 
+> **🐛 IMPORTANTE:** El código de ejemplo de esta semana contiene **7 bugs intencionales** que debes identificar, corregir y documentar. Esto previene la copia mecánica y fomenta el aprendizaje activo. Ver [Sistema de Bugs Pedagógicos](../../_docs/instructor/bugs-pedagogicos.md).
+
+---
+
 ## 📊 Vista General de la Semana
 
 | Aspecto           | Detalle                                                       |
@@ -13,8 +17,9 @@
 | 📚 **Temas**      | Stack, Tab, Drawer Navigator, Navegación Anidada, Context API |
 | 💻 **Prácticas**  | 3 apps guiadas en clase (resultados inmediatos)               |
 | 🚀 **Proyecto**   | App funcional completada en sesión presencial                 |
+| 🐛 **Bugs**       | 7 bugs pedagógicos a resolver y documentar                    |
 | 📈 **Dificultad** | ⭐⭐ Intermedia                                               |
-| ✅ **Evaluación** | 100 puntos (participación en clase + app funcional)           |
+| ✅ **Evaluación** | 100 puntos (teoría + prácticas + proyecto + bugs)             |
 
 ---
 

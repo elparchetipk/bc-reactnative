@@ -8,12 +8,15 @@
 
 ### Distribución de Puntos
 
-| Componente       | Peso | Puntos  | Descripción                             |
-| ---------------- | ---- | ------- | --------------------------------------- |
-| **1. Teoría**    | 20%  | 20      | Comprensión de conceptos de navegación  |
-| **2. Prácticas** | 30%  | 30      | Ejercicios guiados (Stack, Tab, Drawer) |
-| **3. Proyecto**  | 50%  | 50      | App E-Commerce integrador               |
-| **TOTAL**        | 100% | **100** | Puntuación máxima                       |
+| Componente            | Peso | Puntos  | Descripción                             |
+| --------------------- | ---- | ------- | --------------------------------------- |
+| **1. Teoría**         | 15%  | 15      | Comprensión de conceptos de navegación  |
+| **2. Prácticas**      | 25%  | 25      | Ejercicios guiados (Stack, Tab, Drawer) |
+| **3. Proyecto**       | 40%  | 40      | App E-Commerce integrador               |
+| **4. Bugs Resueltos** | 20%  | 20      | Identificación y solución de bugs       |
+| **TOTAL**             | 100% | **100** | Puntuación máxima                       |
+
+> **🐛 NUEVO:** Esta semana incluye **bugs pedagógicos intencionales** en el código de ejemplo. Debes identificarlos, corregirlos y documentarlos en `BUGS-RESUELTOS.md`.
 
 ### Escala de Calificación
 
@@ -974,6 +977,299 @@ Puntuación: 98/100
 
 ---
 
+---
+
+## 🐛 4. Bugs Resueltos (20 puntos)
+
+> **Sistema anti-copia:** El código de ejemplo contiene bugs intencionales que debes identificar, corregir y documentar.
+
+### Objetivo
+
+Fomentar la lectura crítica del código, debugging activo y comprensión profunda en lugar de copiar/pegar mecánicamente.
+
+### Entregables
+
+1. **Código corregido** (funcional en tu repositorio)
+2. **Documento BUGS-RESUELTOS.md** con análisis detallado
+3. **Screenshots** de la app funcionando
+4. **Commits en GitHub** mostrando el proceso
+
+### Distribución de Puntos
+
+| Sub-criterio             | Puntos | Descripción                             |
+| ------------------------ | ------ | --------------------------------------- |
+| **Bugs identificados**   | 8      | Cantidad de bugs encontrados            |
+| **Soluciones correctas** | 6      | Calidad y corrección de las soluciones  |
+| **Documentación**        | 4      | Calidad del documento BUGS-RESUELTOS.md |
+| **Explicaciones**        | 2      | Comprensión demostrada en explicaciones |
+| **TOTAL**                | **20** |                                         |
+
+---
+
+### 4.1 Bugs Identificados (8 puntos)
+
+**Cantidad de bugs en esta semana:** 7 bugs intencionales
+
+#### Excelente (7-8 pts) ⭐⭐⭐⭐⭐
+
+- ✅ Identificados **100% de los bugs** (7/7)
+- ✅ Documentados todos con detalles
+- ✅ Comprendió la naturaleza de cada bug
+
+#### Muy Bueno (6-6.5 pts) ⭐⭐⭐⭐
+
+- ✅ Identificados **6 bugs** (85%)
+- ✅ Documentados correctamente
+- ⚠️ Faltó 1 bug sutil
+
+#### Bueno (5-5.5 pts) ⭐⭐⭐
+
+- ✅ Identificados **5 bugs** (71%)
+- ✅ Documentados adecuadamente
+- ⚠️ Faltaron 2 bugs
+
+#### Suficiente (4-4.5 pts) ⭐⭐
+
+- ✅ Identificados **4 bugs** (57%)
+- ⚠️ Documentación mínima
+- ❌ Faltaron bugs importantes
+
+#### Insuficiente (0-3.5 pts) ⭐
+
+- ❌ Menos de 4 bugs identificados
+- ❌ Documentación incompleta o ausente
+- ❌ No demuestra comprensión
+
+---
+
+### 4.2 Soluciones Correctas (6 puntos)
+
+Evalúa la **calidad** de las correcciones implementadas.
+
+#### Excelente (5.5-6 pts) ⭐⭐⭐⭐⭐
+
+- ✅ **Todas** las soluciones son correctas
+- ✅ Código eficiente y optimizado
+- ✅ Aplica mejores prácticas
+- ✅ Va más allá de lo mínimo
+
+**Ejemplo:**
+
+```javascript
+// No solo corrige el bug, sino que optimiza
+const handlePress = useCallback(() => {
+  setCount((prev) => prev + 1)
+}, [])
+```
+
+#### Muy Bueno (4.5-5 pts) ⭐⭐⭐⭐
+
+- ✅ **Mayoría** de soluciones correctas (85%+)
+- ✅ Código funcional y limpio
+- ⚠️ 1-2 soluciones subóptimas pero funcionales
+
+#### Bueno (3.5-4 pts) ⭐⭐⭐
+
+- ✅ **Varias** soluciones correctas (70%+)
+- ⚠️ Algunas soluciones funcionan pero no son óptimas
+- ⚠️ Código mejorable
+
+#### Suficiente (2.5-3 pts) ⭐⭐
+
+- ⚠️ **Pocas** soluciones correctas (60%+)
+- ⚠️ Código funciona pero con problemas
+- ❌ No aplica mejores prácticas
+
+#### Insuficiente (0-2 pts) ⭐
+
+- ❌ Soluciones incorrectas o ausentes
+- ❌ Código no funcional
+- ❌ Introdujo nuevos bugs
+
+---
+
+### 4.3 Documentación (4 puntos)
+
+Evalúa la calidad del archivo **BUGS-RESUELTOS.md**.
+
+#### Excelente (3.5-4 pts) ⭐⭐⭐⭐⭐
+
+- ✅ Documento completo y bien estructurado
+- ✅ Cada bug con código antes/después
+- ✅ Screenshots de evidencia incluidos
+- ✅ Formato profesional (Markdown correcto)
+- ✅ Tabla resumen de bugs
+- ✅ Checklist de entrega completado
+
+**Estructura esperada:**
+
+```markdown
+# Bug #1: [Título descriptivo]
+
+## Código incorrecto
+
+## Código corregido
+
+## Explicación
+
+## Screenshots
+```
+
+#### Muy Bueno (3-3.5 pts) ⭐⭐⭐⭐
+
+- ✅ Documento bien estructurado
+- ✅ Bugs documentados correctamente
+- ⚠️ Faltan algunos screenshots
+- ⚠️ Formato mejorable
+
+#### Bueno (2.5-3 pts) ⭐⭐⭐
+
+- ✅ Documento básico pero completo
+- ⚠️ Estructura mejorable
+- ⚠️ Pocas evidencias visuales
+
+#### Suficiente (2-2.5 pts) ⭐⭐
+
+- ⚠️ Documento mínimo
+- ⚠️ Información incompleta
+- ❌ Sin screenshots
+
+#### Insuficiente (0-1.5 pts) ⭐
+
+- ❌ Documento ausente o muy incompleto
+- ❌ Sin estructura
+- ❌ No sigue el template
+
+---
+
+### 4.4 Explicaciones (2 puntos)
+
+Evalúa la **comprensión** demostrada en las explicaciones.
+
+#### Excelente (1.8-2 pts) ⭐⭐⭐⭐⭐
+
+- ✅ Explicaciones claras y profundas
+- ✅ Demuestra comprensión total del concepto
+- ✅ Explica **por qué** estaba mal
+- ✅ Explica **cómo** lo solucionó
+- ✅ Menciona qué aprendió
+
+**Ejemplo de buena explicación:**
+
+```
+El bug estaba en usar `setCount(count + 1)` dentro de un handler.
+Esto causa problemas de stale closure porque 'count' captura el
+valor al momento de crear la función.
+
+Solución: usar la forma funcional `setCount(prev => prev + 1)`
+que garantiza que siempre trabajamos con el valor más reciente.
+
+Lección: Siempre usar updater functions cuando el nuevo estado
+depende del anterior.
+```
+
+#### Muy Bueno (1.5-1.7 pts) ⭐⭐⭐⭐
+
+- ✅ Explicaciones correctas
+- ✅ Demuestra buena comprensión
+- ⚠️ Falta profundidad en algunos bugs
+
+#### Bueno (1.2-1.4 pts) ⭐⭐⭐
+
+- ✅ Explicaciones adecuadas
+- ⚠️ Superficiales en algunos casos
+- ⚠️ No siempre explica el "por qué"
+
+#### Suficiente (1-1.1 pts) ⭐⭐
+
+- ⚠️ Explicaciones mínimas
+- ⚠️ No demuestra comprensión profunda
+- ❌ Solo dice "estaba mal" sin explicar
+
+#### Insuficiente (0-0.9 pts) ⭐
+
+- ❌ Sin explicaciones o incorrectas
+- ❌ No demuestra comprensión
+- ❌ Copió explicaciones
+
+---
+
+### 📝 Lista de Bugs de Esta Semana
+
+**Total:** 7 bugs intencionales distribuidos en:
+
+| #   | Tipo        | Archivo                | Severidad | Concepto                  |
+| --- | ----------- | ---------------------- | --------- | ------------------------- |
+| 1   | Sintaxis    | HomeScreen.js          | Alta      | Import incorrectos        |
+| 2   | Lógica      | TabNavigator.tsx       | Media     | Configuración de tabs     |
+| 3   | Práctica    | DrawerContent.tsx      | Baja      | Nombres en español        |
+| 4   | Lógica      | ProductDetailScreen.js | Media     | Navigation params         |
+| 5   | Estado      | CartContext.tsx        | Alta      | Mutación directa          |
+| 6   | Performance | ProductList.tsx        | Media     | FlatList sin keyExtractor |
+| 7   | TypeScript  | types.ts               | Baja      | Interfaces incompletas    |
+
+> **📚 Nota para Instructor:** Lista detallada en `_docs/instructor/bugs-semana-02-solucionario.md`
+
+---
+
+### 🎯 Indicadores de Copia
+
+**Calificación automática de 0 si:**
+
+- ❌ Repositorio clonado sin modificaciones
+- ❌ Commits genéricos: "fix", "update", "changes"
+- ❌ 1 solo commit con todo el código
+- ❌ Código idéntico a otro estudiante
+- ❌ BUGS-RESUELTOS.md idéntico a otro estudiante
+- ❌ No hay evidencia de debugging (sin commits progresivos)
+
+**Indicadores sospechosos:**
+
+- ⚠️ Bugs encontrados en orden alfabético (no de dificultad)
+- ⚠️ Explicaciones idénticas entre estudiantes
+- ⚠️ Mismo vocabulario técnico único
+- ⚠️ Screenshots con nombres de usuario diferentes
+
+**Proceso ante sospecha:**
+
+1. Revisión manual del código
+2. Entrevista individual sobre soluciones
+3. Solicitar explicación en vivo del código
+4. Comparación con otros trabajos similares
+
+---
+
+### ✅ Checklist de Auto-evaluación (Bugs)
+
+Antes de entregar, verifica:
+
+**Código:**
+
+- [ ] Todos los bugs identificados y corregidos
+- [ ] App ejecuta sin errores en consola
+- [ ] App funciona correctamente
+- [ ] Commits descriptivos en GitHub
+- [ ] Código formateado (Prettier)
+
+**Documentación:**
+
+- [ ] BUGS-RESUELTOS.md en la raíz del repo
+- [ ] Tabla resumen completa
+- [ ] Cada bug con código antes/después
+- [ ] Explicaciones claras de cada solución
+- [ ] Screenshots de evidencia
+- [ ] Checklist de entrega marcado
+
+**Repositorio:**
+
+- [ ] Link del repo compartido con instructor
+- [ ] README.md con instrucciones
+- [ ] Carpeta /screenshots con evidencias
+- [ ] No hay node_modules en el repo
+- [ ] .gitignore configurado
+
+---
+
 ## 📈 Rúbrica en Formato Tabla (Vista Rápida)
 
 | Criterio          | Insuficiente (0-59%) | Suficiente (60-69%) | Bueno (70-79%)  | Muy Bueno (80-89%) | Excelente (90-100%) |
@@ -986,12 +1282,14 @@ Puntuación: 98/100
 | **TypeScript**    | Sin types o `any`    | Types básicos       | Types completos | Types avanzados    | Types perfectos     |
 | **Context API**   | No funciona          | Básico funciona     | Bien impl.      | Completo           | Perfecto + extras   |
 | **UI/UX**         | Muy básica           | Funcional           | Agradable       | Profesional        | Excepcional         |
+| **Bugs**          | <4 bugs (0-57%)      | 4 bugs (57%)        | 5 bugs (71%)    | 6 bugs (85%)       | 7 bugs (100%)       |
 
 ---
 
 _Rúbrica de Evaluación - Semana 2: Navegación en React Native_  
 _Bootcamp React Native 2025 - EPTI_
 
-**Versión:** 1.0  
+**Versión:** 2.0 (con sistema de bugs pedagógicos)  
+**Última actualización:** Octubre 2025
 **Última actualización:** Octubre 2025  
 **Total de puntos:** 100
