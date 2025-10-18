@@ -44,6 +44,8 @@ Fundamentos teóricos presentados con demos en vivo:
    - Estilos con StyleSheet y NativeWind
    - Flexbox para layouts
 
+> **💡 Si aún no has instalado pnpm, ejecuta:** `npm install -g pnpm` - [Guía completa](../../_docs/guias/instalacion-entorno.md)
+
 3. **[Estado y Eventos](./1-teoria/03-estado-y-eventos.md)** (1.5 horas)
    - Hook `useState`
    - Manejo de eventos (onPress, onChange)

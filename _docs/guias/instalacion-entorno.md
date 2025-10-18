@@ -31,12 +31,12 @@
 
 ### Recomendados
 
-| Componente | Recomendado                           |
-| ---------- | ------------------------------------- |
-| **OS**     | Windows 11, macOS 12+, Ubuntu 22.04+  |
-| **RAM**    | 16 GB                                 |
-| **Disco**  | SSD con 20 GB libres                  |
-| **CPU**    | Quad-core 2.5 GHz+                    |
+| Componente | Recomendado                          |
+| ---------- | ------------------------------------ |
+| **OS**     | Windows 11, macOS 12+, Ubuntu 22.04+ |
+| **RAM**    | 16 GB                                |
+| **Disco**  | SSD con 20 GB libres                 |
+| **CPU**    | Quad-core 2.5 GHz+                   |
 
 ---
 

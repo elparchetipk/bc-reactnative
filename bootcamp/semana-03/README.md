@@ -120,6 +120,8 @@ Material adicional para reforzar tu aprendizaje:
 
 ## ⏱️ Cronograma Sugerido
 
+> **💡 Si aún no has instalado pnpm, ejecuta:** `npm install -g pnpm` - [Guía completa](../../_docs/guias/instalacion-entorno.md)
+
 ### 📅 Sesión Presencial (6 horas - Obligatoria)
 
 | Horario     | Actividad                                     | Duración | Tipo           |

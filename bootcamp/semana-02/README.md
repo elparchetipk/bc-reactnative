@@ -444,10 +444,12 @@ react-native-reanimated
 
 ### Configuración del Entorno
 
+> **💡 Si aún no has instalado pnpm, ejecuta:** `npm install -g pnpm` - [Guía completa](../../_docs/guias/instalacion-entorno.md)
+
 **Antes de empezar la semana, asegúrate de tener:**
 
 ✅ Node.js 18+ instalado  
-✅ **pnpm instalado globalmente** (`npm install -g pnpm`) - [¿Por qué pnpm?](../../_docs/guias/por-que-pnpm.md)  
+✅ **pnpm instalado globalmente** - [¿Por qué pnpm?](../../_docs/guias/por-que-pnpm.md)  
 ✅ Expo CLI instalado (`pnpm add -g expo-cli`)  
 ✅ Expo Go app en tu dispositivo móvil  
 ✅ Cuenta de Expo creada  
