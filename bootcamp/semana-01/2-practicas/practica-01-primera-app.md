@@ -1,7 +1,7 @@
 # 💻 Práctica 1: Mi Primera App - Perfil Personal
 
 **⏱️ Duración:** 45 minutos  
-**👥 Modalidad:** 🎓 **PRESENCIAL - Guiada por el instructor**  
+**👥 Modalidad:** 🎓 **PRESENCIAL - Con instrucciones paso a paso**  
 **📊 Dificultad:** ⭐ Fácil  
 **🎯 Conceptos:** Componentes básicos, estilos con TailwindCSS, Layouts
 

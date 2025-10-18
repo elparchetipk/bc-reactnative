@@ -27,7 +27,7 @@ Al finalizar esta semana, serás capaz de:
 
 **Duración:** 4.5 horas presenciales
 
-Fundamentos teóricos presentados por el instructor con demos en vivo:
+Fundamentos teóricos presentados con demos en vivo:
 
 1. **[Fundamentos de React Native](./1-teoria/01-fundamentos-react-native.md)** (45 min)
 

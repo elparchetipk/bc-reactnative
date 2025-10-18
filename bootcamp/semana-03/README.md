@@ -100,7 +100,7 @@ Al finalizar esta semana, serás capaz de:
 
 **Tiempo:**
 
-- ⏱️ **Sesión Presencial:** 2-2.5 horas (se completa en clase con el instructor)
+- ⏱️ **Sesión Presencial:** 2-2.5 horas de práctica con ejemplos completos
 - 🏠 **Trabajo Autónomo:** 0 horas (TODO se hace en clase)
 
 **Evaluación:** 50 puntos (50% de la nota final)
@@ -145,13 +145,13 @@ Material adicional para reforzar tu aprendizaje:
 
 > **IMPORTANTE:** El bootcamp está diseñado para que **TODO lo esencial se complete en la sesión presencial de 6 horas**. El trabajo autónomo es **opcional** y solo para reforzar conceptos si lo deseas.
 
-#### ✅ ¿Qué se completa EN CLASE? (6 horas presenciales)
+#### ✅ ¿Qué se completa en las 6 horas presenciales?
 
-✅ **Toda la teoría** explicada con demos en vivo  
-✅ **Las 3 prácticas** completadas con código funcional  
-✅ **El Task Manager completo** con todas las funcionalidades  
+✅ **Toda la teoría** de State Management aplicada  
+✅ **Las 3 prácticas** con código funcional y datos persistentes  
+✅ **El proyecto Task Manager** completo con CRUD  
 ✅ **Verificación inmediata** de que todo funciona  
-✅ **Dudas resueltas** en tiempo real por el instructor
+✅ **Dudas resueltas** en tiempo real
 
 #### 📚 Trabajo Autónomo Opcional (1-2h máximo)
 
@@ -163,11 +163,11 @@ Material adicional para reforzar tu aprendizaje:
 
 **NO necesitas:**
 
-- ❌ Completar código que no terminaste en clase (se termina en clase)
+- ❌ Completar código fuera de clase (TODO se termina en la sesión)
 - ❌ Hacer ejercicios extras extensos
-- ❌ Leer toda la documentación de AsyncStorage
-- ❌ Ver todos los videos
-- ❌ Dedicar horas fuera de la sesión
+- ❌ Leer toda la documentación avanzada
+- ❌ Ver todos los videos complementarios
+- ❌ Dedicar horas extras fuera de la sesión
 
 #### 🎯 Filosofía del Bootcamp
 
@@ -252,11 +252,11 @@ Este bootcamp NO es para desarrollar el proyecto formativo de 7mo trimestre. Es 
 
 ### ¿Es difícil Context API?
 
-**No** con la guía del instructor. Se explica paso a paso con ejemplos prácticos que todos construyen juntos en clase.
+**No** con la documentación detallada y los ejemplos. Se explica con ejemplos prácticos que todos construyen juntos en clase.
 
 ### ¿Qué pasa si no entiendo useReducer?
 
-**Se explica en clase** con ejemplos visuales y práctica inmediata. El instructor verifica que todos entiendan antes de continuar.
+**Se explica en clase** con ejemplos visuales y práctica inmediata. Hay tiempo para verificar que todos entiendan antes de continuar.
 
 ### ¿Cuándo uso Context vs useState?
 
@@ -271,7 +271,7 @@ Este bootcamp NO es para desarrollar el proyecto formativo de 7mo trimestre. Es 
 **Semana 4:** APIs y Comunicación con Backend
 
 - Fetch API y Axios (en clase)
-- Manejo de requests HTTP (práctica guiada)
+- Manejo de requests HTTP (práctica con instrucciones completas)
 - Autenticación JWT (live coding)
 - Integración con APIs reales (implementación en vivo)
 
@@ -288,7 +288,7 @@ Este bootcamp NO es para desarrollar el proyecto formativo de 7mo trimestre. Es 
 El state management es el **corazón** de cualquier aplicación moderna. En esta semana aprenderás:
 
 ✅ **En 6 horas presenciales** los fundamentos de gestión de estado  
-✅ **Con práctica guiada** paso a paso por el instructor  
+✅ **Con documentación detallada** y ejemplos paso a paso  
 ✅ **Resultados inmediatos** - Task Manager funcionando al final de la clase  
 ✅ **Bases sólidas** para manejar datos en tus propios proyectos  
 ✅ **Sin carga excesiva** fuera del aula

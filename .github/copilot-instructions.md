@@ -592,6 +592,20 @@ Todo código debe:
 - Ejercicios de estado global
 - Proyecto: App con datos persistentes
 
+### Semana 3: Estado y Datos (6h presencial + ~10-12h autónoma recomendada)
+
+**Sesión Presencial:**
+
+- State management con hooks (2h)
+- Context API patterns (2h)
+- AsyncStorage y persistencia (1.5h)
+- Integración práctica (0.5h)
+
+**Trabajo Autónomo (flexible):**
+
+- Ejercicios de estado global
+- Proyecto: App con datos persistentes
+
 ### Semana 4: APIs y Backend (6h presencial + ~10-12h autónoma recomendada)
 
 **Sesión Presencial:**

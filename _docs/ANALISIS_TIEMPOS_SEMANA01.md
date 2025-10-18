@@ -76,11 +76,11 @@
 #### Presencial (2.5h):
 
 ```
-12:15 - 13:00  (45min) → Práctica 1: Mi Primera App (guiada paso a paso)
+12:15 - 13:00  (45min) → Práctica 1: Mi Primera App (con instrucciones detalladas)
 13:00 - 14:00  (60min) → ALMUERZO
-14:00 - 14:45  (45min) → Práctica 2: Card Component (guiada)
+14:00 - 14:45  (45min) → Práctica 2: Card Component (siguiendo el documento)
 14:45 - 15:00  (15min) → Break
-15:00 - 15:20  (20min) → Práctica 3: Lista (inicio guiado)
+15:00 - 15:20  (20min) → Práctica 3: Lista (inicio con guía paso a paso)
 ```
 
 #### Autónomo (1.5h):
@@ -164,13 +164,13 @@
 - Todas para trabajo autónomo
 - ~3.5h estimadas (en realidad más)
 
-#### ✅ AHORA (Guiadas + Autónomo):
+#### ✅ AHORA (Con documentación autoexplicativa):
 
-**Presenciales (guiadas paso a paso):**
+**Presenciales (siguiendo documentación paso a paso):**
 
 1. **Práctica 1: Mi Primera App** (45min) - Hacer juntos
 2. **Práctica 2: Card Component** (45min) - Hacer juntos
-3. **Práctica 3: Lista (inicio)** (20min) - Inicio guiado
+3. **Práctica 3: Lista (inicio)** (20min) - Inicio con guía completa
 
 **Autónomo (aplicación):** 4. **Práctica 3: Lista (completar)** (30min) - Terminar en casa 5. **Desafíos adicionales** (60min) - Mejoras opcionales
 
@@ -234,7 +234,7 @@
 🕐 12:15 - 13:00 (45min)
 💻 PRÁCTICA 1: Mi Primera App
    - Crear pantalla de perfil personal
-   - Guiada paso a paso por el instructor
+   - Siguiendo instrucciones detalladas del documento
    - Todos codean juntos
 
 🕐 13:00 - 14:00 (60min)
@@ -244,7 +244,7 @@
 💻 PRÁCTICA 2: Card Component
    - Crear componente reutilizable
    - Props con TypeScript
-   - Guiada paso a paso
+   - Con documentación paso a paso
 
 🕐 14:45 - 15:00 (15min)
 ☕ BREAK
@@ -252,7 +252,7 @@
 🕐 15:00 - 15:20 (20min)
 💻 PRÁCTICA 3: Lista de Contactos (inicio)
    - Renderizar arrays con .map()
-   - Inicio guiado
+   - Inicio con guía detallada
    - Completar en casa
 
 🕐 15:20 - 15:50 (30min)

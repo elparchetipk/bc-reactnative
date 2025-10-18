@@ -1,4 +1,4 @@
-# 💻 Práctica 3: Lista de Contactos (Inicio Guiado)
+# 💻 Práctica 3: Lista de Contactos
 
 **⏱️ Duración:** 20 minutos presencial + 30 minutos autónomo  
 **👥 Modalidad:** 🎓 **PRESENCIAL (inicio)** + 🏠 **AUTÓNOMO (completar)**  
@@ -9,7 +9,7 @@
 
 ## 🎯 Objetivo
 
-**En clase (20 min):** El instructor iniciará la lista de contactos y explicará el renderizado de arrays.  
+**En clase (20 min):** Iniciarás la lista de contactos y aprenderás el renderizado de arrays siguiendo esta guía.  
 **En casa (30 min):** Completarás la funcionalidad de búsqueda y agregarás más contactos.
 
 ---

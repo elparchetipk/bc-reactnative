@@ -1,7 +1,7 @@
 # 💻 Práctica 2: Card Component Reutilizable
 
 **⏱️ Duración:** 45 minutos  
-**👥 Modalidad:** 🎓 **PRESENCIAL - Guiada por el instructor**  
+**👥 Modalidad:** 🎓 **PRESENCIAL - Con documentación detallada**  
 **📊 Dificultad:** ⭐⭐ Intermedio  
 **🎯 Conceptos:** Componentes reutilizables, Props, TypeScript, Variants
 

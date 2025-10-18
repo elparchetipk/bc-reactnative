@@ -1,7 +1,7 @@
 # 💻 Prácticas Guiadas - Semana 1
 
 **⏱️ Tiempo Total:** 2 horas presenciales + 1 hora autónoma  
-**👥 Modalidad:** Prácticas guiadas por el instructor en clase
+**👥 Modalidad:** Prácticas con instrucciones paso a paso en clase
 
 ---
 

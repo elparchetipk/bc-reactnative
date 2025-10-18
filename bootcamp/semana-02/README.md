@@ -224,7 +224,7 @@ Material adicional para reforzar tu aprendizaje:
 ✅ **Las 3 prácticas** completadas con código funcional  
 ✅ **El proyecto principal** con navegación funcionando  
 ✅ **Verificación inmediata** de que todo funciona  
-✅ **Dudas resueltas** en tiempo real por el instructor
+✅ **Dudas resueltas** en tiempo real
 
 #### 📚 Trabajo Autónomo Opcional (1-2h máximo)
 
@@ -612,7 +612,7 @@ Para esta semana, **no**. Queremos que domines React Navigation puro. Expo Route
 La navegación es la **columna vertebral** de cualquier aplicación móvil. En esta semana aprenderás:
 
 ✅ **En 6 horas presenciales** los fundamentos de React Navigation  
-✅ **Con práctica guiada** paso a paso por el instructor  
+✅ **Con documentación detallada** paso a paso  
 ✅ **Resultados inmediatos** - app funcionando al final de la clase  
 ✅ **Bases sólidas** para luego desarrollar tus propios proyectos  
 ✅ **Sin carga excesiva** fuera del aula

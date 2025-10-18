@@ -168,8 +168,8 @@ pnpm add --save-dev tailwindcss
 ### En Clase (Presencial):
 
 1. **Lee la introducción** de la práctica (2 min)
-2. **Sigue los pasos** del instructor (paso a paso)
-3. **Escribe el código** junto con el instructor
+2. **Sigue los pasos** de la documentación (paso a paso)
+3. **Escribe el código** siguiendo los ejemplos
 4. **Prueba cada parte** antes de continuar
 5. **Haz preguntas** cuando tengas dudas
 

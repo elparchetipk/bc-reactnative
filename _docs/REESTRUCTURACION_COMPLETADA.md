@@ -134,17 +134,17 @@
 
 🕐 15:15 - 16:00 (45min) ━━━━━━━━━━━━━━━━━━━━
 💻 PRÁCTICA 1: Mi Primera App
-   - Guiada paso a paso
+   - Con instrucciones paso a paso
    ✅ 45min presencial
 
 🕐 16:00 - 16:45 (45min) ━━━━━━━━━━━━━━━━━━━━
 💻 PRÁCTICA 2: Card Component
-   - Guiada paso a paso
+   - Con documentación detallada
    ✅ 45min presencial
 
 🕐 16:45 - 17:05 (20min) ━━━━━━━━━━━━━━━━━━━━
 💻 PRÁCTICA 3: Lista (inicio)
-   - Inicio guiado
+   - Inicio con guía completa
    ✅ 20min presencial
 
 🕐 17:05 - 17:15 (10min) ━━━━━━━━━━━━━━━━━━━━
