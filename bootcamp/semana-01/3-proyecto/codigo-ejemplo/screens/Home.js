@@ -1,18 +1,18 @@
 /**
  * 🐛 ADVERTENCIA: Este archivo contiene un BUG INTENCIONAL
- * 
+ *
  * Home.js - Pantalla principal con lista de contactos
- * 
+ *
  * Bug #3: FlatList sin keyExtractor
  * Severidad: 🟡 Baja (Mejores Prácticas)
  * Tipo: Warning de performance
- * 
+ *
  * ¿Puedes encontrarlo? Pista: Revisa el FlatList
  */
 
-import React, { useState } from 'react';
-import { View, Text, FlatList, StyleSheet, TextInput } from 'react-native';
-import Card from '../components/Card';
+import React, { useState } from 'react'
+import { View, Text, FlatList, StyleSheet, TextInput } from 'react-native'
+import Card from '../components/Card'
 
 // Mock data de contactos
 const CONTACTS_DATA = [
@@ -21,50 +21,45 @@ const CONTACTS_DATA = [
   { id: '3', name: 'Carlos López', email: 'carlos@example.com' },
   { id: '4', name: 'Ana Martínez', email: 'ana@example.com' },
   { id: '5', name: 'Luis Rodríguez', email: 'luis@example.com' },
-];
+]
 
 /**
  * Componente Home - Pantalla principal
- * 
+ *
  * ¿Qué hace?
  * Muestra una lista de contactos con buscador
- * 
+ *
  * ¿Para qué?
  * Demostrar el uso de FlatList y filtrado de datos
- * 
+ *
  * ¿Cómo funciona?
  * 1. Mantiene estado de búsqueda
  * 2. Filtra contactos según texto de búsqueda
  * 3. Renderiza lista con FlatList
  */
 export default function Home() {
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState('')
 
   /**
    * Filtra contactos según el texto de búsqueda
    */
-  const filteredContacts = CONTACTS_DATA.filter(contact =>
+  const filteredContacts = CONTACTS_DATA.filter((contact) =>
     contact.name.toLowerCase().includes(searchText.toLowerCase())
-  );
+  )
 
   /**
    * Renderiza cada item de la lista
    */
   const renderContact = ({ item }) => (
-    <Card 
-      title={item.name}
-      description={item.email}
-    />
-  );
+    <Card title={item.name} description={item.email} />
+  )
 
   return (
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.title}>Mis Contactos</Text>
-        <Text style={styles.subtitle}>
-          {filteredContacts.length} contactos
-        </Text>
+        <Text style={styles.subtitle}>{filteredContacts.length} contactos</Text>
       </View>
 
       {/* Buscador */}
@@ -90,13 +85,11 @@ export default function Home() {
       {/* Empty state */}
       {filteredContacts.length === 0 && (
         <View style={styles.emptyState}>
-          <Text style={styles.emptyText}>
-            No se encontraron contactos
-          </Text>
+          <Text style={styles.emptyText}>No se encontraron contactos</Text>
         </View>
       )}
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -144,4 +137,4 @@ const styles = StyleSheet.create({
     color: '#999',
     textAlign: 'center',
   },
-});
+})

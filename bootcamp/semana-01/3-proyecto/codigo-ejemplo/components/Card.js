@@ -1,76 +1,73 @@
 /**
  * 🐛 ADVERTENCIA: Este archivo contiene un BUG INTENCIONAL
- * 
+ *
  * Card.js - Componente reutilizable de tarjeta
- * 
+ *
  * Bug #2: Mutación directa del estado
  * Severidad: 🟠 Media (Sutil)
  * Tipo: Anti-patrón de React
- * 
+ *
  * ¿Puedes encontrarlo? Pista: Revisa cómo se actualiza el estado
  */
 
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
 /**
  * Componente Card
- * 
+ *
  * ¿Qué hace?
  * Muestra una tarjeta con información y un contador de likes
- * 
+ *
  * ¿Para qué?
  * Componente reutilizable para mostrar contenido con interactividad
- * 
+ *
  * ¿Cómo funciona?
  * 1. Recibe título y descripción por props
  * 2. Mantiene estado local del contador de likes
  * 3. Permite incrementar likes con un botón
- * 
+ *
  * @param {string} title - Título de la tarjeta
  * @param {string} description - Descripción del contenido
  */
 export default function Card({ title, description }) {
-  const [likes, setLikes] = useState(0);
-  const [likeHistory, setLikeHistory] = useState([]);
+  const [likes, setLikes] = useState(0)
+  const [likeHistory, setLikeHistory] = useState([])
 
   /**
    * Maneja el evento de dar like
-   * 
+   *
    * 🐛 BUG #2: Mutación directa del estado
    * Este código muta el array directamente en lugar de crear uno nuevo
    * React no detecta el cambio y no re-renderiza correctamente
    */
   const handleLike = () => {
-    setLikes(likes + 1);
-    
+    setLikes(likes + 1)
+
     // 🐛 BUG AQUÍ: mutación directa del array
-    likeHistory.push(new Date().toISOString());
-    setLikeHistory(likeHistory); // React no detecta el cambio
-    
+    likeHistory.push(new Date().toISOString())
+    setLikeHistory(likeHistory) // React no detecta el cambio
+
     // ✅ SOLUCIÓN CORRECTA (comentada):
     // setLikeHistory([...likeHistory, new Date().toISOString()]);
-  };
+  }
 
   return (
     <View style={styles.card}>
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.description}>{description}</Text>
-      
+
       <View style={styles.footer}>
-        <TouchableOpacity 
-          style={styles.likeButton} 
-          onPress={handleLike}
-        >
+        <TouchableOpacity style={styles.likeButton} onPress={handleLike}>
           <Text style={styles.likeText}>❤️ {likes}</Text>
         </TouchableOpacity>
-        
+
         <Text style={styles.historyText}>
           Total de likes: {likeHistory.length}
         </Text>
       </View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -122,4 +119,4 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#999',
   },
-});
+})

@@ -12,6 +12,7 @@
 ## 🎯 Objetivo
 
 Este ejercicio te enseña a:
+
 - ✅ Leer código críticamente
 - ✅ Identificar errores comunes
 - ✅ Aplicar mejores prácticas
@@ -35,6 +36,7 @@ src/
 ## 🔍 Pistas Generales
 
 **Sin spoilers específicos:**
+
 - 2 bugs son **obvios** (la app no funcionará correctamente)
 - 2 bugs son **sutiles** (la app funciona pero con comportamiento incorrecto)
 - 1 bug es de **mejores prácticas** (funciona pero genera warnings)
@@ -49,6 +51,7 @@ src/
 ## 📚 Recursos de Ayuda
 
 Si estás atascado:
+
 1. Revisa la [teoría de la semana](../1-teoria/)
 2. Consulta el [glosario](../5-glosario/)
 3. Lee la documentación oficial de React Native

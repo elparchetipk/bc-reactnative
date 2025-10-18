@@ -1,4 +1,37 @@
+# ===============# ============================================
+# 📚 DOCUMENTACIÓN INTERNA (NO SUBIR)
 # ============================================
+# Carpeta de documentos de análisis y trabajo interno
+# Visible en VS Code pero no trackeada en Git
+_docs/
+
+# ============================================
+# 🔒 SOLUCIONARIOS DE BUGS (CONFIDENCIAL)
+# ============================================
+# Solucionarios solo para instructores
+# IMPORTANTE: Estos archivos SON VISIBLES en VS Code localmente
+#             pero NO se suben a GitHub (confidenciales)
+#
+# ¿Por qué?
+# - Los solucionarios contienen las respuestas correctas de los bugs
+# - Solo los instructores deben tener acceso
+# - Los estudiantes no deben ver las soluciones antes de intentarlo
+#
+# ¿Cómo funciona?
+# - Instructores: Trabajan con estos archivos localmente
+# - Estudiantes: Clonan el repo sin estos archivos
+# - GitHub: Nunca recibe estos archivos sensibles
+
+# Solucionarios de bugs por semana
+**/bugs-semana-*-solucionario.md
+**/solucionario-bugs-*.md
+
+# Carpeta de solucionarios si se crea
+**/solucionarios/
+
+# Notas privadas del instructor
+**/notas-instructor*.md
+**/instructor-notes*.md=======================
 # GITIGNORE - Bootcamp React Native + Expo
 # ============================================
 # 
