@@ -6,16 +6,16 @@
 
 ## 📊 Comparación: pnpm vs npm
 
-| Característica          | pnpm ⚡                        | npm 🐌                           |
-| ----------------------- | ------------------------------ | -------------------------------- |
-| **Velocidad**           | 2-3x más rápido                | Línea base                       |
-| **Espacio en disco**    | Hasta 3x menos espacio         | Duplica dependencias             |
-| **Instalación inicial** | ~30 segundos                   | ~90 segundos                     |
-| **Reinstalación**       | ~5 segundos (caché)            | ~45 segundos                     |
-| **Seguridad**           | Aislamiento estricto           | Acceso plano (menos seguro)      |
-| **Consistencia**        | Lock file más confiable        | Lock file puede tener conflictos |
-| **Monorepos**           | Soporte nativo                 | Requiere workspaces complejos    |
-| **Uso de memoria**      | Menor consumo                  | Mayor consumo                    |
+| Característica          | pnpm ⚡                          | npm 🐌                           |
+| ----------------------- | -------------------------------- | -------------------------------- |
+| **Velocidad**           | 2-3x más rápido                  | Línea base                       |
+| **Espacio en disco**    | Hasta 3x menos espacio           | Duplica dependencias             |
+| **Instalación inicial** | ~30 segundos                     | ~90 segundos                     |
+| **Reinstalación**       | ~5 segundos (caché)              | ~45 segundos                     |
+| **Seguridad**           | Aislamiento estricto             | Acceso plano (menos seguro)      |
+| **Consistencia**        | Lock file más confiable          | Lock file puede tener conflictos |
+| **Monorepos**           | Soporte nativo                   | Requiere workspaces complejos    |
+| **Uso de memoria**      | Menor consumo                    | Mayor consumo                    |
 | **Tamaño node_modules** | Estructura de enlaces simbólicos | Estructura plana pesada          |
 
 ---
@@ -238,20 +238,20 @@ brew install pnpm
 
 ## 📚 Comandos Equivalentes
 
-| Tarea                    | npm                      | pnpm                    |
-| ------------------------ | ------------------------ | ----------------------- |
-| Instalar dependencias    | `npm install`            | `pnpm install`          |
-| Agregar paquete          | `npm install lodash`     | `pnpm add lodash`       |
-| Agregar dev dependency   | `npm install -D prettier` | `pnpm add -D prettier`  |
-| Remover paquete          | `npm uninstall lodash`   | `pnpm remove lodash`    |
-| Instalar globalmente     | `npm install -g expo-cli` | `pnpm add -g expo-cli`  |
-| Ejecutar script          | `npm run dev`            | `pnpm dev`              |
-| Ejecutar binario local   | `npx expo start`         | `pnpx expo start`       |
-| Limpiar caché            | `npm cache clean --force` | `pnpm store prune`      |
-| Actualizar dependencias  | `npm update`             | `pnpm update`           |
-| Listar dependencias      | `npm list`               | `pnpm list`             |
-| Ver outdated             | `npm outdated`           | `pnpm outdated`         |
-| Ver dependencias globales| `npm list -g`            | `pnpm list -g`          |
+| Tarea                     | npm                       | pnpm                   |
+| ------------------------- | ------------------------- | ---------------------- |
+| Instalar dependencias     | `npm install`             | `pnpm install`         |
+| Agregar paquete           | `npm install lodash`      | `pnpm add lodash`      |
+| Agregar dev dependency    | `npm install -D prettier` | `pnpm add -D prettier` |
+| Remover paquete           | `npm uninstall lodash`    | `pnpm remove lodash`   |
+| Instalar globalmente      | `npm install -g expo-cli` | `pnpm add -g expo-cli` |
+| Ejecutar script           | `npm run dev`             | `pnpm dev`             |
+| Ejecutar binario local    | `npx expo start`          | `pnpx expo start`      |
+| Limpiar caché             | `npm cache clean --force` | `pnpm store prune`     |
+| Actualizar dependencias   | `npm update`              | `pnpm update`          |
+| Listar dependencias       | `npm list`                | `pnpm list`            |
+| Ver outdated              | `npm outdated`            | `pnpm outdated`        |
+| Ver dependencias globales | `npm list -g`             | `pnpm list -g`         |
 
 ---
 

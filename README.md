@@ -4,10 +4,23 @@
 
 <div align="center">
 
-[![React Native](https://img.shields.io/badge/React%20Native-0.74-61DAFB?logo=react)](https://reactnative.dev/)
-[![Expo](https://img.shields.io/badge/Expo-51-000020?logo=expo)](https://expo.dev/)
-[![pnpm](https://img.shields.io/badge/pnpm-9.x-F69220?logo=pnpm)](https://pnpm.io/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[### 📖 [Referencias](./_docs/referencias/)
+
+- [**Comandos pnpm**](./_docs/referencias/comandos-pnpm.md) - Cheat sheet completo
+- Cheatsheet React Native
+- Componentes básicos
+- APIs de Expo
+- Comandos CLI
+
+### 🎓 [Recursos](./_docs/recursos/)
+
+- eBooks recomendados
+- Canales de YouTube
+- Artículos imprescindibles
+- Comunidades y forose](https://img.shields.io/badge/React%20Native-0.74-61DAFB?logo=react)](https://reactnative.dev/)
+  [![Expo](https://img.shields.io/badge/Expo-51-000020?logo=expo)](https://expo.dev/)
+  [![pnpm](https://img.shields.io/badge/pnpm-9.x-F69220?logo=pnpm)](https://pnpm.io/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 
 </div>
 
@@ -128,13 +141,15 @@ Toda la documentación está organizada en [`/_docs/`](./_docs/):
 
 ### 📖 [Guías](./_docs/guias/)
 
-- Instalación del entorno de desarrollo
+- [**Instalación del Entorno**](./_docs/guias/instalacion-entorno.md) - 🛠️ Setup completo paso a paso
+- [**¿Por qué pnpm?**](./_docs/guias/por-que-pnpm.md) - ⚡ Ventajas y benchmarks
 - Configuración de VS Code
 - Primeros pasos con Expo
 - Troubleshooting común
 
 ### 🔍 [Referencias](./_docs/referencias/)
 
+- [**Comandos pnpm**](./_docs/referencias/comandos-pnpm.md) - 📋 Cheat sheet completo
 - Cheat sheet de React Native
 - Componentes básicos
 - APIs de Expo
@@ -230,8 +245,15 @@ cd bc-reactnative
 
 ### 2. Instalar pnpm (si no lo tienes)
 
+> **⚡ IMPORTANTE:** Este bootcamp usa **pnpm exclusivamente** por su velocidad superior (3x más rápido que npm) y eficiencia de espacio (80% menos). Lee [¿Por qué pnpm?](./_docs/guias/por-que-pnpm.md)
+
 ```bash
+# Instalar pnpm globalmente (última vez que usarás npm)
 npm install -g pnpm
+
+# Verificar instalación
+pnpm --version
+# Debe mostrar: 8.x.x o superior
 ```
 
 ### 3. Instalar Dependencias

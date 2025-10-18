@@ -381,14 +381,14 @@ Este bootcamp NO es para desarrollar el proyecto formativo de 7mo trimestre. Es 
 
 ### Stack Tecnológico
 
-| Tecnología           | Versión | Propósito                        |
-| -------------------- | ------- | -------------------------------- |
-| **React Native**     | 0.74+   | Framework base                   |
-| **Expo**             | SDK 51+ | Plataforma de desarrollo         |
-| **React Navigation** | 6.x     | Sistema de navegación            |
-| **TypeScript**       | 5.x     | Tipado estático (opcional)       |
+| Tecnología           | Versión | Propósito                                                   |
+| -------------------- | ------- | ----------------------------------------------------------- |
+| **React Native**     | 0.74+   | Framework base                                              |
+| **Expo**             | SDK 51+ | Plataforma de desarrollo                                    |
+| **React Navigation** | 6.x     | Sistema de navegación                                       |
+| **TypeScript**       | 5.x     | Tipado estático (opcional)                                  |
 | **pnpm**             | 8.x     | Gestor de paquetes (**obligatorio**, 3x más rápido que npm) |
-| **Node.js**          | 18.x+   | Runtime de JavaScript            |
+| **Node.js**          | 18.x+   | Runtime de JavaScript                                       |
 
 ### Librerías de Navegación
 

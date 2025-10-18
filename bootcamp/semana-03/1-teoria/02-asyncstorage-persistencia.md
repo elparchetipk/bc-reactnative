@@ -86,7 +86,7 @@ Piensa en AsyncStorage como un **archivero digital**:
 
 ### Instalación
 
-```bash
+````bash
 # Con pnpm (recomendado en el bootcamp)
 pnpm add @react-native-async-storage/async-storage
 
@@ -96,11 +96,13 @@ pnpm add @react-native-async-storage/async-storage
 
 # O con npm (no recomendado en este bootcamp)
 npm install @react-native-async-storage/async-storage
-```
+````
 
 # Con yarn
+
 yarn add @react-native-async-storage/async-storage
-```
+
+````
 
 ### Configuración para Expo (Automática)
 
@@ -141,7 +143,7 @@ export function TestAsyncStorage() {
 
   return null
 }
-```
+````
 
 ---
 

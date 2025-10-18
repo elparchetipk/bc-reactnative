@@ -438,9 +438,10 @@ const colors = {
 
 ### 1. Setup Inicial
 
+````bash
 ```bash
-# Crear proyecto
-npx create-expo-app ecommerce-app
+# Crear proyecto (usa pnpx - es más rápido que npx)
+pnpx create-expo-app ecommerce-app
 cd ecommerce-app
 
 # Instalar dependencias de navegación
@@ -453,14 +454,19 @@ pnpm add @react-navigation/drawer
 pnpm add react-native-screens react-native-safe-area-context
 pnpm add react-native-gesture-handler react-native-reanimated
 
+````
+
 # Íconos y styling
+
 pnpm add @expo/vector-icons
 pnpm add nativewind
 pnpm add --save-dev tailwindcss
 
 # TypeScript (si no está)
+
 pnpm add --save-dev typescript @types/react @types/react-native
-```
+
+````
 
 ### 2. Configurar Babel
 
@@ -470,7 +476,7 @@ module.exports = {
   presets: ['babel-preset-expo'],
   plugins: ['nativewind/babel', 'react-native-reanimated/plugin'],
 }
-```
+````
 
 ### 3. Crear Estructura de Carpetas
 
