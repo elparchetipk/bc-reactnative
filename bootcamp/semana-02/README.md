@@ -134,7 +134,7 @@ Ejercicios prácticos paso a paso:
 
 **Tiempo:**
 
-- ⏱️ **Sesión Presencial:** 2-2.5 horas (se completa en clase con el instructor)
+- ⏱️ **Sesión Presencial:** 2-2.5 horas de práctica con ejemplos paso a paso
 - 🏠 **Trabajo Autónomo:** 0 horas (TODO se hace en clase)
 
 **Evaluación:** 50 puntos (50% de la nota final)
@@ -207,7 +207,7 @@ Material adicional para reforzar tu aprendizaje:
 | 13:15-13:45 | **Teoría 3:** Drawer Navigator + Demo          | 30 min   | Clase práctica |
 | 13:45-14:15 | **Práctica 3:** Drawer (TODOS juntos)          | 30 min   | Live coding    |
 | 14:15-14:30 | ☕ Break                                       | 15 min   | Descanso       |
-| 14:30-16:30 | **Proyecto:** App completa guiada paso a paso  | 2h       | Live coding    |
+| 14:30-16:30 | **Proyecto:** Implementación completa          | 2h       | Live coding    |
 | 16:30-17:00 | Verificación final, testing y cierre           | 30 min   | Q&A + Demo     |
 
 **Total:** 6 horas efectivas (sin contar breaks y almuerzo)
@@ -218,7 +218,7 @@ Material adicional para reforzar tu aprendizaje:
 
 > **IMPORTANTE:** El bootcamp está diseñado para que **TODO lo esencial se complete en la sesión presencial de 6 horas**. El trabajo autónomo es **opcional** y solo para reforzar conceptos si lo deseas.
 
-#### ✅ ¿Qué se completa EN CLASE? (6 horas presenciales)
+#### ✅ ¿Qué se completa en las 6 horas presenciales?
 
 ✅ **Toda la teoría** explicada y aplicada  
 ✅ **Las 3 prácticas** completadas con código funcional  
@@ -236,7 +236,7 @@ Material adicional para reforzar tu aprendizaje:
 
 **NO necesitas:**
 
-- ❌ Completar código que no terminaste en clase (se termina en clase)
+- ❌ Completar código fuera de clase (TODO se termina en la sesión)
 - ❌ Hacer ejercicios extras extensos
 - ❌ Leer toda la documentación
 - ❌ Ver todos los videos
@@ -520,7 +520,7 @@ git --version     # Cualquier versión reciente
 
 ### ¿Cuánto tiempo debo dedicar?
 
-**Respuesta:** Solo las **6 horas presenciales obligatorias**. Todo se completa en clase. El trabajo autónomo (1-2h) es **opcional** solo para reforzar si lo deseas.
+**Respuesta:** Las **6 horas presenciales obligatorias** donde se trabaja en las prácticas y el proyecto. El trabajo autónomo (1-2h) es **opcional** solo para reforzar conceptos.
 
 ### ¿Es obligatorio TypeScript?
 
@@ -530,9 +530,9 @@ git --version     # Cualquier versión reciente
 
 **No recomendado** para esta semana. Context API es suficiente y es parte de los objetivos de aprendizaje. Redux se verá en semanas posteriores.
 
-### ¿Qué pasa si no termino en clase?
+### ¿Qué pasa si no termino en la sesión?
 
-**No debería pasar** porque el instructor guía paso a paso y todos avanzan juntos. Si tienes dificultades, se resuelven inmediatamente en la sesión. La app se completa 100% en las 6 horas presenciales.
+El instructor ajusta el ritmo para que todos avancen juntos. Si tienes dificultades, se resuelven inmediatamente. Las prácticas tienen instrucciones paso a paso muy detalladas para que puedas seguirlas a tu ritmo.
 
 ### ¿Puedo agregar features extra?
 
