@@ -5,6 +5,10 @@
 
 ---
 
+> **🐛 IMPORTANTE:** El código de ejemplo de esta semana contiene **5 bugs intencionales** que debes identificar, corregir y documentar. Esto previene la copia mecánica y fomenta el aprendizaje activo. Ver [Sistema de Bugs Pedagógicos](../../_docs/instructor/bugs-pedagogicos.md).
+
+---
+
 ## 🎯 Objetivos de Aprendizaje
 
 Al finalizar esta semana, serás capaz de:
@@ -235,13 +239,16 @@ expo --version
 
 ## ✅ Criterios de Evaluación
 
+> **Nota:** Esta semana incluye **5 bugs pedagógicos intencionales** en el código de ejemplo que debes identificar y corregir como parte de la evaluación (20 puntos).
+
 ### Distribución de Puntos (100 puntos totales)
 
 | Componente             | Peso     | Puntos      |
 | ---------------------- | -------- | ----------- |
-| 📖 Comprensión Teórica | 20%      | 20 pts      |
-| 💻 Prácticas Guiadas   | 30%      | 30 pts      |
-| 🚀 Proyecto Integrador | 50%      | 50 pts      |
+| 📖 Comprensión Teórica | 15%      | 15 pts      |
+| 💻 Prácticas Guiadas   | 25%      | 25 pts      |
+| 🚀 Proyecto Integrador | 40%      | 40 pts      |
+| 🐛 Bugs Resueltos      | 20%      | 20 pts      |
 | **TOTAL**              | **100%** | **100 pts** |
 
 ---

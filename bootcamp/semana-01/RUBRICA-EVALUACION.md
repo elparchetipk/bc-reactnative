@@ -7,11 +7,14 @@
 
 ## 🎯 Distribución de Puntos Totales
 
+> **Versión 2.0:** Esta semana incluye **5 bugs pedagógicos intencionales** en el código de ejemplo que debes identificar, corregir y documentar (20% de la nota).
+
 | Componente    | Peso     | Puntos      | Descripción                            |
 | ------------- | -------- | ----------- | -------------------------------------- |
-| **Teoría**    | 20%      | 20 pts      | Comprensión de conceptos fundamentales |
-| **Prácticas** | 30%      | 30 pts      | Ejercicios guiados en clase            |
-| **Proyecto**  | 50%      | 50 pts      | Proyecto integrador: Mi App Personal   |
+| **Teoría**    | 15%      | 15 pts      | Comprensión de conceptos fundamentales |
+| **Prácticas** | 25%      | 25 pts      | Ejercicios guiados en clase            |
+| **Proyecto**  | 40%      | 40 pts      | Proyecto integrador: Mi App Personal   |
+| **Bugs**      | 20%      | 20 pts      | Identificación y corrección de bugs    |
 | **TOTAL**     | **100%** | **100 pts** | Calificación final de la semana        |
 
 ---
@@ -494,7 +497,107 @@ Antes de entregar, verifica que cumples con todos estos puntos:
 
 ---
 
-## 📞 Dudas sobre la Evaluación
+## � 4. BUGS PEDAGÓGICOS (20 puntos)
+
+> Esta semana incluye **5 bugs intencionales** en el código de ejemplo. Debes identificarlos, corregirlos y documentar el proceso en un archivo `BUGS-RESUELTOS.md` siguiendo el [template oficial](../../_docs/instructor/TEMPLATE-BUGS-RESUELTOS.md).
+
+### 4.1 Bugs Identificados (8 puntos)
+
+| Bugs Encontrados | Puntos | Descripción                         |
+| ---------------- | ------ | ----------------------------------- |
+| **5 bugs (100%)** | 8 pts  | Encontraste todos los bugs          |
+| **4 bugs (80%)**  | 6 pts  | Encontraste la mayoría              |
+| **3 bugs (60%)**  | 4 pts  | Encontraste más de la mitad         |
+| **2 bugs (40%)**  | 2 pts  | Encontraste algunos bugs            |
+| **0-1 bug**       | 0 pts  | No identificaste suficientes bugs   |
+
+### 4.2 Soluciones Correctas (6 puntos)
+
+| Criterio | Excelente (5-6) | Muy Bueno (4) | Bueno (2-3) | Insuficiente (0-1) |
+| -------- | --------------- | ------------- | ----------- | ------------------ |
+| **Corrección** | Todos los bugs corregidos apropiadamente, código funciona perfectamente | Mayoría corregidos bien, 1 error menor | Varios bugs corregidos pero con errores | Soluciones incorrectas o incompletas |
+| **Calidad** | Soluciones elegantes siguiendo mejores prácticas | Soluciones correctas y funcionales | Soluciones funcionales pero mejorables | Código de baja calidad |
+
+### 4.3 Documentación (4 puntos)
+
+| Criterio | Excelente (4) | Muy Bueno (3) | Bueno (2) | Insuficiente (0-1) |
+| -------- | ------------- | ------------- | --------- | ------------------ |
+| **BUGS-RESUELTOS.md** | Documento completo siguiendo el template, incluye código before/after, screenshots, explicaciones detalladas | Documento completo con información clara | Documento básico con información mínima | Sin documento o muy incompleto |
+| **Commits** | Commits progresivos (1 por bug), mensajes descriptivos, historial limpio | Varios commits con mensajes claros | Pocos commits o mensajes poco claros | 1 solo commit o sin commits |
+
+### 4.4 Explicaciones y Comprensión (2 puntos)
+
+| Criterio | Excelente (2) | Bueno (1) | Insuficiente (0) |
+| -------- | ------------- | --------- | ---------------- |
+| **Entendimiento** | Explica claramente por qué era bug, cómo lo solucionó, qué aprendió | Explica el bug y la solución básica | No explica o explicaciones confusas |
+
+---
+
+### 📋 Lista de Bugs - Semana 1 (5 bugs)
+
+| # | Ubicación | Tipo | Severidad | Descripción |
+| - | --------- | ---- | --------- | ----------- |
+| 1 | `App.js` línea 15 | **Obvio** | 🔴 Alta | Import incorrecto: `react-native` sin componentes específicos |
+| 2 | `components/Card.js` línea 8 | **Sutil** | 🟠 Media | Estado no se actualiza: mutación directa del array |
+| 3 | `screens/Home.js` línea 23 | **Mejores Prácticas** | 🟡 Baja | FlatList sin `keyExtractor`, genera warnings |
+| 4 | `styles/theme.js` línea 5 | **Sutil** | 🟠 Media | Colores hardcodeados en vez de usar constantes |
+| 5 | `utils/helpers.js` línea 12 | **Obvio** | 🔴 Alta | Función sin return, retorna `undefined` |
+
+**Distribución:**
+- 40% Bugs Obvios (rompen la app o generan errores)
+- 40% Bugs Sutiles (app funciona pero con comportamiento incorrecto)
+- 20% Mejores Prácticas (funciona pero no es profesional)
+
+---
+
+### ⚠️ Detección de Copias
+
+**Se considerará copia y recibirá automáticamente 0 puntos si:**
+
+- ✅ El documento `BUGS-RESUELTOS.md` es idéntico o muy similar a otro estudiante
+- ✅ Las explicaciones son copiadas textualmente de internet sin atribución
+- ✅ El código corregido es idéntico en múltiples estudiantes (incluyendo formato, nombres de variables, comentarios)
+- ✅ Solo hay 1 commit con "bugs arreglados" (debe haber commits progresivos)
+- ✅ No hay evidencia de proceso de debugging (screenshots, pruebas)
+
+**Patrones sospechosos:**
+- Mismos nombres de variables en las correcciones
+- Orden idéntico de bugs encontrados
+- Explicaciones con fraseología idéntica
+- Screenshots con misma resolución/timestamp
+- Commits al mismo tiempo con mensajes similares
+
+---
+
+### ✅ Checklist de Auto-Evaluación
+
+Antes de entregar, verifica:
+
+- [ ] He encontrado los 5 bugs (o al menos 3-4)
+- [ ] He corregido cada bug correctamente
+- [ ] La app funciona sin errores después de las correcciones
+- [ ] He creado `BUGS-RESUELTOS.md` con toda la información
+- [ ] Cada bug tiene: ubicación, código before/after, explicación
+- [ ] He incluido screenshots que demuestran la funcionalidad
+- [ ] He hecho commits progresivos (no 1 solo commit)
+- [ ] Mis explicaciones son con mis propias palabras
+- [ ] He probado que todo funciona antes de entregar
+
+---
+
+## 📊 Tabla Resumen de Evaluación
+
+| Componente | Criterios | Puntos Máximos | Mi Puntuación |
+| ---------- | --------- | -------------- | ------------- |
+| **1. Teoría** | Conceptos (10) + Aplicación (5) | 15 pts | ___ / 15 |
+| **2. Prácticas** | Práctica 1 (8) + Práctica 2 (8) + Práctica 3 (9) | 25 pts | ___ / 25 |
+| **3. Proyecto** | Funcionalidad (16) + Código (12) + UI (8) + Docs (4) | 40 pts | ___ / 40 |
+| **4. Bugs** | Identificados (8) + Soluciones (6) + Docs (4) + Explicaciones (2) | 20 pts | ___ / 20 |
+| **TOTAL** | | **100 pts** | **___ / 100** |
+
+---
+
+## �📞 Dudas sobre la Evaluación
 
 Si tienes dudas sobre algún criterio de evaluación:
 
@@ -536,4 +639,4 @@ Si consideras que tu evaluación fue injusta, puedes:
 
 _Rúbrica de Evaluación - Semana 1: Fundamentos de React Native_  
 _Bootcamp React Native 2025 - Ficha 3147252_  
-_Versión 1.0 - Actualizada: 11 de octubre de 2025_
+_Versión 2.0 (con bugs pedagógicos) - Actualizada: 18 de octubre de 2025_
