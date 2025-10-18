@@ -178,10 +178,9 @@ AHORA:
 
 ### Inmediato (completar Semana 1):
 
-- [ ] Crear documento del Proyecto Integrador (5-proyecto/)
+- [ ] Crear documento del Proyecto Integrador (3-proyecto/)
 - [ ] Crear recursos rápidos (4-recursos/)
-- [ ] Completar glosario (6-glosario/)
-- [ ] Preparar asignaciones de dominios (7-asignacion-dominios/)
+- [ ] Completar glosario (5-glosario/)
 
 ### Semanas 2-6:
 

@@ -86,14 +86,7 @@ semana-XX/
 │   ├── ebooks-free/
 │   ├── videografia/
 │   └── webgrafia/
-├── 5-glosario/                 # Términos técnicos y conceptos clave
-└── 6-asignacion-dominios/      # 🔒 Dominios personalizados (PRIVADO)
-    ├── .gitkeep               # Mantener carpeta en Git
-    ├── README.md              # Guía para instructor
-    ├── TEMPLATE.md            # Plantilla de asignación
-    ├── breyner-alfonso.md     # Ejemplo: Breyner Alfonso
-    ├── pablo-bernal.md        # Ejemplo: Pablo Bernal
-    └── juan-culma.md          # Ejemplo: Juan Culma (etc.)
+└── 5-glosario/                 # Términos técnicos y conceptos clave
 ```
 
 ---
@@ -272,20 +265,9 @@ Cada código debe servir como recurso de aprendizaje:
 
 [Descripción del proyecto semanal](./3-proyecto/README.md)
 
-## � Dominio Personalizado
+## 📚 Recursos Adicionales
 
-[Tu asignación única](./4-asignacion-dominios/) - Ver [Política Anticopia](./../_docs/POLITICA_ANTICOPIA_DOMINIOS.md)
-
-## �📚 Recursos Adicionales
-
-- [eBooks recomendados](./5-recursos/ebooks-free/)
-- [Videos tutoriales](./5-recursos/videografia/)
-- [Artículos y documentación](./5-recursos/webgrafia/)
-
-## 📖 Glosario
-
-[Términos clave de la semana](./6-glosario/README.md)
-
+- [eBooks recomendados](./4-recursos/ebooks-free/)
 - [Videos tutoriales](./4-recursos/videografia/)
 - [Artículos y documentación](./4-recursos/webgrafia/)
 

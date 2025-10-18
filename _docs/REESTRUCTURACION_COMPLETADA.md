@@ -245,7 +245,6 @@ TIEMPO EFECTIVO: 6 horas 10 minutos
 - [ ] Crear carpeta `3-proyecto/` con proyecto integrador simplificado
 - [ ] Crear carpeta `4-recursos/` con material de referencia rápida
 - [ ] Crear carpeta `5-glosario/` con términos clave
-- [ ] Crear carpeta `6-asignacion-dominios/` con asignaciones personalizadas
 - [ ] Crear README principal de `semana-01/` con overview completo
 - [ ] Aplicar misma metodología a Semanas 2-6
 

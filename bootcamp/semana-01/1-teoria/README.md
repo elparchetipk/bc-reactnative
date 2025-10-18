@@ -205,9 +205,8 @@ Una vez completada la teoría de la Semana 1:
 
 1. ✅ Completar las **Prácticas Guiadas** en `2-practicas/`
 2. ✅ Desarrollar el **Proyecto Integrador** en `3-proyecto/`
-3. ✅ Revisar tu **Dominio Personalizado** en `6-asignacion-dominios/`
-4. ✅ Consultar **Recursos Adicionales** en `4-recursos/`
-5. ✅ Revisar el **Glosario** en `5-glosario/`
+3. ✅ Consultar **Recursos Adicionales** en `4-recursos/`
+4. ✅ Revisar el **Glosario** en `5-glosario/`
 
 ---
 
