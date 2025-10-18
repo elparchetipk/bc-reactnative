@@ -9,12 +9,12 @@
 | Aspecto           | Detalle                                                       |
 | ----------------- | ------------------------------------------------------------- |
 | 🎯 **Enfoque**    | Navegación entre pantallas con React Navigation               |
-| ⏱️ **Duración**   | 6 horas presenciales + 10-12h autónomas (recomendado)         |
+| ⏱️ **Duración**   | 6 horas presenciales + 1-2h autónomas (refuerzo opcional)     |
 | 📚 **Temas**      | Stack, Tab, Drawer Navigator, Navegación Anidada, Context API |
-| 💻 **Prácticas**  | 3 apps completas (Blog, Dashboard, Settings)                  |
-| 🚀 **Proyecto**   | E-Commerce App con 16 pantallas                               |
-| 📈 **Dificultad** | ⭐⭐⭐ Intermedia                                             |
-| ✅ **Evaluación** | 100 puntos (20% teoría, 30% prácticas, 50% proyecto)          |
+| 💻 **Prácticas**  | 3 apps guiadas en clase (resultados inmediatos)               |
+| 🚀 **Proyecto**   | App funcional completada en sesión presencial                 |
+| 📈 **Dificultad** | ⭐⭐ Intermedia                                               |
+| ✅ **Evaluación** | 100 puntos (participación en clase + app funcional)           |
 
 ---
 
@@ -134,8 +134,8 @@ Ejercicios prácticos paso a paso:
 
 **Tiempo:**
 
-- ⏱️ **Sesión Presencial:** 30 minutos (introducción y guía)
-- 🏠 **Trabajo Autónomo:** ~7 horas (flexible según tu ritmo)
+- ⏱️ **Sesión Presencial:** 2-2.5 horas (se completa en clase con el instructor)
+- 🏠 **Trabajo Autónomo:** 0 horas (TODO se hace en clase)
 
 **Evaluación:** 50 puntos (50% de la nota final)
 
@@ -195,72 +195,63 @@ Material adicional para reforzar tu aprendizaje:
 
 ### 📅 Sesión Presencial (6 horas - Obligatoria)
 
-| Horario     | Actividad                                     | Duración | Tipo         |
-| ----------- | --------------------------------------------- | -------- | ------------ |
-| 09:00-09:15 | Bienvenida y objetivos de la semana           | 15 min   | Introducción |
-| 09:15-10:00 | **Teoría 1:** Introducción a React Navigation | 45 min   | Clase        |
-| 10:00-10:45 | **Teoría 2:** Stack Navigator                 | 45 min   | Clase        |
-| 10:45-11:00 | ☕ Break                                      | 15 min   | Descanso     |
-| 11:00-11:45 | **Teoría 3:** Tab y Drawer Navigator          | 45 min   | Clase        |
-| 11:45-12:30 | **Práctica 1:** Stack Navigator (Blog App)    | 45 min   | Hands-on     |
-| 12:30-13:30 | 🍽️ Almuerzo                                   | 60 min   | Descanso     |
-| 13:30-14:15 | **Práctica 2:** Tab Navigator (Dashboard)     | 45 min   | Hands-on     |
-| 14:15-14:45 | **Práctica 3:** Drawer Navigator (Settings)   | 30 min   | Hands-on     |
-| 14:45-15:00 | ☕ Break                                      | 15 min   | Descanso     |
-| 15:00-15:30 | **Proyecto:** Introducción al E-Commerce App  | 30 min   | Explicación  |
-| 15:30-16:00 | Q&A, dudas y cierre                           | 30 min   | Discusión    |
+| Horario     | Actividad                                     | Duración | Tipo           |
+| ----------- | --------------------------------------------- | -------- | -------------- |
+| 09:00-09:15 | Bienvenida y objetivos de la semana           | 15 min   | Introducción   |
+| 09:15-09:45 | **Teoría 1:** Intro React Navigation + Demo   | 30 min   | Clase práctica |
+| 09:45-10:30 | **Práctica 1:** Stack Navigator (TODOS juntos)| 45 min   | Live coding    |
+| 10:30-10:45 | ☕ Break + Verificación de código             | 15 min   | Descanso       |
+| 10:45-11:30 | **Teoría 2:** Tab Navigator + Demo en vivo    | 45 min   | Clase práctica |
+| 11:30-12:15 | **Práctica 2:** Tab Navigator (TODOS juntos)  | 45 min   | Live coding    |
+| 12:15-13:15 | 🍽️ Almuerzo                                   | 60 min   | Descanso       |
+| 13:15-13:45 | **Teoría 3:** Drawer Navigator + Demo         | 30 min   | Clase práctica |
+| 13:45-14:15 | **Práctica 3:** Drawer (TODOS juntos)         | 30 min   | Live coding    |
+| 14:15-14:30 | ☕ Break                                      | 15 min   | Descanso       |
+| 14:30-16:30 | **Proyecto:** App completa guiada paso a paso | 2h       | Live coding    |
+| 16:30-17:00 | Verificación final, testing y cierre          | 30 min   | Q&A + Demo     |
 
 **Total:** 6 horas efectivas (sin contar breaks y almuerzo)
 
 ---
 
-### 🏠 Trabajo Autónomo (10-12h recomendadas, flexible)
+### 🏠 Trabajo Autónomo (1-2h opcional - Solo refuerzo)
 
-> **Nota:** Las horas son **flexibles** y cada estudiante las adapta según su ritmo, experiencia previa y disponibilidad. Los tiempos son recomendaciones promedio.
+> **IMPORTANTE:** El bootcamp está diseñado para que **TODO lo esencial se complete en la sesión presencial de 6 horas**. El trabajo autónomo es **opcional** y solo para reforzar conceptos si lo deseas.
 
-#### 📅 Plan Semanal Sugerido
+#### ✅ ¿Qué se completa EN CLASE? (6 horas presenciales)
 
-**Lunes-Martes (2-3 horas):**
+✅ **Toda la teoría** explicada y aplicada  
+✅ **Las 3 prácticas** completadas con código funcional  
+✅ **El proyecto principal** con navegación funcionando  
+✅ **Verificación inmediata** de que todo funciona  
+✅ **Dudas resueltas** en tiempo real por el instructor
 
-- [ ] Repasar teoría de la sesión presencial
-- [ ] Completar o mejorar las 3 prácticas
-- [ ] Experimentar con personalizaciones
+#### 📚 Trabajo Autónomo Opcional (1-2h máximo)
 
-**Miércoles-Jueves (3-4 horas):**
+**Solo si quieres reforzar:**
 
-- [ ] Leer documentación del proyecto E-Commerce
-- [ ] Completar Fase 1: Setup y Fase 2: Context
-- [ ] Implementar Home Stack (3 pantallas)
+- [ ] **30-45 min:** Revisar notas de clase y documentación oficial
+- [ ] **30-45 min:** Ver 1-2 videos recomendados sobre navegación
+- [ ] **15-30 min:** Experimentar con pequeñas personalizaciones (colores, iconos)
 
-**Viernes-Sábado (4-5 horas):**
+**NO necesitas:**
 
-- [ ] Implementar Cart Stack (4 pantallas)
-- [ ] Implementar Profile Stack (4 pantallas)
-- [ ] Integrar navegación completa (Drawer → Tab → Stack)
+- ❌ Completar código que no terminaste en clase (se termina en clase)
+- ❌ Hacer ejercicios extras extensos
+- ❌ Leer toda la documentación
+- ❌ Ver todos los videos
+- ❌ Dedicar horas fuera de la sesión
 
-**Domingo (1-2 horas):**
+#### 🎯 Filosofía del Bootcamp
 
-- [ ] Testing completo de la app
-- [ ] Documentación y README
-- [ ] Preparar entrega
-- [ ] Auto-evaluación con checklist
+Este bootcamp NO es para desarrollar el proyecto formativo de 7mo trimestre. Es para:
 
-#### ⏰ Distribución Detallada
+✅ **Aprender fundamentos** de React Native en 6 semanas  
+✅ **Práctica intensiva** en sesiones presenciales  
+✅ **Resultados inmediatos** verificables en clase  
+✅ **Bases sólidas** para que luego puedan desarrollar sus propios proyectos
 
-| Actividad                             | Tiempo Estimado | Prioridad |
-| ------------------------------------- | --------------- | --------- |
-| Repaso de teoría                      | 2-3 horas       | Alta      |
-| Completar/mejorar prácticas           | 2-3 horas       | Alta      |
-| Proyecto: Fases 1-2 (Setup + Context) | 1-2 horas       | Alta      |
-| Proyecto: Home Stack                  | 1.5 horas       | Alta      |
-| Proyecto: Cart Stack                  | 2-2.5 horas     | Alta      |
-| Proyecto: Profile Stack               | 1.5-2 horas     | Alta      |
-| Integración y navegación completa     | 1 hora          | Alta      |
-| Testing y debugging                   | 1 hora          | Alta      |
-| Documentación                         | 30 min          | Media     |
-| Recursos adicionales (videos, eBooks) | 2-3 horas       | Opcional  |
-
-**Total Recomendado:** ~10-12 horas (puede variar de 8 a 15 horas según experiencia)
+**El proyecto formativo (app móvil de 7mo trimestre) es POSTERIOR y está FUERA del alcance de este bootcamp.**
 
 ---
 
@@ -529,7 +520,7 @@ git --version     # Cualquier versión reciente
 
 ### ¿Cuánto tiempo debo dedicar?
 
-**Recomendación:** 10-12 horas de trabajo autónomo, además de las 6 horas presenciales. Puede variar según tu experiencia (8-15 horas).
+**Respuesta:** Solo las **6 horas presenciales obligatorias**. Todo se completa en clase. El trabajo autónomo (1-2h) es **opcional** solo para reforzar si lo deseas.
 
 ### ¿Es obligatorio TypeScript?
 
@@ -539,9 +530,9 @@ git --version     # Cualquier versión reciente
 
 **No recomendado** para esta semana. Context API es suficiente y es parte de los objetivos de aprendizaje. Redux se verá en semanas posteriores.
 
-### ¿Qué pasa si no termino el proyecto?
+### ¿Qué pasa si no termino en clase?
 
-Entregas parciales se evalúan. Se penalizará entregas tardías (10% por día). Es mejor entregar algo incompleto que nada.
+**No debería pasar** porque el instructor guía paso a paso y todos avanzan juntos. Si tienes dificultades, se resuelven inmediatamente en la sesión. La app se completa 100% en las 6 horas presenciales.
 
 ### ¿Puedo agregar features extra?
 
@@ -603,30 +594,32 @@ Para esta semana, **no**. Queremos que domines React Navigation puro. Expo Route
 
 **Semana 3:** Estado y Datos
 
-- State management avanzado
-- Context API patterns
-- AsyncStorage y persistencia
-- Custom hooks
+- State management avanzado (en clase)
+- Context API patterns (práctica guiada)
+- AsyncStorage y persistencia (live coding)
+- Custom hooks (implementación en vivo)
 
 **Preparación:**
 
-- Repasa hooks de React (useState, useEffect, useContext)
-- Entiende cómo funciona el state en React
-- Practica conceptos de inmutabilidad
+- ✅ Asiste a la sesión presencial con tu laptop y app funcionando
+- ✅ Trae preguntas sobre navegación (si las tienes)
+- ❌ No necesitas estudiar nada antes (se explica todo en clase)
 
 ---
 
 ## 🎓 Reflexión Final
 
-La navegación es la **columna vertebral** de cualquier aplicación móvil. Dominar React Navigation te permitirá:
+La navegación es la **columna vertebral** de cualquier aplicación móvil. En esta semana aprenderás:
 
-✅ Crear apps móviles profesionales  
-✅ Implementar flujos de usuario complejos  
-✅ Trabajar con arquitecturas escalables  
-✅ Colaborar efectivamente en equipos  
-✅ Prepararte para el mundo laboral real
+✅ **En 6 horas presenciales** los fundamentos de React Navigation  
+✅ **Con práctica guiada** paso a paso por el instructor  
+✅ **Resultados inmediatos** - app funcionando al final de la clase  
+✅ **Bases sólidas** para luego desarrollar tus propios proyectos  
+✅ **Sin carga excesiva** fuera del aula
 
-**Esta semana es fundamental** - invierte el tiempo necesario y no te apresures. La comprensión profunda aquí te ahorrará dolores de cabeza en semanas futuras.
+**Objetivo:** Que salgas de la sesión presencial con una app completa funcionando y la confianza para crear más.
+
+> **Nota importante:** Este bootcamp NO es para desarrollar tu proyecto formativo de 7mo trimestre. Es para aprender los fundamentos en 6 semanas intensivas. Tu proyecto de grado lo desarrollarás después, con las bases que aprendas aquí.
 
 ---
 
@@ -685,16 +678,15 @@ _Bootcamp React Native 2025 - EPTI_
 
 ## 📊 Estadísticas de la Semana
 
-| Métrica                  | Valor            |
-| ------------------------ | ---------------- |
-| 📄 Documentos totales    | 22               |
-| 📖 Páginas de lectura    | ~150             |
-| 💻 Líneas de código      | ~2,000+          |
-| ⏱️ Tiempo total estimado | ~16-18 horas     |
-| 🎯 Objetivos aprendizaje | 15               |
-| ✅ Criterios evaluación  | 100 puntos       |
-| 🔧 Tecnologías           | 8+               |
-| 📱 Apps a desarrollar    | 4 (3 + proyecto) |
+| Métrica                  | Valor                              |
+| ------------------------ | ---------------------------------- |
+| ⏱️ **Sesión presencial** | **6 horas (todo se hace en clase)**|
+| 🏠 **Trabajo autónomo**  | **1-2h opcional (refuerzo)**       |
+| 💻 Líneas de código      | ~800 (guiadas en vivo)             |
+| 🎯 Objetivos aprendizaje | 8 esenciales                       |
+| ✅ Evaluación            | Participación + app funcional      |
+| 🔧 Tecnologías           | 4 principales                      |
+| 📱 Apps a desarrollar    | 3 prácticas + 1 proyecto (en clase)|
 
 ---
 
